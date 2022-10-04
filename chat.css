@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Roboto:wght@400;700&display=swap');
+
+
+body{
+  margin: 0;
+}
+
+
+.chat{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 800px;
+  background-color: white;
+  border: 2px solid;
+  border-radius: 4px;
+}
+
+/*Chat head*/
+
+.chat-head{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 50px;
+  background-color: rgb(36, 113, 221);
+  display: flex;
+
+}
+.profile{
+  margin: 10px 16px;
+}
+
+.profile-picture{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 15px;
+}
+
+.green-circle-icon{
+  width: 10px;
+  height: 10px;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 15px;
+  margin-left: -14px;
+}
+
+.chat-title{
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Message*/
+
+.message{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 2px solid;
+  border-color: red;
+  margin-top: 30px 
+}
+
+
+.surname{
+  color:gray;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+
+  margin: 0;
+
+}
+
+.message-text{
+  background-color: rgb(36, 113, 221);
+  
+  border-radius: 10px;
+  color:white;
+  font-family: 'Roboto', sans-serif;
+
+  padding: 8px 12px;
+  margin: 4px 16px 4px 0;
+
+  max-width: 300px;
+  word-wrap:break-word;
+
+}
+.message-time{
+  color:gray;
+  font-family: 'Roboto', sans-serif;
+  font-size: 9px;
+  margin :0 2px 0 0;
+
+
+
+
+
+}
