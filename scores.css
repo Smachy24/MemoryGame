@@ -17,14 +17,49 @@ body{
   justify-content: center;
   align-items: center;
   width: 100vw;
+  margin-bottom: 50px;
 }
 
 h1{
   color:white;
   font-family: 'Montserrat', sans-serif;
   font-size: 36px;
- 
-  
 
 }
+
+.scores-table{
+  padding: 0 50px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+thead{
+  background-color: #ec9123;
+  height: 50px;
+
+ 
+}
+th{
+  color: #100f2f;
+}
+
+
+tbody{
+  border: 1px solid;
+  border-color: gray;
+}
+
+tbody th{
+  height: 30px;
+  border: 1px solid;
+  border-color: gray;
+  background-color: #28265c;
+  color: white;
+  
+}
+
 
