@@ -108,6 +108,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin-top: 2em;
+    padding: 8% 0;
 }
 
 .games-status img{
@@ -165,6 +166,7 @@ body{
     color: white;
     text-align: center;
     line-height: 1em;
+    padding-bottom: 6em;
 }
 
 .team h2{
@@ -178,6 +180,7 @@ body{
 
 .team img{
     width: 20%;
+    
 }
 
 .cardbox{
@@ -185,6 +188,7 @@ body{
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    margin-top: 1.5em;
     
 }
 
@@ -195,23 +199,27 @@ body{
     width: 30%;
     background-color: #0d0b26;
     padding: 2.5em 0;
+    margin: 1em;
 }
 
 .avatar{
-    width: 10em;
-    height: 10em;
+    width: 50%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: white;
 }
 
 .card h3{
     font-size: 1.5em;
+    margin-top: 2em;
 }
 
 .card h4{
     margin: 0;
     color: #8c9ba8;
     font-size: 1.2em;
+    font-weight: 400;
+    
 }
 
 .card ul{
@@ -219,16 +227,15 @@ body{
     justify-content: space-around;
     width: 30%;
     padding: 0;
-    margin: 0;
+    margin: -10px 0 0 0;
 }
 
 .card ul i{
-    font-size: 1.5em;
+    font-size: 1.5em
 }
 .card ul li{
     margin: 0;
     list-style: none;
     display:block;
 
-    
 }
