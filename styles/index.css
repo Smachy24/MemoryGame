@@ -107,6 +107,7 @@ body{
 .games-status{
     display: flex;
     justify-content: space-between;
+    margin-top: 2em;
 }
 
 .games-status img{
@@ -158,3 +159,76 @@ body{
     background-color: #EC9123;
 }
 
+/*==================== Section Team ====================*/
+
+.team{
+    color: white;
+    text-align: center;
+    line-height: 1em;
+}
+
+.team h2{
+    font-size: 3.7em;
+}
+
+.team p{
+    color: #8c9ba8;
+    font-size: 1.2em;
+}
+
+.team img{
+    width: 20%;
+}
+
+.cardbox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    background-color: #0d0b26;
+    padding: 2.5em 0;
+}
+
+.avatar{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.card h3{
+    font-size: 1.5em;
+}
+
+.card h4{
+    margin: 0;
+    color: #8c9ba8;
+    font-size: 1.2em;
+}
+
+.card ul{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+.card ul i{
+    font-size: 1.5em;
+}
+.card ul li{
+    margin: 0;
+    list-style: none;
+    display:block;
+
+    
+}
