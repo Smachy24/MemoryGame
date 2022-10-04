@@ -3,7 +3,7 @@
 body{
     margin: 0;
 }
-nav{
+header{
     color: white;
     display: flex;
     justify-content: space-between;
@@ -13,19 +13,24 @@ nav{
     align-items: center;
     width: 80%;
     margin: auto;
-
 }
 
 .logo{
     font-size: 1.2em;
 }
+
+header nav{
+    width: 40%;
+    
+}
 ul{
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 100%;
     font-size: 0.9em;
     margin: 0;
     max-height: 5em;
+    box-sizing: border-box;
 }
 
 li{
@@ -35,7 +40,7 @@ li{
 a{
     text-decoration: none;
     color: white;
-    padding: 2em 0em;
+    padding: 2.5em 0em;
 }
 
 /* ============= Hover ================ */
