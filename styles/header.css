@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
 
+body{
+    margin: 0;
+}
 nav{
     color: white;
     display: flex;
-    border: 2px solid red;
-    padding: 0 10em;
     justify-content: space-between;
     font-family: 'Asap', sans-serif;
     font-weight: 600;
     font-size: 1.2em;
     align-items: center;
+    width: 80%;
+    margin: auto;
+
 }
 
 .logo{
@@ -20,6 +24,8 @@ ul{
     justify-content: space-between;
     width: 30%;
     font-size: 0.9em;
+    margin: 0;
+    max-height: 5em;
 }
 
 li{
@@ -29,4 +35,12 @@ li{
 a{
     text-decoration: none;
     color: white;
+    padding: 2em 0em;
+}
+
+/* ============= Hover ================ */
+
+a:hover{
+    border-top:3px solid #ec9123;
+    color: #ec9123;
 }
