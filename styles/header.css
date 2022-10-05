@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
+
+body{
+    margin: 0;
+}
+header{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    align-items: center;
+    height: fit-content;
+    width: 80%;
+    margin: auto;
+}
+
+.logo{
+    font-size: 1.2em;
+    margin-top: 1.2em;
+}
+
+header nav{
+    width: 40%;
+    
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin: 0;
+    max-height: 5em;
+    box-sizing: border-box;
+}
+
+header li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding: 3em 0em;
+}
+
+/* ============= Hover ================ */
+
+header a:hover{
+    border-top:3px solid #ec9123;
+    color: #ec9123;
+}
