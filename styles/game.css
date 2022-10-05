@@ -1,28 +1,30 @@
 body{
     font-family: 'Asap', sans-serif;
-    background-color: #0d0b26;
+    background-color: rgb(16, 15, 47);
 }
 
 main{
     margin-top: 10em;
+    padding-bottom: 5vh;
 }
 
 table{
-    width: 40%;
+    min-width: 40%;
+    max-width: 80%;
     aspect-ratio: 1/1;
     border-spacing:20px;
     margin: auto;
 }
 
-thead tr{
+thead th{
     width: 100%;
-    height: 5em;
+    height: 2em;
 }
+
 
 th{
     font-size: 4em;
     color: white;
-    
 }
 tr{
     border: 2px solid blue;
@@ -32,9 +34,84 @@ td{
     padding: 0;
 }
 
+tfoot div{
+    border: 2px solid red;
+    width: fit-content;
+}
+
 .case{
     background-color: #1a1933;
     border-radius: 15px;
     width: 100%;
     aspect-ratio: 1/1;
+}
+
+.table-features{
+    width: 40%;
+    margin: 2em auto;
+    color: white;
+}
+
+.difficulty{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 0;
+}
+
+.difficulty li{
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+.easy{
+    background-color: #23ec2d;
+}
+
+.medium{
+    background-color: #ec9123;
+}
+
+.expert{
+    background-color: #f53a3a;
+}
+
+.impossible{
+    background-color: #9b23ec;
+}
+
+.theme{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 2em;
+    margin-top: 1em;
+    font-weight: 800;
+}
+
+.theme div{
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.pokemon{
+    background-image: url(../assets/pokeball.svg);
+    background-size: 30px;
+}
+
+
+.flags{
+    background-image: url(../assets/flag.svg);
+    background-size: 30px;
+}
+
+.cars{
+    background-image: url(../assets/car.svg);
+    background-size: 30px; 
+}
+
+.table-features li{
+    display: block;
+    list-style: none;
 }
