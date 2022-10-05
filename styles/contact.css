@@ -31,7 +31,7 @@ position: absolute;
 .contact-header img {
 opacity: 50%;
 height: 240px;
-width: 1450px;
+width: 100%;
 object-fit: cover;
 object-position: 5% 30%;
 display: flex;
