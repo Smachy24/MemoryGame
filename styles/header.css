@@ -23,7 +23,7 @@ header nav{
     width: 40%;
     
 }
-ul{
+header ul{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -33,7 +33,7 @@ ul{
     box-sizing: border-box;
 }
 
-li{
+header li{
     list-style-type: none;
 }
 
@@ -45,7 +45,7 @@ a{
 
 /* ============= Hover ================ */
 
-a:hover{
+header a:hover{
     border-top:3px solid #ec9123;
     color: #ec9123;
 }

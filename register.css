@@ -42,6 +42,7 @@ input{
     justify-content:flex-start;
     margin-left: 415px;
     height: 45px;
+    margin-bottom: 100px;
 }
 
 ::placeholder{
