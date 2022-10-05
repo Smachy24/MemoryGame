@@ -11,12 +11,14 @@ header{
     font-weight: 600;
     font-size: 1.2em;
     align-items: center;
+    height: fit-content;
     width: 80%;
     margin: auto;
 }
 
 .logo{
     font-size: 1.2em;
+    margin-top: 1.2em;
 }
 
 header nav{
@@ -26,8 +28,10 @@ header nav{
 header ul{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: flex-start;
+    width: 80%;
     font-size: 0.9em;
+    font-weight: 700;
     margin: 0;
     max-height: 5em;
     box-sizing: border-box;
@@ -40,7 +44,7 @@ header li{
 a{
     text-decoration: none;
     color: white;
-    padding: 2.5em 0em;
+    padding: 3em 0em;
 }
 
 /* ============= Hover ================ */

@@ -74,5 +74,6 @@ footer p span{
 .copyright{
     position: absolute;
     bottom: 0;
-    padding: 1em 0;
+    padding-bottom: 1em;
+    
 }
