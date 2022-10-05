@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
+
+
+body{
+  background-color: #100f2f;
+  margin: 0;
+}
+
+.title-section{
+  display: flex;
+  background-image: url(assets/fond.jpg);
+  background-size: cover;
+  background-position: center top;
+
+
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+h1{
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+
+}
+
+.scores-table{
+  padding: 5% 0;
+}
+
+table{
+  width: 50%;
+  border-collapse: collapse;
+  margin: auto;
+  font-family: 'Asap',sans-serif;
+  text-align: left;
+  
+  
+
+}
+
+thead{
+  background-color: #ec9123;
+  height: 50px;
+ 
+}
+th{
+  color: #100f2f;
+  padding-left: 1em;
+}
+
+td{
+  color: white;
+  background-color: #0d0b26;
+  padding: 20px;
+}
+
+
+
+
+tbody th{
+  height: 30px;
+  border: 1px solid;
+  border-color: gray;
+  background-color: #1a1933;
+  color: white;
+  
+}
+
+
