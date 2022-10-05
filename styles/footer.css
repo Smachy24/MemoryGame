@@ -6,6 +6,7 @@ footer{
     display: flex;
     font-size: 1.4em;
     position: relative;
+    font-family: "Asap", sans-serif;
 }
 
 footer h3{
