@@ -11,13 +11,14 @@ color: white;
 }
 
 .contact-header {
-    margin-top: 100px;
+    margin-top: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contact-header h2 {
+.title-h2 {
+color: white;
 letter-spacing: 2px;
 font-size: 38px;
 font-family: 'Montserrat', sans-serif;
@@ -47,7 +48,7 @@ margin-right: 200px;
 margin-left: 200px;
 margin-bottom: 80px;
 height: 150px;
-margin-top: 130px;
+margin-top: 140px;
 }
 
 .contact-card{
@@ -82,17 +83,88 @@ align-items: center;
 .content-card p{
     margin-top: 25px;
     font-family: 'Asap' ,sans-serif;
+    opacity: 70%;
 }
 
 .form-box {
     margin-left: 200px;
-    text-decoration: none;
+    width: 502px;
+    margin-bottom: 100px;
 }
 
 .align-form{
-    display: flex;
+width: 101%;
 }
 
-.topic-box{
-   
+.name-box input{
+margin-right: 22px;
+float: left;
+background-color: #232144;
+border-radius: 2px;
+border: none;
+height: 37px;
+width: 47%;
+
 }
+
+.mail-box input{
+    background-color: #232144;
+    border: none;
+    height: 37px;
+   border-radius: 2px;
+   width: 47%;
+}
+
+.topic-box input{
+    background-color: #232144;
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 37px;
+    border-radius: 2px;
+}
+
+.message-box textarea{
+    background-color: #232144;
+    width: 100%;
+    border: none;
+    height: 150px;
+    border-radius: 2px;
+    
+}
+
+.submit-button input{
+background-color: #ec9123;
+font-size: 15px;
+color: white;
+border: none;
+margin-top: 15px;
+padding: 16px;
+width: 100px;
+border-radius: 2.5px;
+cursor: pointer;
+}
+
+::placeholder {
+    color: white;
+    opacity: 50%;
+    padding-top: 13px;
+    padding-left: 16px;
+    font-family: 'Monserrat', sans-serif;
+}
+
+.column-form{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    color: white;
+}
+
+input{
+    color: white;
+}
+
+
