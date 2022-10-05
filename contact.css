@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
 
+
 body {
     margin: 0;
     background-color: #100f2f;
@@ -17,50 +18,58 @@ color: white;
 }
 
 .contact-header h2 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
+letter-spacing: 2px;
+font-size: 38px;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+display: flex;
+justify-content: center;
+position: absolute;
 }
 
 .contact-header img {
-    opacity: 50%;
-    height: 240px;
-    width: 1450px;
-    object-fit: cover;
-    object-position: 5% 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+opacity: 50%;
+height: 240px;
+width: 1450px;
+object-fit: cover;
+object-position: 5% 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
 }
 
 .contact-line{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 150px;
-    margin-top: 130px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+margin-right: 200px;
+margin-left: 200px;
+margin-bottom: 80px;
+height: 150px;
+margin-top: 130px;
 }
 
 .contact-card{
-background-color: #080645;
+background-color: #050429;
 min-height: 210px;
-min-width: 300px;
+min-width: 330px;
 display: flex; 
 justify-content: center;
 align-items: center;
+margin: 13px;
+
 }
 
 .contact-card i {
-    background-color: #ec9123;
-    height: 80px;
-    font-size: 30px;
-    width: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+background-color: #ec9123;
+height: 80px;
+font-size: 30px;
+width: 80px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .content-card {
@@ -70,3 +79,20 @@ align-items: center;
 
 }
 
+.content-card p{
+    margin-top: 25px;
+    font-family: 'Asap' ,sans-serif;
+}
+
+.form-box {
+    margin-left: 200px;
+    text-decoration: none;
+}
+
+.align-form{
+    display: flex;
+}
+
+.topic-box{
+   
+}
