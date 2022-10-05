@@ -11,14 +11,20 @@ header{
     font-weight: 600;
     font-size: 1.2em;
     align-items: center;
+<<<<<<< HEAD
     height: fit-content;
+=======
+>>>>>>> 210116cf3ec0822f9613100ef5d344c11e3a2446
     width: 80%;
     margin: auto;
 }
 
 .logo{
     font-size: 1.2em;
+<<<<<<< HEAD
     margin-top: 1.2em;
+=======
+>>>>>>> 210116cf3ec0822f9613100ef5d344c11e3a2446
 }
 
 header nav{
@@ -28,10 +34,15 @@ header nav{
 header ul{
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
     align-items: flex-start;
     width: 80%;
     font-size: 0.9em;
     font-weight: 700;
+=======
+    width: 100%;
+    font-size: 0.9em;
+>>>>>>> 210116cf3ec0822f9613100ef5d344c11e3a2446
     margin: 0;
     max-height: 5em;
     box-sizing: border-box;
@@ -44,7 +55,11 @@ header li{
 a{
     text-decoration: none;
     color: white;
+<<<<<<< HEAD
     padding: 3em 0em;
+=======
+    padding: 2.5em 0em;
+>>>>>>> 210116cf3ec0822f9613100ef5d344c11e3a2446
 }
 
 /* ============= Hover ================ */
