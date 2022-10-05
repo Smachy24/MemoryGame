@@ -1,8 +1,9 @@
 footer{
+    font-family: 'Asap',sans-serif;
     background-color: #0d0b26;
     color: #8c9ba8;
     height: 59vh;
-    padding: 10vh 10% 0 10%;
+    padding: 10vh 10% 2em 10%;
     display: flex;
     font-size: 1.4em;
     position: relative;
