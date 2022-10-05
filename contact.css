@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
+
+
+body {
+    margin: 0;
+    background-color: #100f2f;
+}
+
+p , h2 , i {
+color: white;
+}
+
+.contact-header {
+    margin-top: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-h2 {
+color: white;
+letter-spacing: 2px;
+font-size: 38px;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+display: flex;
+justify-content: center;
+position: absolute;
+}
+
+.contact-header img {
+opacity: 50%;
+height: 240px;
+width: 1450px;
+object-fit: cover;
+object-position: 5% 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.contact-line{
+display: flex;
+align-items: center;
+justify-content: space-around;
+margin-right: 200px;
+margin-left: 200px;
+margin-bottom: 80px;
+height: 150px;
+margin-top: 140px;
+}
+
+.contact-card{
+background-color: #050429;
+min-height: 210px;
+min-width: 330px;
+display: flex; 
+justify-content: center;
+align-items: center;
+margin: 13px;
+
+}
+
+.contact-card i {
+background-color: #ec9123;
+height: 80px;
+font-size: 30px;
+width: 80px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.content-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.content-card p{
+    margin-top: 25px;
+    font-family: 'Asap' ,sans-serif;
+    opacity: 70%;
+}
+
+.form-box {
+    margin-left: 200px;
+    width: 502px;
+    margin-bottom: 100px;
+}
+
+.align-form{
+width: 101%;
+}
+
+.name-box input{
+margin-right: 22px;
+float: left;
+background-color: #232144;
+border-radius: 2px;
+border: none;
+height: 37px;
+width: 47%;
+
+}
+
+.mail-box input{
+    background-color: #232144;
+    border: none;
+    height: 37px;
+   border-radius: 2px;
+   width: 47%;
+}
+
+.topic-box input{
+    background-color: #232144;
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 37px;
+    border-radius: 2px;
+}
+
+.message-box textarea{
+    background-color: #232144;
+    width: 100%;
+    border: none;
+    height: 150px;
+    border-radius: 2px;
+    
+}
+
+.submit-button input{
+background-color: #ec9123;
+font-size: 15px;
+color: white;
+border: none;
+margin-top: 15px;
+padding: 16px;
+width: 100px;
+border-radius: 2.5px;
+cursor: pointer;
+}
+
+::placeholder {
+    color: white;
+    opacity: 50%;
+    padding-top: 13px;
+    padding-left: 16px;
+    font-family: 'Monserrat', sans-serif;
+}
+
+.column-form{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    color: white;
+}
+
+input{
+    color: white;
+}
+
+
