@@ -3,6 +3,7 @@ body{
     background-color: rgb(16, 15, 47);
 }
 
+
 main{
     margin-top: 10em;
     padding-bottom: 5vh;
@@ -16,9 +17,18 @@ table{
     margin: auto;
 }
 
-thead th{
-    width: 100%;
-    height: 2em;
+.deco-header {
+    margin-top: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+    background-image: linear-gradient(to bottom, rgba(19, 4, 31, 0.42), rgba(23, 8, 51, 0.73)), url(../assets/fond.jpg);
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1.7em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 
