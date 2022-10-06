@@ -4,6 +4,7 @@
 body{
     background-color: rgb(16, 15, 47);
     font-family: 'Asap', sans-serif;
+    color: #d1d2f8;
 }
 
 .landing-page{
@@ -37,8 +38,9 @@ body{
 
 .home p{
     font-size: 1.7em;
-    color: #c6ced4;
     margin: 0;
+    padding: 1em;
+    color: #d1d2f8;
 
 }
 
@@ -54,7 +56,7 @@ body{
 /* ========================================================*/
 
 .website-content{
-    padding: 0 10%;
+    padding: 0 13%;
 }
 
 /* ================ DESC Section ==========================*/
@@ -75,7 +77,6 @@ body{
 
 .desc-text{
     display: flex;
-    color: #8c9ba8;
     font-size: 1.2em;
     justify-content: space-between;
     margin-top: 3em;
@@ -91,12 +92,14 @@ body{
 .desc-el h3{
     color: white;
     margin-top: 0;
+    font-size: 1.4em;
 }
 
 .desc-el h2{
-    font-size: 2.5em;
+    font-size: 3em;
     color: #38259e;
     margin-top: 0;
+    font-weight: 800;
 }
 
 .desc-el div{
@@ -175,7 +178,6 @@ body{
 }
 
 .team p{
-    color: #8c9ba8;
     font-size: 1.2em;
 }
 
@@ -217,7 +219,6 @@ body{
 
 .card h4{
     margin: 0;
-    color: #8c9ba8;
     font-size: 1.2em;
     font-weight: 400;
     
