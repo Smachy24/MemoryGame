@@ -2,8 +2,6 @@
 
 body{
     background-color: #100f2f;
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -24,8 +22,11 @@ h1{
 .infos{
     margin-top: 7%;
     display: flex;
+    justify-content: center;
     max-width: 100vw;
     flex-direction: column;
+    align-items: center;
+    margin-left: 1%;
 }
 
 input{
@@ -42,6 +43,7 @@ input{
     justify-content:flex-start;
     height: 45px;
     margin-bottom: 7%;
+    padding-left: 33%;
 }
 
 ::placeholder{
@@ -67,6 +69,3 @@ input{
     transition: 10ms;
 }
 
-.container{
-    padding :7% 10% 9% 32%;
-}
