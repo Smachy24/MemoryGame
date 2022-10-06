@@ -24,25 +24,26 @@ color: white;
     font-weight: bold;
 }
 
+.contact-container{
+    padding: 0 13%;
+}
+
 .contact-line{
 display: flex;
 align-items: center;
-justify-content: space-around;
-margin-right: 200px;
-margin-left: 200px;
-margin-bottom: 80px;
-height: 150px;
 margin-top: 140px;
+column-gap: 3em;
+
 }
 
 .contact-card{
 background-color: #050429;
-min-height: 210px;
-min-width: 330px;
+height: 17em;
+width: 100%;
 display: flex; 
 justify-content: center;
 align-items: center;
-margin: 13px;
+
 
 }
 
@@ -71,45 +72,47 @@ align-items: center;
 }
 
 .form-box {
-    margin-left: 200px;
-    width: 502px;
+    width: 50%;
     margin-bottom: 100px;
+    margin-top: 3em;
+    
 }
 
 .align-form{
-width: 101%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    column-gap: 2em;
 }
 
-.name-box input{
-margin-right: 22px;
-float: left;
+.name-box{
 background-color: #232144;
 border-radius: 2px;
 border: none;
-height: 37px;
-width: 47%;
+height: 50px;
+width: 50%;
 
 }
 
-.mail-box input{
+.mail-box{
     background-color: #232144;
     border: none;
-    height: 37px;
+    height: 50px;
    border-radius: 2px;
-   width: 47%;
+   width: 50%;
 }
 
-.topic-box input{
+.topic-box{
     background-color: #232144;
     width: 100%;
     border: none;
     margin-top: 15px;
     margin-bottom: 15px;
-    height: 37px;
+    height: 50px;
     border-radius: 2px;
 }
 
-.message-box textarea{
+.message-box{
     background-color: #232144;
     width: 100%;
     border: none;

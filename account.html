@@ -24,6 +24,7 @@
           <a href="game.html"><li>JEU</li></a>
           <a href="scores.html"><li>SCORES</li></a>
           <a href="contact.html"><li>NOUS CONTACTER</li></a>
+          <a href="account.html"><li>MON ESPACE</li></a>
         </ul>
       </nav>  
     </header>
@@ -31,37 +32,71 @@
 
     <main>
 
-      <div><h1>MODIFIER MES INFORMATIONS</h1></div>
+      <div class="deco-header">
+        <h2>MON ESPACE</h2>
+      </div>
+
+      <div class="account-container">
+        <aside class="user-control-panel">
+          <div class="user-info">
+            <div class="user-avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <p>USERNAME</p>
+          </div>
+  
+          <h3>
+            <span><i class="fa-solid fa-chart-simple"></i></span>
+            STATISTIQUES
+          </h3>
+  
+          <h3>
+            <span><i class="fa-solid fa-gear"></i></span>
+            MODIFIER MES IDENTIFIANTS
+          </h3>
+          
+        </aside>
+
+        <section class="modif-section">
+          
+          <div class="modif-container">
+            <h3>Modification de l'adresse mail</h3>
+            <div id="modifmail" class="modif-container-column">
+              <input type="email" placeholder="Ancien Email" >
+  
+              <input type="email" placeholder="Nouveau Email">
+              
+              <input type="password" placeholder="Mot de passe">
+              
+              <input type="password" placeholder="Confirmer le mot de passe">
+              
+              <button type="submit"id="butVmail" class="validation">
+                Valider
+              </button>
+            </div>
+          </div>
       
-      <section class="princip">
+  
+          <div class="modif-container">
+            <h3>Modification du mot de passe</h3>
+            <div id="modifmdp" class="modif-container-column">
+              <input type="password" placeholder="Ancien mot de passe">
+              
+              <input type="password" placeholder="Nouveau mot de passe">
+              
+              <input type="password" placeholder="Confirmer le nouveau mot de passe">
+              
+              <button type="submit"id="butVmail" class="validation">
+                Valider
+              </button>
+            </div>
+          </div>
 
-        <div id="modifmail">
-          <input type="email" placeholder="     Ancien Email" >
-          <br>
-          <input type="email" placeholder="     Nouveau Email">
-          <br>
-          <input type="password" placeholder="     Mot de passe">
-          <br>
-          <input type="password" placeholder="     Confirmer le mot de passe">
-          <br>
-          <input type="submit" value="Valider" id="butVmail">
-        </div>
-        
-
-        <div id="modifmdp">
-          <input type="password" placeholder="     Ancien mot de passe">
-          <br>
-          <input type="password" placeholder="     Nouveau mot de passe">
-          <br>
-          <input type="password" placeholder="     Confirmer le nouveau mot de passe">
-          <br>
-          <input type="submit" value="Valider" id="butVmdp">
-        </div>
-
-      </section>
-
+        </section>
+      </div>
     </main>
-
+        
+        
 
     <footer>
     <section class="information">
