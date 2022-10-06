@@ -16,7 +16,7 @@ body{
   height: 300px;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   margin-bottom: 50px;
 }
 
@@ -28,36 +28,44 @@ h1{
 }
 
 .scores-table{
-  padding: 0 50px;
+  padding: 5% 0;
 }
 
 table{
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
+  margin: auto;
+  font-family: 'Asap',sans-serif;
+  text-align: left;
+  
+  
 
 }
 
 thead{
   background-color: #ec9123;
   height: 50px;
-
  
 }
 th{
   color: #100f2f;
+  padding-left: 1em;
+}
+
+td{
+  color: white;
+  background-color: #0d0b26;
+  padding: 20px;
 }
 
 
-tbody{
-  border: 1px solid;
-  border-color: gray;
-}
+
 
 tbody th{
   height: 30px;
   border: 1px solid;
   border-color: gray;
-  background-color: #28265c;
+  background-color: #1a1933;
   color: white;
   
 }
