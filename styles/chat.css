@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Roboto:wght@400;700&display=swap");
 
-body{
+body {
   margin: 0;
-
 }
 
-.chat-box{
+.chat-box {
   height: 50px;
   position: fixed;
   bottom: 0;
@@ -15,25 +14,24 @@ body{
   transition: height 0.5s ease-in-out 2s;
 }
 
-.chat-box:hover{
+.chat-box:hover {
   height: 500px;
   transition: height 0.5s;
 }
 
-
-.chat{
+.chat {
   display: flex;
   flex-direction: column;
   width: 400px;
   height: 500px;
-  background-color:#1a1933;;
+  background-color: #1a1933;
   border-radius: 10px;
   position: relative;
 }
 
 /*Chat head*/
 
-.chat-head{
+.chat-head {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   height: 50px;
@@ -41,11 +39,11 @@ body{
   display: flex;
 }
 
-.profile{
+.profile {
   margin: 10px 16px;
 }
 
-.my-profile-picture{
+.my-profile-picture {
   width: 30px;
   height: 30px;
   object-fit: cover;
@@ -54,7 +52,7 @@ body{
   border-radius: 15px;
 }
 
-.green-circle-icon{
+.green-circle-icon {
   width: 10px;
   height: 10px;
   border: 2px solid;
@@ -63,80 +61,78 @@ body{
   margin-left: -14px;
 }
 
-.chat-title{
-  color:white;
-  font-family: 'Roboto', sans-serif;
+.chat-title {
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 /*Message & message send*/
 
-.message-send{
+.message-send {
   display: flex;
   justify-content: flex-end;
 
-  margin-top: 30px 
+  margin-top: 30px;
 }
 
-.message-box{
+.message-box {
   max-width: fit-content;
 }
 
-.surname{
-  color:gray;
-  font-family: 'Roboto', sans-serif;
+.surname {
+  color: gray;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   margin: 0;
 }
 
-.message-send-text{
+.message-send-text {
   background-color: #ec9123;
   border-radius: 10px;
-  color:white;
-  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-family: "Roboto", sans-serif;
   padding: 8px 12px;
   margin: 4px 16px 4px 0;
   max-width: 240px;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
 
-.message-time{
-  color:gray;
-  font-family: 'Roboto', sans-serif;
+.message-time {
+  color: gray;
+  font-family: "Roboto", sans-serif;
   font-size: 9px;
-  margin :0 2px 0 0;
+  margin: 0 2px 0 0;
 }
 
 /*Message received*/
 
-.message-received{
+.message-received {
   display: flex;
   flex-direction: row;
-  margin-top: 15px 
+  margin-top: 15px;
 }
 
-.message-received-text{
+.message-received-text {
   background-color: #232144;
   border-radius: 10px;
-  color:#d1d2f8;
-  font-family: 'Roboto', sans-serif;
+  color: #d1d2f8;
+  font-family: "Roboto", sans-serif;
   padding: 8px 12px;
-  margin: 4px  4px 6px 0;
+  margin: 4px 4px 6px 0;
   max-width: 240px;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
 
-
-.profile-picture{
+.profile-picture {
   width: 30px;
   height: 30px;
   object-fit: cover;
   border-radius: 15px;
-  margin : 15px 10px 0 15px
+  margin: 15px 10px 0 15px;
 }
 
-.send-message{
-
-  margin: 20px 20px 0 20px; 
+.send-message {
+  margin: 20px 20px 0 20px;
   display: flex;
   position: absolute;
   bottom: 30px;
@@ -144,7 +140,7 @@ body{
   justify-content: space-between;
 }
 
-.text-input{
+.text-input {
   border: 1px solid rgb(201, 200, 205);
   border-radius: 7px;
   color: rgb(83, 83, 83);
@@ -154,8 +150,8 @@ body{
   padding-right: 8px;
 }
 
-.send-message-text{
-  font-family: 'Roboto', sans-serif;
+.send-message-text {
+  font-family: "Roboto", sans-serif;
   color: white;
   font-weight: bold;
 }

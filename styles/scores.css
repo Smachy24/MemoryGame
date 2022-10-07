@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27");
 
-
-body{
+body {
   background-color: #100f2f;
   margin: 0;
 }
@@ -12,62 +11,56 @@ body{
   justify-content: center;
   align-items: center;
   height: 240px;
-  background-image: linear-gradient(to bottom, rgba(19, 4, 31, 0.42), rgba(23, 8, 51, 0.73)), url(../assets/fond.jpg);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(19, 4, 31, 0.42),
+      rgba(23, 8, 51, 0.73)
+    ),
+    url(../assets/fond.jpg);
   color: white;
   letter-spacing: 2px;
   font-size: 1.7em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
-} 
-
-h1{
-  color:white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 36px;
-
 }
 
-.scores-table{
+h1 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+}
+
+.scores-table {
   padding: 5% 0;
 }
 
-table{
+table {
   width: 50%;
   border-collapse: collapse;
   margin: auto;
-  font-family: 'Asap',sans-serif;
+  font-family: "Asap", sans-serif;
   text-align: left;
-  
-  
-
 }
 
-thead{
+thead {
   background-color: #ec9123;
   height: 50px;
- 
 }
-th{
+th {
   color: #100f2f;
   padding-left: 1em;
 }
 
-td{
+td {
   color: white;
   background-color: #0d0b26;
   padding: 20px;
 }
 
-
-
-
-tbody th{
+tbody th {
   height: 30px;
   border: 1px solid;
   border-color: gray;
   background-color: #1a1933;
   color: white;
-  
 }
-
-

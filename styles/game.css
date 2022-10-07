@@ -1,131 +1,132 @@
-body{
-    font-family: 'Asap', sans-serif;
-    background-color: rgb(16, 15, 47);
-
+body {
+  font-family: "Asap", sans-serif;
+  background-color: rgb(16, 15, 47);
 }
 
-
-main{
-    margin-top: 10em;
-    padding-bottom: 5vh;
+main {
+  margin-top: 10em;
+  padding-bottom: 5vh;
 }
 
-.game-grid{
-    position: relative;
+.game-grid {
+  position: relative;
 }
-table{
-    min-width: 40%;
-    max-width: 80%;
-    aspect-ratio: 1/1;
-    border-spacing:20px;
-    margin: auto;
+table {
+  min-width: 40%;
+  max-width: 80%;
+  aspect-ratio: 1/1;
+  border-spacing: 20px;
+  margin: auto;
 }
 
 .deco-header {
-    margin-top: 13px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 240px;
-    background-image: linear-gradient(to bottom, rgba(19, 4, 31, 0.42), rgba(23, 8, 51, 0.73)), url(../assets/fond.jpg);
-    color: white;
-    letter-spacing: 2px;
-    font-size: 1.7em;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+  margin-top: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(19, 4, 31, 0.42),
+      rgba(23, 8, 51, 0.73)
+    ),
+    url(../assets/fond.jpg);
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.7em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 
-
-th{
-    font-size: 4em;
-    color: white;
+th {
+  font-size: 4em;
+  color: white;
 }
-tr{
-    border: 2px solid blue;
-}
-
-td{
-    padding: 0;
+tr {
+  border: 2px solid blue;
 }
 
-tfoot div{
-    border: 2px solid red;
-    width: fit-content;
+td {
+  padding: 0;
 }
 
-.case{
-    background-color: #1a1933;
-    border-radius: 15px;
-    width: 100%;
-    aspect-ratio: 1/1;
+tfoot div {
+  border: 2px solid red;
+  width: fit-content;
 }
 
-.table-features{
-    width: 40%;
-    margin: 2em auto;
-    color: white;
+.case {
+  background-color: #1a1933;
+  border-radius: 15px;
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 
-.difficulty{
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.5em;
-    width: 100%;
-    padding: 0;
+.table-features {
+  width: 40%;
+  margin: 2em auto;
+  color: white;
 }
 
-.difficulty li{
-    padding: 0.5em;
-    border-radius: 10px;
+.difficulty {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5em;
+  width: 100%;
+  padding: 0;
 }
 
-.easy{
-    background-color: #23ec2d;
+.difficulty li {
+  padding: 0.5em;
+  border-radius: 10px;
 }
 
-.medium{
-    background-color: #ec9123;
+.easy {
+  background-color: #23ec2d;
 }
 
-.expert{
-    background-color: #f53a3a;
+.medium {
+  background-color: #ec9123;
 }
 
-.impossible{
-    background-color: #9b23ec;
+.expert {
+  background-color: #f53a3a;
 }
 
-.theme{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    font-size: 2em;
-    margin-top: 1em;
-    font-weight: 800;
+.impossible {
+  background-color: #9b23ec;
 }
 
-.theme div{
-    padding: 1em;
-    border-radius: 10px;
+.theme {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-top: 1em;
+  font-weight: 800;
 }
 
-.pokemon{
-    background-image: url(../assets/pokeball.svg);
-    background-size: 30px;
+.theme div {
+  padding: 1em;
+  border-radius: 10px;
 }
 
-
-.flags{
-    background-image: url(../assets/flag.svg);
-    background-size: 30px;
+.pokemon {
+  background-image: url(../assets/pokeball.svg);
+  background-size: 30px;
 }
 
-.cars{
-    background-image: url(../assets/car.svg);
-    background-size: 30px; 
+.flags {
+  background-image: url(../assets/flag.svg);
+  background-size: 30px;
 }
 
-.table-features li{
-    display: block;
-    list-style: none;
+.cars {
+  background-image: url(../assets/car.svg);
+  background-size: 30px;
+}
+
+.table-features li {
+  display: block;
+  list-style: none;
 }
