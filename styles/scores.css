@@ -56,11 +56,3 @@ td {
   background-color: #0d0b26;
   padding: 20px;
 }
-
-tbody th {
-  height: 30px;
-  border: 1px solid;
-  border-color: gray;
-  background-color: #1a1933;
-  color: white;
-}
