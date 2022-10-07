@@ -12,8 +12,7 @@ body{
   bottom: 0;
   right: 50px;
   z-index: 2;
-  transition: height 0.5s ease-in-out 3s;
-  
+  transition: height 0.5s ease-in-out 2s;
 }
 
 .chat-box:hover{
