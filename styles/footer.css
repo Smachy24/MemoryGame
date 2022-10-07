@@ -1,6 +1,6 @@
 footer{
     background-color: #0d0b26;
-    color: #8c9ba8;
+    color: #d1d2f8;
     height: 59vh;
     padding: 10vh 10% 0 10%;
     display: flex;
@@ -50,7 +50,7 @@ footer p span{
 }
 
 .footer-nav a{
-    color: #8c9ba8;
+    color: #d1d2f8;
     display: flex;
     align-items: center;
     padding: 0;

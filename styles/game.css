@@ -1,6 +1,7 @@
 body{
     font-family: 'Asap', sans-serif;
     background-color: rgb(16, 15, 47);
+
 }
 
 
@@ -9,6 +10,9 @@ main{
     padding-bottom: 5vh;
 }
 
+.game-grid{
+    position: relative;
+}
 table{
     min-width: 40%;
     max-width: 80%;

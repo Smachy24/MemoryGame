@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/game.css">
+  <link rel="stylesheet" href="styles/chat.css">
   <script src="https://kit.fontawesome.com/7a226b5b65.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
@@ -21,8 +22,8 @@
           <a href="index.html"><li>ACCUEIL</li></a>
           <a href="game.html"><li>JEU</li></a>
           <a href="scores.html"><li>SCORES</li></a>
-          <a href="contact.html"><li>NOUS CONTACTER</li></a>
           <a href="account.html"><li>MON ESPACE</li></a>
+          <a href="contact.html"><li>NOUS CONTACTER</li></a>
         </ul>
       </nav>  
     </header>
@@ -77,7 +78,7 @@
         </tbody>
       </table>
 
-      <aside class="table-features">
+      <section class="table-features">
 
         <ul class="difficulty">
           <li class="easy">FACILE</li>
@@ -93,13 +94,45 @@
 
         </div>
 
-      </aside>
-
-    
-        
-
+      </section>
       </div>
+
+      <aside class="chat-box">
+        <div class="chat">
+          <div class="chat-head">
+            <div class="profile">
+              <img class = "my-profile-picture" src="assets/profile-picture.jpg" alt="profile picture">
+              <img class = "green-circle-icon" src="assets/green-circle-icon.jpg" alt="green circle icon">
+            </div>
+            <p class="chat-title">Chat général</p>
+          </div>
+      
+          <div class="message-send">
+            <div class="message-box">
+              <p class="surname">Moi</p>
+              <p class="message-send-text">Hello</p>
+              <p class="message-time">Aujourd'hui à 15h22</p>
+            </div>
+          </div>
+      
+          <div class="message-received">
+            <img class="profile-picture"src="assets/profile-picture.jpg" alt="profile picture">
+            <div class="message-box">
+              <p class="surname">Arthur</p>
+              <p class="message-received-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+              <p class="message-time">Aujourd'hui à 15h30</p>
+            </div>
+          </div>
+      
+          <div class="send-message">
+            <input placeholder="Votre message..." type="text" class="text-input">
+            <p class ="send-message-text">Envoyer</p>
+          </div>
+        </div>
+      </aside>
   </main>
+
+  
 
   <footer>
     <section class="information">

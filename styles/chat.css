@@ -3,17 +3,32 @@
 
 body{
   margin: 0;
+
+}
+
+.chat-box{
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  z-index: 2;
+  transition: height 0.5s ease-in-out 3s;
+  
+}
+
+.chat-box:hover{
+  height: 500px;
+  transition: height 0.5s;
 }
 
 
 .chat{
-  border: 1px solid;
   display: flex;
   flex-direction: column;
   width: 400px;
   height: 500px;
-  background-color: white;
-  border-radius: 4px;
+  background-color:#1a1933;;
+  border-radius: 10px;
   position: relative;
 }
 
@@ -23,7 +38,7 @@ body{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   height: 50px;
-  background-color: rgb(36, 113, 221);
+  background-color: #ec9123;
   display: flex;
 }
 
@@ -75,7 +90,7 @@ body{
 }
 
 .message-send-text{
-  background-color: rgb(36, 113, 221);
+  background-color: #ec9123;
   border-radius: 10px;
   color:white;
   font-family: 'Roboto', sans-serif;
@@ -101,9 +116,9 @@ body{
 }
 
 .message-received-text{
-  background-color: rgb(242, 241, 245);
+  background-color: #232144;
   border-radius: 10px;
-  color:black;
+  color:#d1d2f8;
   font-family: 'Roboto', sans-serif;
   padding: 8px 12px;
   margin: 4px  4px 6px 0;
@@ -133,7 +148,7 @@ body{
 .text-input{
   border: 1px solid rgb(201, 200, 205);
   border-radius: 7px;
-  color: rgb(242, 241, 245);
+  color: rgb(83, 83, 83);
   width: 100%;
   margin-right: 20px;
   padding-left: 16px;
@@ -142,5 +157,6 @@ body{
 
 .send-message-text{
   font-family: 'Roboto', sans-serif;
+  color: white;
   font-weight: bold;
 }
