@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Montserrat:wght@500;700;800;900&display=swap%27");
+
+body {
+  background-color: #100f2f;
+  margin: 0;
+  font-family: "Asap", sans-serif;
+}
+
+.account-container {
+  display: flex;
+}
+
+.deco-header {
+  margin-top: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(19, 4, 31, 0.42),
+      rgba(23, 8, 51, 0.73)
+    ),
+    url(../assets/fond.jpg);
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.7em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.user-control-panel {
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+  width: 15%;
+  background-color: #0d0b26;
+  padding: 2em;
+  color: #d1d2f8;
+}
+
+.user-info {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.4em;
+  justify-content: space-between;
+  width: fit-content;
+  max-width: 100%;
+  padding-bottom: 2em;
+  display: flex;
+}
+
+.user-avatar {
+  font-size: 1.5em;
+  display: flex;
+  color: white;
+}
+
+.user-info p {
+  padding-left: 1em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.user-control-panel h3 {
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: fit-content;
+  color: #716f99;
+  padding: 1em 0;
+}
+
+.user-control-panel h3 span {
+  font-size: 1.5em;
+  padding-right: 10px;
+}
+
+.modif-section {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 10%;
+}
+
+.modif-container {
+  margin: 10% 0 0 10%;
+  padding-bottom: 20%;
+}
+
+.modif-container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+.modif-container h3 {
+  color: white;
+  font-size: 2em;
+}
+
+#modifmail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #100f2f;
+}
+
+#modifmdp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #100f2f;
+}
+
+::placeholder {
+  color: #d1d2f8;
+  background-color: #232144;
+}
+
+.validation {
+  width: 100px;
+  font-family: "Asap", sans-serif;
+  font-size: 1.2em;
+  background-color: #ec9123;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  transition: all 0.1s;
+  padding: 15px 10px;
+}
+
+.validation:hover {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  cursor: pointer;
+}
+
+input {
+  border: 0px;
+  background-color: #232144;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  color: white;
+  padding: 15px 10px;
+  font-size: 1.2em;
+}

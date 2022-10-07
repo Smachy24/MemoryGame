@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon espace</title>
+    <link rel="stylesheet" href="./styles/account.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <script
+      src="https://kit.fontawesome.com/7a226b5b65.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">The Power Of Memory</div>
+      <nav>
+        <ul>
+          <a href="index.html"><li>ACCUEIL</li></a>
+          <a href="game.html"><li>JEU</li></a>
+          <a href="scores.html"><li>SCORES</li></a>
+          <a href="account.html"><li>MON ESPACE</li></a>
+          <a href="login.html"><li>LOGIN</li></a>
+          <a href="contact.html"><li>NOUS CONTACTER</li></a>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="deco-header">
+        <h2>MON ESPACE</h2>
+      </div>
+
+      <div class="account-container">
+        <aside class="user-control-panel">
+          <div class="user-info">
+            <div class="user-avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <p>USERNAME</p>
+          </div>
+
+          <h3>
+            <span><i class="fa-solid fa-chart-simple"></i></span>
+            STATISTIQUES
+          </h3>
+
+          <h3>
+            <span><i class="fa-solid fa-gear"></i></span>
+            MODIFIER MES IDENTIFIANTS
+          </h3>
+        </aside>
+
+        <section class="modif-section">
+          <div class="modif-container">
+            <h3>Modification de l'adresse mail</h3>
+            <div id="modifmail" class="modif-container-column">
+              <input type="email" placeholder="Ancien Email" />
+
+              <input type="email" placeholder="Nouveau Email" />
+
+              <input type="password" placeholder="Mot de passe" />
+
+              <input type="password" placeholder="Confirmer le mot de passe" />
+
+              <button type="submit" id="butVmail" class="validation">
+                Valider
+              </button>
+            </div>
+          </div>
+
+          <div class="modif-container">
+            <h3>Modification du mot de passe</h3>
+            <div id="modifmdp" class="modif-container-column">
+              <input type="password" placeholder="Ancien mot de passe" />
+
+              <input type="password" placeholder="Nouveau mot de passe" />
+
+              <input
+                type="password"
+                placeholder="Confirmer le nouveau mot de passe"
+              />
+
+              <button type="submit" id="butVmail" class="validation">
+                Valider
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <section class="information">
+        <h3>Information</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p><span>Tel : </span>06 05 04 03 02</p>
+        <p><span>Email : </span>support@powerofmemory.com</p>
+        <p><span>Location : </span>Paris</p>
+        <ul class="our-social-media">
+          <a href=""
+            ><li><i class="fa-brands fa-facebook"></i></li
+          ></a>
+          <a href=""
+            ><li><i class="fa-brands fa-twitter"></i></li
+          ></a>
+          <a href=""
+            ><li><i class="fa-brands fa-pinterest"></i></li
+          ></a>
+          <a href=""
+            ><li><i class="fa-brands fa-google"></i></li
+          ></a>
+          <a href=""
+            ><li><i class="fa-brands fa-instagram"></i></li
+          ></a>
+        </ul>
+      </section>
+      <nav class="footer-nav">
+        <h3>Power of Memory</h3>
+        <ul>
+          <a href="game.html"
+            ><div class="list-chip"></div>
+            <li>Jouer !</li></a
+          >
+          <a href="scores.html"
+            ><div class="list-chip"></div>
+            <li>Les scores</li></a
+          >
+          <a href="contact.html"
+            ><div class="list-chip"></div>
+            <li>Nous contacter</li></a
+          >
+        </ul>
+      </nav>
+
+      <div class="copyright">Copyright 2022 Tous droits réservés</div>
+    </footer>
+  </body>
+</html>
