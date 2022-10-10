@@ -1,3 +1,3 @@
 SELECT *
 FROM message
-WHERE message_date <= DATEADD(day, -1, GETDATE())
+WHERE DATEDIFF(message_date, CURRENT_TIMESTAMP())<1

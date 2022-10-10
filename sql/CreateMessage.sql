@@ -12,5 +12,6 @@ CREATE TABLE Message(
   id_sender INT,
   id_receiver INT,
   message VARCHAR(500),
-  message_date DATETIME
+  message_date DATETIME DEFAULT CURRENT_TIMESTAMP() 
 )
+
