@@ -10,9 +10,9 @@ date de connexion -> DATETIME
 
 CREATE TABLE Utilisateur( 
   id INT PRIMARY KEY, 
-  email VARCHAR(100),
-  password VARCHAR(32),
-  pseudo VARCHAR(16),
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(64),
+  pseudo VARCHAR(16) UNIQUE,
   inscription_date DATETIME,
   connexion_date DATETIME DEFAULT CURRENT_TIMESTAMP() 
   --Current_TIMESTAMP -> current date  
