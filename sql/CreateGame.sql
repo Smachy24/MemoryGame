@@ -7,5 +7,5 @@ name -> VARCHAR(16)
 
 CREATE TABLE Game(
   id INT PRIMARY KEY, 
-  name VARCHAR(16)
+  name VARCHAR(64)
 )
