@@ -44,7 +44,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .contact-card i {
   background-color: #ec9123;
   height: 80px;
@@ -54,6 +53,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .content-card {

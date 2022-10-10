@@ -33,7 +33,6 @@ header ul {
   font-weight: 700;
   margin: 0;
   max-height: 5em;
-  box-sizing: border-box;
 }
 
 header li {
