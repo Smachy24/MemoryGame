@@ -5,4 +5,4 @@ Requires : Id player
 
 UPDATE Utilisateur
 SET password = "test123"
-WHERE id = 12345
+WHERE id = 12345 AND password = "12345"
