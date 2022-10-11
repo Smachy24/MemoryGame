@@ -1,6 +1,6 @@
 /*
 On update le password du joueur
-Requires : Id player
+Requires : Id player and password player
 */
 
 UPDATE Utilisateur
