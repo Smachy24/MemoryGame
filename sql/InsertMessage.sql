@@ -1,4 +1,4 @@
--- J indique que je veux insérer msg 
+-- J indique que je veux insérer msg avec insert into
 -- Les valeurs on ne les connait pas 
 
 
