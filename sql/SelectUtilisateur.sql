@@ -2,4 +2,4 @@
 
 SELECT *
 FROM Utilisateur
-WHERE email IS NOT NULL AND password IS NOT NULL;
+WHERE id = 123 ;
