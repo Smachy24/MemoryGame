@@ -9,8 +9,8 @@ date du message -> DATETIME
 
 CREATE TABLE Message(
   id INT PRIMARY KEY, 
+  id_game INT,
   id_sender INT,
-  id_receiver INT,
   message VARCHAR(500),
   message_date DATETIME DEFAULT CURRENT_TIMESTAMP() 
 )
