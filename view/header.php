@@ -4,12 +4,12 @@
     </div>
     <nav>
       <ul>
-        <a href="index.html"><li>ACCUEIL</li></a>
-        <a href="game.html"><li>JEU</li></a>
-        <a href="scores.html"><li>SCORES</li></a>
-        <a href="account.html"><li>MON ESPACE</li></a>
-        <a href="login.html"><li>LOGIN</li></a>
-        <a href="contact.html"><li>NOUS CONTACTER</li></a>
+        <a href="index.php"><li>ACCUEIL</li></a>
+        <a href="game.php"><li>JEU</li></a>
+        <a href="scores.php"><li>SCORES</li></a>
+        <a href="account.php"><li>MON ESPACE</li></a>
+        <a href="login.php"><li>LOGIN</li></a>
+        <a href="contact.php"><li>NOUS CONTACTER</li></a>
       </ul>
     </nav>  
   </header>

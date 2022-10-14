@@ -22,7 +22,7 @@
       <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
       <p>Venez challenger les cerveaux les plus agiles !</p>
       <div class="play-btn">
-        <a href="game.html">JOUER</a>
+        <a href="game.php">JOUER</a>
       </div>
     </section>
   </section>

@@ -16,9 +16,9 @@
     <nav class="footer-nav">
       <h3>Power of Memory</h3>
       <ul>
-        <a href="game.html"><div class="list-chip"></div><li>Jouer !</li></a>
-        <a href="scores.html"><div class="list-chip"></div><li>Les scores</li></a> 
-        <a href="contact.html"><div class="list-chip"></div><li>Nous contacter</li></a>
+        <a href="game.php"><div class="list-chip"></div><li>Jouer !</li></a>
+        <a href="scores.php"><div class="list-chip"></div><li>Les scores</li></a> 
+        <a href="contact.php"><div class="list-chip"></div><li>Nous contacter</li></a>
       </ul>
     </nav>
 

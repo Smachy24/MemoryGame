@@ -14,19 +14,7 @@
     ></script>
   </head>
   <body>
-    <header>
-      <div class="logo">The Power Of Memory</div>
-      <nav>
-        <ul>
-          <a href="index.html"><li>ACCUEIL</li></a>
-          <a href="game.html"><li>JEU</li></a>
-          <a href="scores.html"><li>SCORES</li></a>
-          <a href="account.html"><li>MON ESPACE</li></a>
-          <a href="login.html"><li>LOGIN</li></a>
-          <a href="contact.html"><li>NOUS CONTACTER</li></a>
-        </ul>
-      </nav>
-    </header>
+  <?php include "view/header.php" //inclure le header ?>
 
     <div class="deco-header">
       <h2>SCORES</h2>
@@ -89,50 +77,6 @@
       </table>
     </section>
 
-    <footer>
-      <section class="information">
-        <h3>Information</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p><span>Tel : </span>06 05 04 03 02</p>
-        <p><span>Email : </span>support@powerofmemory.com</p>
-        <p><span>Location : </span>Paris</p>
-        <ul class="our-social-media">
-          <a href=""
-            ><li><i class="fa-brands fa-facebook"></i></li
-          ></a>
-          <a href=""
-            ><li><i class="fa-brands fa-twitter"></i></li
-          ></a>
-          <a href=""
-            ><li><i class="fa-brands fa-pinterest"></i></li
-          ></a>
-          <a href=""
-            ><li><i class="fa-brands fa-google"></i></li
-          ></a>
-          <a href=""
-            ><li><i class="fa-brands fa-instagram"></i></li
-          ></a>
-        </ul>
-      </section>
-      <nav class="footer-nav">
-        <h3>Power of Memory</h3>
-        <ul>
-          <a href="game.html"
-            ><div class="list-chip"></div>
-            <li>Jouer !</li></a
-          >
-          <a href="scores.html"
-            ><div class="list-chip"></div>
-            <li>Les scores</li></a
-          >
-          <a href="contact.html"
-            ><div class="list-chip"></div>
-            <li>Nous contacter</li></a
-          >
-        </ul>
-      </nav>
-
-      <div class="copyright">Copyright 2022 Tous droits réservés</div>
-    </footer>
+    <?php include "view/footer.php" //inclure le footer ?> 
   </body>
 </html>
