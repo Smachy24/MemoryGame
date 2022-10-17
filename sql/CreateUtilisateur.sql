@@ -15,6 +15,6 @@ CREATE TABLE Utilisateur(
   pseudo VARCHAR(16) UNIQUE,
   inscription_date DATETIME,
   connexion_date DATETIME DEFAULT CURRENT_TIMESTAMP() 
-  --Current_TIMESTAMP -> current date  
-  --as "YYYY-MM-DD HH-MM-SS"
+  ##Current_TIMESTAMP -> current date  
+  ##as "YYYY-MM-DD HH-MM-SS"
 )
