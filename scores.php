@@ -23,9 +23,9 @@
       <h2>SCORES</h2>
     </div>
 
-    <div class = filter-box>
+    <div class="filter-box">
 
-      <label for="filter-label">Filtrer par :</label>
+      <label class ="filter-text" for="filter-label">Filtrer par :</label>
 
       <select name="filter" id="filter-dropdown">
         <option value="jeu">Jeu</option>
@@ -34,6 +34,7 @@
       </select>
 
     </div>
+    
 
     <section class="scores-table">
       <table>

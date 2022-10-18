@@ -61,9 +61,10 @@ td {
 .filter-box{
   right: 0;
   display: flex;
-  background-color:white
+  background-color:white;
+  color:white;
  
 }
-.filter-box label{
+.filter-text{
   color:white;
 }
