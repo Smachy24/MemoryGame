@@ -34,7 +34,7 @@ class Bdd{
      if($this -> connexion===null){
       $this -> connexion = new PDO('mysql:host='.$this -> getHost().';dbname='.$this -> getName(). '' ,$this -> getUser(),  $this -> getPass());
 
-      /*$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass); */
+    
       }
     }catch (PDOException $e) {
       print "Error!: " . $e->getMessage() . "<br/>";
