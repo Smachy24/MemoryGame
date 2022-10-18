@@ -43,9 +43,33 @@ class Bdd{
     }
   }
 
+
+  function selectScore(){
+    
+    $req = $this -> connexion-> prepare("SELECT Game.name, difficulty, score, Utilisateur.pseudo
+    FROM Score
+    JOIN Utilisateur ON score.player_id = Utilisateur.id
+    JOIN Game ON Score.game_id = Game.id 
+    ORDER BY Game.name, difficulty, score DESC ");
+
+    $req -> execute();
+    $all = $req->fetchAll();
+    foreach($all as $row){
+
+      echo $row["name"];
+      echo $row["difficulty"];
+      echo $row["score"];
+      echo $row["pseudo"];
+      echo "<br>";
+      
+    }
+  }
+
 }
 
 
+$bd = new Bdd();
+$bd -> selectScore();
 
 
 
