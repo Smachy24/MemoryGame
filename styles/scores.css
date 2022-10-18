@@ -56,3 +56,14 @@ td {
   background-color: #0d0b26;
   padding: 20px;
 }
+
+
+.filter-box{
+  right: 0;
+  display: flex;
+  background-color:white
+ 
+}
+.filter-box label{
+  color:white;
+}
