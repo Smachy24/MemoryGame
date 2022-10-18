@@ -66,7 +66,7 @@ class Bdd{
     $req -> execute();
     $all = $req->fetchAll();
     foreach($all as $row){
-      $array = [$row['name'],$row['difficulty'], $row['score'], $row['pseudo'], $row['game_date']];
+      $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
       $this -> addScore($array);
     }
     
