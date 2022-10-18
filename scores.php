@@ -24,16 +24,21 @@
     </div>
 
     <div class="filter-box">
+      
 
       <label class ="filter-text" for="filter-label">Filtrer par :</label>
-
-      <select name="filter" id="filter-dropdown">
-        <option value="jeu">Jeu</option>
-        <option value="joueur">Joueur</option>
-        <option value="difficulte">Difficulté</option>
-      </select>
+      <form action="#" method="post">
+        <select name="filter" class="filter-dropdown">
+          <option value="jeu">JEU</option>       
+          <option value="joueur">JOUEUR</option>
+          <option value="difficulte">DIFFICULTÉ</option>
+        </select>
+        <input name="pseudo" type="text" placeholder="Pseudo" class ="pseudo-research">
+      </form>
 
     </div>
+
+   
     
 
     <section class="scores-table">
@@ -51,6 +56,7 @@
           
           <?php
 
+          
           
           for($a=0; $a<count($bd->getScores()); $a++){
             echo "<tr>";

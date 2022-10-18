@@ -59,12 +59,51 @@ td {
 
 
 .filter-box{
-  right: 0;
+  margin-right: 20px;
+  margin-top: 20px;
   display: flex;
-  background-color:white;
-  color:white;
+  justify-content: flex-end;
+  font-family: "Montserrat", sans-serif;
+  
+
+}
+
+
+
+.filter-text{
+  margin-right: 10px;
+  color:#ec9123;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.filter-dropdown{
+  background-color: #ec9123;
+  font-family: "Montserrat", sans-serif;
+  color: #0d0b26;
+  border:none;
+  font-weight: bold;
+  padding: 5px;
  
 }
-.filter-text{
-  color:white;
+
+.pseudo-research{
+
+  max-width: 150px;
+  padding: 6px;
+  background-color: #ec9123;  
+  border:none;
+  color: #0d0b26;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  
 }
+
+::placeholder{
+  color: #0d0b266c;
+  border:none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  padding: 6px;
+}
+

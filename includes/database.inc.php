@@ -55,13 +55,25 @@ class Bdd{
   }
 
 
-  function selectScore(){
-    
-    $req = $this -> connexion-> prepare("SELECT Game.name, Utilisateur.pseudo, difficulty, score, game_date
+  function selectScore($filter = null){
+    $sql = "SELECT Game.name, Utilisateur.pseudo, difficulty, score, game_date
     FROM Score
     JOIN Utilisateur ON score.player_id = Utilisateur.id
     JOIN Game ON Score.game_id = Game.id 
-    ORDER BY Game.name, difficulty, score DESC ");
+    ORDER BY Game.name, difficulty, score DESC ";
+
+    if($filter=="jeu"){
+      $sql.="WHERE Game.name = '' ";
+    }
+    elseif($filter=="joueur"){
+
+    }
+    elseif($filter=="difficulte"){
+
+    }
+
+
+    $req = $this -> connexion-> prepare($sql);
 
     $req -> execute();
     $all = $req->fetchAll();
