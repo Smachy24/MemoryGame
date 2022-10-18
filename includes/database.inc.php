@@ -70,9 +70,3 @@ class Bdd{
 
 $bd = new Bdd();
 $bd -> selectScore();
-
-
-
-
-?>
-
