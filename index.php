@@ -14,27 +14,15 @@
   
   <section class="landing-page">
 
-    <header>
-    <div class="logo">
-      The Power Of Memory
-    </div>
-    <nav>
-      <ul>
-        <a href="index.html"><li>ACCUEIL</li></a>
-        <a href="game.html"><li>JEU</li></a>
-        <a href="scores.html"><li>SCORES</li></a>
-        <a href="account.html"><li>MON ESPACE</li></a>
-        <a href="login.html"><li>LOGIN</li></a>
-        <a href="contact.html"><li>NOUS CONTACTER</li></a>
-      </ul>
-    </nav>  
-  </header>
+  <?php include "view/header.php" //inclure le header ?>
+ 
+    
 
     <section class="home">
       <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
       <p>Venez challenger les cerveaux les plus agiles !</p>
       <div class="play-btn">
-        <a href="game.html">JOUER</a>
+        <a href="game.php">JOUER</a>
       </div>
     </section>
   </section>
@@ -58,6 +46,8 @@
             <p>A chaque tour, retourne une paire de cartes et regarde si elles sont les mêmes. Si oui, bien joué, tu as fait une paire. Arriveras-tu à retourner l’ensemble des paires et à finir le jeu ? Viens découvrir notre memory game et mesure toi aux autres joueurs pour déterminer qui a la meilleure mémoire !</p>
           </div>
         </div>
+
+
 
         <div class="desc-el">
           <h2>02</h2>
@@ -164,34 +154,7 @@
 
   </section>
 
-  <footer>
-    <section class="information">
-      <h3>Information</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p><span>Tel : </span>06 05 04 03 02</p>
-      <p><span>Email : </span>support@powerofmemory.com</p>
-      <p><span>Location : </span>Paris</p>
-      <ul class="our-social-media">
-        <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
-        <a href=""><li><i class="fa-brands fa-twitter"></i></li></a>
-        <a href=""><li><i class="fa-brands fa-pinterest"></i></li></a>
-        <a href=""><li><i class="fa-brands fa-google"></i></li></a>
-        <a href=""><li><i class="fa-brands fa-instagram"></i></li></a>
-      </ul>
-    </section>
-    <nav class="footer-nav">
-      <h3>Power of Memory</h3>
-      <ul>
-        <a href="game.html"><div class="list-chip"></div><li>Jouer !</li></a>
-        <a href="scores.html"><div class="list-chip"></div><li>Les scores</li></a> 
-        <a href="contact.html"><div class="list-chip"></div><li>Nous contacter</li></a>
-      </ul>
-    </nav>
-
-    <div class="copyright">
-      Copyright 2022 Tous droits réservés
-    </div>
-  </footer>
+  <?php include "view/footer.php" //inclure le footer ?> 
   
 </body>
 </html>
