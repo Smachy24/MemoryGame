@@ -1,5 +1,5 @@
--- J indique que je veux insérer msg avec insert into
--- Les valeurs on ne les connait pas 
+-- J'indique avec INSERT INTO que j'ajoute une ligne à la tbale Message
+-- La valeur "2" : id, "5":id-game, "6":id_sender, "gg":j'insère un message.
 
 
 INSERT INTO Message
