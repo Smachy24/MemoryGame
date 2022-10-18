@@ -23,22 +23,25 @@
       </div>
 
       <div class="container">
+      <form action="#" method="post">
         <div class="infos">
-          <input type="email" placeholder="     Email" id="Cmail" />
+          <input name="mail" type="email" placeholder="     Email" id="Cmail" />
           <br />
-          <input type="text" placeholder="     Pseudo" id="Cpseud" />
+          <input name="pseudo" type="text" placeholder="     Pseudo" id="Cpseud" />
           <br />
-          <input type="password" placeholder="     Mot de passe" id="Cmdp" />
+          <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
           <br />
           <input
+          name = "confirmPassword"
             type="password"
             placeholder="     Confirmer le mot de passe"
             id="Confirmmdp"
           />
         </div>
         <div class="buttonregister">
-          <button href="" id="but">Inscription</button>
+          <button type="submit" href="" id="but">Inscription</button>
         </div>
+      </form>
       </div>
     </main>
 
