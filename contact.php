@@ -101,7 +101,7 @@
                 } ?>
               </div>
             </div>
-
+            <!-- Submit form -->
             <div class="submit-button">
               <input type="submit" value="Envoyer" class="subtmit-button" name="submit">
             </div>

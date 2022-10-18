@@ -158,6 +158,8 @@ input {
   border-radius: 2px;
 }
 
+/* ================ SUBMIT BUTTON ================ */
+
 .submit-button input {
   background-color: #ec9123;
   font-size: 15px;
@@ -168,4 +170,22 @@ input {
   width: 100px;
   border-radius: 2.5px;
   cursor: pointer;
+}
+
+/* ================ Message sent validation ================ */
+
+.message-sent-validation {
+  background-color: #050429;
+  color: #d1d2f8;
+  margin: 3em auto 3em auto;
+  width: 30%;
+  height: 20%;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  padding: 5em;
+}
+
+.message-sent-validation h2 {
+  color: #ec9123;
+  font-size: 2em;
 }
