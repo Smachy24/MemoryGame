@@ -5,6 +5,8 @@ body {
   background-color: #100f2f;
 }
 
+/* ================ PAGE HEADER ================ */
+
 .deco-header {
   margin-top: 13px;
   display: flex;
@@ -23,6 +25,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
+
+/* ================ OUR CONTACT SECTION ================ */
 
 .contact-container {
   padding: 0 13%;
@@ -67,10 +71,17 @@ body {
   font-family: "Asap", sans-serif;
 }
 
+/* ================ FORM BOX ================ */
+
 .form-box {
   width: 50%;
   margin-bottom: 100px;
   margin-top: 3em;
+}
+
+.column-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .align-form {
@@ -80,12 +91,41 @@ body {
   column-gap: 2em;
 }
 
-.name-box {
+::placeholder {
+  color: white;
+  opacity: 50%;
+  padding-top: 13px;
+  padding-left: 16px;
+  font-family: "Monserrat", sans-serif;
+}
+
+textarea {
+  color: white;
+}
+
+input {
+  color: white;
+}
+
+/* ================ ERRORS STYLES ================ */
+
+.form-box p {
+  color: #ec9123;
+  font-family: "Asap", sans-serif;
+}
+
+.align-form .input-error-flex {
+  width: 50%;
+}
+
+/* ================ INPUT NAME AND EMAIL ================ */
+
+.user-info-box {
   background-color: #232144;
   border-radius: 2px;
   border: none;
   height: 50px;
-  width: 50%;
+  width: 100%;
 }
 
 .mail-box {
@@ -93,8 +133,10 @@ body {
   border: none;
   height: 50px;
   border-radius: 2px;
-  width: 50%;
+  width: 100%;
 }
+
+/* ================ INPUT TOPIC ================ */
 
 .topic-box {
   background-color: #232144;
@@ -105,6 +147,8 @@ body {
   height: 50px;
   border-radius: 2px;
 }
+
+/* ================ INPUT MESSAGE================ */
 
 .message-box {
   background-color: #232144;
@@ -124,25 +168,4 @@ body {
   width: 100px;
   border-radius: 2.5px;
   cursor: pointer;
-}
-
-::placeholder {
-  color: white;
-  opacity: 50%;
-  padding-top: 13px;
-  padding-left: 16px;
-  font-family: "Monserrat", sans-serif;
-}
-
-.column-form {
-  display: flex;
-  flex-direction: column;
-}
-
-textarea {
-  color: white;
-}
-
-input {
-  color: white;
 }
