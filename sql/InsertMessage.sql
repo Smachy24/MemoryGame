@@ -2,6 +2,6 @@
 -- La valeur "2" : id, "5":id-game, "6":id_sender, "gg":j'insère un message.
 
 
-INSERT INTO Message
+INSERT INTO Message(id, id_game, id_sender, message)
 VALUES(2, 5, 6, "gg");
 
