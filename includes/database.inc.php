@@ -6,6 +6,7 @@ class Bdd{
   private $host;
   private $name;
   private $connexion;
+  private $scores;
 
   public function __construct($user = "root", $pass = "", $host = "localhost",$name = "memorygame"){
     $this -> user = $user;
@@ -13,6 +14,8 @@ class Bdd{
     $this -> host = $host;
     $this -> name = $name;
     $this -> connect();
+    $this -> scores = [];
+
   }
 
   function getUser(){
@@ -27,6 +30,14 @@ class Bdd{
 
   function getName(){
     return $this -> name;
+  }
+
+  function getScores(){
+    return $this -> scores;
+  }
+
+  function addScore($array){
+    array_push($this -> scores, $array);
   }
 
   function connect(){
@@ -46,7 +57,7 @@ class Bdd{
 
   function selectScore(){
     
-    $req = $this -> connexion-> prepare("SELECT Game.name, difficulty, score, Utilisateur.pseudo
+    $req = $this -> connexion-> prepare("SELECT Game.name, Utilisateur.pseudo, difficulty, score, game_date
     FROM Score
     JOIN Utilisateur ON score.player_id = Utilisateur.id
     JOIN Game ON Score.game_id = Game.id 
@@ -55,18 +66,26 @@ class Bdd{
     $req -> execute();
     $all = $req->fetchAll();
     foreach($all as $row){
-
-      echo $row["name"];
-      echo $row["difficulty"];
-      echo $row["score"];
-      echo $row["pseudo"];
-      echo "<br>";
-      
+      $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
+      $this -> addScore($array);
     }
+    
   }
+
+  
 
 }
 
 
 $bd = new Bdd();
 $bd -> selectScore();
+<<<<<<< HEAD
+=======
+
+
+
+
+
+?>
+
+>>>>>>> 44b060ddcbee6a9a482b9083ec7c60482e8f72af

@@ -23,18 +23,20 @@
       </div>
 
       <div class="container">
+      <form action="#" method="post">
         <div class="infos">
-          <input type="email" placeholder="     Email" id="Cmail" />
+          <input name="mail" type="email" placeholder="     Email" id="Cmail" />
           <br />
-          <input type="password" placeholder="     Mot de passe" id="Cmdp" />
+          <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
           <a href="register.php"
             >Vous n'avez pas encore de compte ? Inscrivez-vous !</a
           >
         </div>
 
         <div class="buttonlogin">
-          <button href="" id="but">Connexion</button>
+          <button type="submit" href="" id="but">Connexion</button>
         </div>
+      </form>
       </div>
     </main>
 
