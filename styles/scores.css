@@ -59,12 +59,13 @@ td {
 
 
 .filter-box{
-  margin-right: 20px;
+  margin-right: 200px;
   margin-top: 20px;
   display: flex;
   justify-content: flex-end;
   font-family: "Montserrat", sans-serif;
   
+ 
 
 }
 
@@ -74,23 +75,42 @@ td {
 
 }
 
-
-.filter-text{
-  margin-right: 10px;
-  color:#ec9123;
-  padding: 5px;
-  font-weight: bold;
-}
-
 .filter-dropdown-button{
   background-color: #ec9123;
   font-family: "Montserrat", sans-serif;
   color: #0d0b26;
   border:none;
   font-weight: bold;
-  padding: 5px;
+  padding: 6px;
+
+
  
 }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin: 0;
+
+}
+
+.dropdown-category{
+  color: black;
+  
+  text-decoration: none;
+  display: block;
+}
+
+
+
+
 
 .pseudo-research{
 

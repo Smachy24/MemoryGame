@@ -23,28 +23,37 @@
       <h2>SCORES</h2>
     </div>
 
-    <section class="filter-box">
-      <div class = "dropdown">
+    <aside class="filter-box">
+    <div class = "dropdown">
       <button class="filter-dropdown-button" type="button">Filter</button>
-      <ul>Jeu
-        <li>Power of memory</li>
-      </ul>
+      
+        <ul class = "dropdown-content">
 
-      <ul>Joueur
-        <li>Power of memory</li>
-        <li>Power of memory</li>
-        <li>Power of memory</li>
-      </ul>
+        <li class = "dropdown-category">Joueur
 
-      <ul>Difficulté
-        <li>Facile</li>
-        <li>Intermédiaire</li>
-        <li>Expert</li>
-        <li>Impossible</li>
-      </ul>
+          <li class = "dropdown-category">Jeu
+            <ul class = "dropdown-content">
+              <li class = "dropdown-category" >Power of memory</li>
+            </ul>
+          </li>
+
+          
+            
+          </li>
+
+          <li class = "dropdown-category">Difficulté
+            <ul class = "dropdown-content">
+              <li class = "dropdown-category">Facile</li>
+              <li class = "dropdown-category">Intermédiaire</li>
+              <li class = "dropdown-category">Expert</li>
+              <li class = "dropdown-category">Impossible</li>
+            </ul>
+          </li>
+          
+        </ul>
       </div>
-
-    </section>
+      <input class="pseudo-research" type="text" value="Pseudo...">
+    </aside>
 
    
     
