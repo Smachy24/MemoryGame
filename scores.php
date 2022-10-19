@@ -24,27 +24,35 @@
     </div>
 
     <aside class="filter-box">
-      <div class = "dropdown">
-        <button class="filter-dropdown-button" type="button">Filter</button>
-        <ul class = "filter-category">Jeu
-          <li class = "filter-element" >Power of memory</li>
-        </ul>
+    <div class = "dropdown">
+      <button class="filter-dropdown-button" type="button">Filter</button>
+      
+        <ul class = "dropdown-content">
 
-        <ul class = "filter-category">Joueur
-          <li class = "filter-element">Power of memory</li>
-          <li class = "filter-element">Power of memory</li>
-          <li class = "filter-element">Power of memory</li>
-        </ul>
+        <li class = "dropdown-category">Joueur
 
-        <ul class = "filter-category">Difficulté
-          <li class = "filter-element">Facile</li>
-          <li class = "filter-element">Intermédiaire</li>
-          <li class = "filter-element">Expert</li>
-          <li class = "filter-element">Impossible</li>
+          <li class = "dropdown-category">Jeu
+            <ul class = "dropdown-content">
+              <li class = "dropdown-category" >Power of memory</li>
+            </ul>
+          </li>
+
+          
+            
+          </li>
+
+          <li class = "dropdown-category">Difficulté
+            <ul class = "dropdown-content">
+              <li class = "dropdown-category">Facile</li>
+              <li class = "dropdown-category">Intermédiaire</li>
+              <li class = "dropdown-category">Expert</li>
+              <li class = "dropdown-category">Impossible</li>
+            </ul>
+          </li>
+          
         </ul>
-        
       </div>
-
+      <input class="pseudo-research" type="text" value="Pseudo...">
     </aside>
 
    
