@@ -62,7 +62,7 @@ class Bdd{
     JOIN Game ON Score.game_id = Game.id 
     ORDER BY Game.name, difficulty, score DESC ";
 
-    if($filter=="jeu"){
+    /*if($filter=="jeu"){
       $sql.="WHERE Game.name = '' ";
     }
     elseif($filter=="joueur"){
@@ -70,11 +70,10 @@ class Bdd{
     }
     elseif($filter=="difficulte"){
 
-    }
+    }*/
 
 
     $req = $this -> connexion-> prepare($sql);
-
     $req -> execute();
     $all = $req->fetchAll();
     foreach($all as $row){
@@ -84,13 +83,22 @@ class Bdd{
     
   }
 
-  
+  function getConnectedPlayers(){
+    $sql = "SELECT COUNT(id) FROM Utilisateur" ;
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
 
 }
 
 
 $bd = new Bdd();
 $bd -> selectScore();
+
 
 
 
