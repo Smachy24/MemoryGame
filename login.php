@@ -13,8 +13,9 @@
 </head>
 
 <body>
-  <?php include "view/header.php"; //inclure le header 
+  <?php
   include "includes/login.inc.php";
+  include "view/header.php"; //inclure le header 
   ?>
 
   <main>
@@ -23,27 +24,28 @@
     </div>
 
     <div class="container">
-      <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == true) {
+      <?php if ($_SESSION["connected"] == true) {
         echo $sucessMessage;
-      } ?>
-      <form action="#" method="post">
-        <div class="infos">
-          <input name="mail" type="email" placeholder="     Email" id="Cmail" />
-          <br />
-          <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {
-            echo $errors;
-          } ?>
-          <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
-          <a href="register.php">Vous n'avez pas encore de compte ? Inscrivez-vous !</a>
-          <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {
-            echo $errors;
-          } ?>
-        </div>
+      } else { ?>
+        <form action="#" method="post">
+          <div class="infos">
+            <input name="mail" type="email" placeholder="     Email" id="Cmail" />
+            <br />
+            <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {
+              echo $errors;
+            } ?>
+            <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
+            <a href="register.php">Vous n'avez pas encore de compte ? Inscrivez-vous !</a>
+            <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {
+              echo $errors;
+            } ?>
+          </div>
 
-        <div class="buttonlogin">
-          <button type="submit" href="" id="but" name="submit">Connexion</button>
-        </div>
-      </form>
+          <div class="buttonlogin">
+            <button type="submit" href="" id="but" name="submit">Connexion</button>
+          </div>
+        </form>
+      <?php } ?>
     </div>
   </main>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,15 @@
   <link rel="stylesheet" href="./styles/footer.css">
   <title>The power of memory</title>
 </head>
+
 <body>
-  
+
   <section class="landing-page">
 
-  <?php include "view/header.php" //inclure le header ?>
+    <?php
+    include "includes/session.inc.php";
+    include "view/header.php"; //inclure le header
+    ?>
 
     <section class="home">
       <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
@@ -24,7 +29,7 @@
       </div>
     </section>
   </section>
-  
+
   <section class="website-content">
 
     <section class="description">
@@ -55,7 +60,7 @@
               - Pokémon : Viens mesurer tes connaissances sur Pokemon pour voir si tu n’es pas inculte ! <br>
               - Drapeaux : T’es un fan de géo ? Seras-tu capable de finir le jeu sans te tromper ? <br>
               - Voitures : Plutôt voitures italiennes ou allemandes ? Découvre notre memory game sur les voitures ! <br>
-              </p>
+            </p>
           </div>
         </div>
 
@@ -68,10 +73,10 @@
               - Intermédiaire : un niveau un peu plus dur mais tout aussi facile : une grille de 8x8 cases.<br>
               - Expert : deviens un expert de ce memory game en terminant cette grille de 12x12 cases.<br>
               - Impossible : Essaye de définir ce jeu impossible de 20x20 cases (PS : tu n’y arriveras pas) !
-              </p>
+            </p>
           </div>
 
-      </div>
+        </div>
     </section>
 
     <section class="games-status">
@@ -98,9 +103,15 @@
           <h4>Développeur Full-Stack</h4>
 
           <ul class="social media">
-            <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-twitter"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-pinterest"></i></li></a>
+            <a href="">
+              <li><i class="fa-brands fa-facebook"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-twitter"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-pinterest"></i></li>
+            </a>
           </ul>
         </div>
 
@@ -112,9 +123,15 @@
           <h4>Développeur Full-Stack</h4>
 
           <ul class="social media">
-            <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-twitter"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-pinterest"></i></li></a>
+            <a href="">
+              <li><i class="fa-brands fa-facebook"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-twitter"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-pinterest"></i></li>
+            </a>
           </ul>
         </div>
 
@@ -126,9 +143,15 @@
           <h4>Développeur Full-Stack</h4>
 
           <ul class="social media">
-            <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-twitter"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-pinterest"></i></li></a>
+            <a href="">
+              <li><i class="fa-brands fa-facebook"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-twitter"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-pinterest"></i></li>
+            </a>
           </ul>
         </div>
 
@@ -140,19 +163,27 @@
           <h4>Développeur Imposteur</h4>
 
           <ul class="social media">
-            <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-twitter"></i></li></a>
-            <a href=""><li><i class="fa-brands fa-pinterest"></i></li></a>
+            <a href="">
+              <li><i class="fa-brands fa-facebook"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-twitter"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-pinterest"></i></li>
+            </a>
           </ul>
         </div>
 
-        
+
       </div>
     </section>
 
   </section>
 
-  <?php include "view/footer.php" //inclure le footer ?> 
-  
+  <?php include "view/footer.php" //inclure le footer 
+  ?>
+
 </body>
+
 </html>

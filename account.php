@@ -13,8 +13,9 @@
 </head>
 
 <body>
-  <?php include "view/header.php";
-  include "includes/session.inc.php"; //inclure le header 
+  <?php
+  include "includes/session.inc.php";
+  include "view/header.php"; //inclure le header
   ?>
   <main>
     <div class="deco-header">
@@ -27,7 +28,6 @@
           <div class="user-avatar">
             <i class="fa-solid fa-user"></i>
           </div>
-          <p><?php echo $_SESSION["username"] ?></p>
         </div>
 
         <h3>
