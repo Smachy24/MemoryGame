@@ -62,7 +62,6 @@ class Bdd
     } catch (PDOException $e) {
       print "Error!: " . $e->getMessage() . "<br/>";
       die();
-   
     }
   }
 
@@ -90,7 +89,6 @@ class Bdd
       $array = [$row['name'], $row['pseudo'], $row['difficulty'], $row['score'], $row['game_date']];
       $this->addScore($array);
     }
-    
   }
 
   function selectMessage()
@@ -105,6 +103,27 @@ class Bdd
       $array = [$messages['id'], $messages['id_game'], $messages['id_sender'], $messages['message'], $messages['message_date']];
       $this->addScore($array);
     }
+  }
+
+  function selectUser($userIdentifier)
+  {
+    $req = $this->connexion->prepare("
+    SELECT *
+    FROM utilisateur
+    WHERE email = ?
+    ");
+    $req->execute([$userIdentifier]);
+    $userData = $req->fetchAll();
+    $userDataArray = [];
+    foreach ($userData as $data) {
+      $userDataArray = [
+        'email' => $data["email"],
+        'id' => $data["id"],
+        'pseudo' => $data["pseudo"],
+        'password' => $data["password"]
+      ];
+    }
+    return $userDataArray;
   }
 }
 
