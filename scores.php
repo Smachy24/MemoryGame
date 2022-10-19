@@ -1,96 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scores</title>
-    <link rel="stylesheet" href="styles/scores.css" />
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <script
-      src="https://kit.fontawesome.com/7a226b5b65.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-  <?php 
-    include "view/header.php"; //inclure le header 
-    include "includes/database.inc.php";
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scores</title>
+  <link rel="stylesheet" href="styles/scores.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <script src="https://kit.fontawesome.com/7a226b5b65.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <?php
+  include "view/header.php"; //inclure le header 
+  include "includes/database.inc.php";
   ?>
 
-    <div class="deco-header">
-      <h2>SCORES</h2>
-    </div>
+  <div class="deco-header">
+    <h2>SCORES</h2>
+  </div>
 
-    <aside class="filter-box">
-    <div class = "dropdown">
-      <button class="filter-dropdown-button" type="button">Filter</button>
-      
-        <ul class = "dropdown-content">
+  <aside class="filter-box">
 
-        <li class = "dropdown-category">Joueur
+    <div class="dropdown">
+      <div class="filter-btn">Filtrer</div>
+      <div class="filter-content">
 
-          <li class = "dropdown-category">Jeu
-            <ul class = "dropdown-content">
-              <li class = "dropdown-category" >Power of memory</li>
-            </ul>
-          </li>
+        <label>Jeu
+          <input type="checkbox" name="filter-game" value="Jeu">
+        </label>
 
-          
-            
-          </li>
+        <div>Score</div>
 
-          <li class = "dropdown-category">Difficulté
-            <ul class = "dropdown-content">
-              <li class = "dropdown-category">Facile</li>
-              <li class = "dropdown-category">Intermédiaire</li>
-              <li class = "dropdown-category">Expert</li>
-              <li class = "dropdown-category">Impossible</li>
-            </ul>
-          </li>
-          
-        </ul>
+        <div class="option-dropdown">Difficulté
+          <div class="option-dropdown-content">
+
+            <label>Facile
+              <input type="checkbox" name="filter-dif-1" value="easy">
+            </label>
+            <label>Intermédiaire
+              <input type="checkbox" name="filter-dif-2" value="medium">
+            </label>
+            <label>Difficile
+              <input type="checkbox" name="filter-dif-3" value="hard">
+            </label>
+            <label>Expert
+              <input type="checkbox" name="filter-dif-4" value="expert">
+            </label>
+            <label>Impossible
+              <input type="checkbox" name="filter-dif-5" value="impossible">
+            </label>
+          </div>
+
+        </div>
+
+
+
+
       </div>
-      <input class="pseudo-research" type="text" value="Pseudo...">
-    </aside>
 
-   
-    
 
-    <section class="scores-table">
-      <table>
-        <thead>
-          <th>JEU</th>
-          <th>PSEUDO</th>
-          <th>DIFFICULTÉ</th>
-          <th>SCORE</th>
-          <th>DATE / HEURE</th>
-        </thead>
+      <!--<ul class="dropdown-content">
 
-        <tbody>
+        <li class="dropdown-category">Joueur
 
-          
-          <?php
+        <li class="dropdown-category">Jeu
+          <ul class="dropdown-content">
+            <li class="dropdown-category">Power of memory</li>
+          </ul>
+        </li>
 
-          
-          
-          for($a=0; $a<count($bd->getScores()); $a++){
-            echo "<tr>";
-            for($b=0; $b<count($bd->getScores()[$a]); $b++){
-              echo "<td>". $bd->getScores()[$a][$b]."</td>";
-            }
-            echo "</tr>";
+        </li>
+
+        <li class="dropdown-category">Difficulté
+          <ul class="dropdown-content">
+            <li class="dropdown-category">Facile</li>
+            <li class="dropdown-category">Intermédiaire</li>
+            <li class="dropdown-category">Expert</li>
+            <li class="dropdown-category">Impossible</li>
+          </ul>
+        </li>
+
+      </ul>-->
+    </div>
+    <input class="pseudo-research" type="text" value="Pseudo...">
+  </aside>
+
+
+
+
+  <section class="scores-table">
+    <table>
+      <thead>
+        <th>JEU</th>
+        <th>PSEUDO</th>
+        <th>DIFFICULTÉ</th>
+        <th>SCORE</th>
+        <th>DATE / HEURE</th>
+      </thead>
+
+      <tbody>
+
+
+        <?php
+
+
+
+        for ($a = 0; $a < count($bd->getScores()); $a++) {
+          echo "<tr>";
+          for ($b = 0; $b < count($bd->getScores()[$a]); $b++) {
+            echo "<td>" . $bd->getScores()[$a][$b] . "</td>";
           }
-          
-          
-          ?>
+          echo "</tr>";
+        }
 
-        
-        </tbody>
-      </table>
-    </section>
 
-    <?php include "view/footer.php" //inclure le footer ?> 
-  </body>
+        ?>
+
+
+      </tbody>
+    </table>
+  </section>
+
+  <?php include "view/footer.php" //inclure le footer 
+  ?>
+</body>
+
 </html>
