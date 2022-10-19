@@ -23,20 +23,28 @@
       <h2>SCORES</h2>
     </div>
 
-    <div class="filter-box">
-      
+    <section class="filter-box">
+      <div class = "dropdown">
+      <button class="filter-dropdown-button" type="button">Filter</button>
+      <ul>Jeu
+        <li>Power of memory</li>
+      </ul>
 
-      <label class ="filter-text" for="filter-label">Filtrer par :</label>
-      <form action="#" method="post">
-        <select name="filter" class="filter-dropdown">
-          <option value="jeu">JEU</option>       
-          <option value="joueur">JOUEUR</option>
-          <option value="difficulte">DIFFICULTÉ</option>
-        </select>
-        <input name="pseudo" type="text" placeholder="Pseudo" class ="pseudo-research">
-      </form>
+      <ul>Joueur
+        <li>Power of memory</li>
+        <li>Power of memory</li>
+        <li>Power of memory</li>
+      </ul>
 
-    </div>
+      <ul>Difficulté
+        <li>Facile</li>
+        <li>Intermédiaire</li>
+        <li>Expert</li>
+        <li>Impossible</li>
+      </ul>
+      </div>
+
+    </section>
 
    
     
