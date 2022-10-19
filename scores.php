@@ -24,36 +24,71 @@
     </div>
 
     <aside class="filter-box">
-    <div class = "dropdown">
-      <button class="filter-dropdown-button" type="button">Filter</button>
-      
-        <ul class = "dropdown-content">
 
-        <li class = "dropdown-category">Joueur
+    <div class="dropdown">
+      <div class="filter-btn">Filtrer</div>
+      <div class="filter-content">
+      <form method="post" action ="scores.php">
+        <label>Jeu
+          <input type="checkbox" name="filter-game" value="Jeu">
+        </label>
 
-          <li class = "dropdown-category">Jeu
-            <ul class = "dropdown-content">
-              <li class = "dropdown-category" >Power of memory</li>
-            </ul>
-          </li>
+        <div class="option-dropdown">Score
 
-          
-            
-          </li>
+          <div class="option-dropdown-content">
 
-          <li class = "dropdown-category">Difficulté
-            <ul class = "dropdown-content">
-              <li class = "dropdown-category">Facile</li>
-              <li class = "dropdown-category">Intermédiaire</li>
-              <li class = "dropdown-category">Expert</li>
-              <li class = "dropdown-category">Impossible</li>
-            </ul>
-          </li>
-          
-        </ul>
+            <label>Du plus élevé
+              <input type="checkbox" name="more" value="more">
+            </label>
+            <label>Du plus faible
+              <input type="checkbox" name="less" value="less">
+            </label>
+
+          </div>
+
+        </div>
+
+        <div class="option-dropdown">Difficulté
+          <div class="option-dropdown-content">
+
+            <label>Facile
+              <input type="checkbox" name="easy" value="easy">
+            </label>
+            <label>Intermédiaire
+              <input type="checkbox" name="medium" value="medium">
+            </label>
+
+            <label>Expert
+              <input type="checkbox" name="expert" value="expert">
+            </label>
+            <label>Impossible
+              <input type="checkbox" name="impossible" value="impossible">
+            </label>
+          </div>
+        </div>
       </div>
-      <input class="pseudo-research" type="text" value="Pseudo...">
-    </aside>
+    </div>
+      <input class="pseudo-research" name = "pseudo" type="text" placeholder="Pseudo...">
+    <button type="submit" name ="submit">Envoyer le formulaire</button>
+    </form>
+  </aside>
+
+  <?php
+
+  if(isset($_POST["submit"])){
+    if(!empty($_POST["easy"]) xor !empty($_POST["medium"])xor !empty($_POST["expert"]) xor !empty($_POST["impossible"])) {
+      echo "a";
+    }
+    if(!empty($_POST["more"]) xor !empty($_POST["less"])){
+      echo"b";
+    }
+    if(!empty($_POST["pseudo"])){
+      echo "c";
+    }
+    
+  }
+  
+  ?>
 
    
     
