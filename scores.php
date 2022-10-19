@@ -23,28 +23,29 @@
       <h2>SCORES</h2>
     </div>
 
-    <section class="filter-box">
+    <aside class="filter-box">
       <div class = "dropdown">
-      <button class="filter-dropdown-button" type="button">Filter</button>
-      <ul>Jeu
-        <li>Power of memory</li>
-      </ul>
+        <button class="filter-dropdown-button" type="button">Filter</button>
+        <ul class = "filter-category">Jeu
+          <li class = "filter-element" >Power of memory</li>
+        </ul>
 
-      <ul>Joueur
-        <li>Power of memory</li>
-        <li>Power of memory</li>
-        <li>Power of memory</li>
-      </ul>
+        <ul class = "filter-category">Joueur
+          <li class = "filter-element">Power of memory</li>
+          <li class = "filter-element">Power of memory</li>
+          <li class = "filter-element">Power of memory</li>
+        </ul>
 
-      <ul>Difficulté
-        <li>Facile</li>
-        <li>Intermédiaire</li>
-        <li>Expert</li>
-        <li>Impossible</li>
-      </ul>
+        <ul class = "filter-category">Difficulté
+          <li class = "filter-element">Facile</li>
+          <li class = "filter-element">Intermédiaire</li>
+          <li class = "filter-element">Expert</li>
+          <li class = "filter-element">Impossible</li>
+        </ul>
+        
       </div>
 
-    </section>
+    </aside>
 
    
     
