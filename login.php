@@ -31,9 +31,6 @@
           <div class="infos">
             <input name="mail" type="email" placeholder="     Email" id="Cmail" />
             <br />
-            <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {
-              echo $errors;
-            } ?>
             <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
             <a href="register.php">Vous n'avez pas encore de compte ? Inscrivez-vous !</a>
             <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {

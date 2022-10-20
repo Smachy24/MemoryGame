@@ -27,8 +27,8 @@
         <div class="user-info">
           <div class="user-avatar">
             <i class="fa-solid fa-user"></i>
-            <h2><?php echo $_SESSION["username"] ?></h2>
           </div>
+          <p><?php echo $_SESSION["username"] ?></p>
         </div>
 
         <h3>
