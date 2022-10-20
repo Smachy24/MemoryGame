@@ -88,9 +88,36 @@
     <input class="pseudo-research" type="text" value="Pseudo...">
   </aside>
 
+  <?php
+
+  if (isset($_POST["submit"])) {
+    if (!empty($_POST["easy"])) {
+      $bd->addFilter("WHERE difficulty = \"easy\"");
+      $bd->selectScore();
+    } elseif (!empty($_POST["medium"])) {
+
+      $bd->addFilter("WHERE difficulty = \"medium\"");
+      $bd->selectScore();
+    } elseif (!empty($_POST["expert"])) {
+
+      $bd->addFilter("WHERE difficulty = \"expert\"");
+      $bd->selectScore();
+    } elseif (!empty($_POST["impossible"])) {
+
+      $bd->addFilter("WHERE difficulty = \"impossible\"");
+      $bd->selectScore();
+    }
+
+    if (!empty($_POST["more"]) xor !empty($_POST["less"])) {
+      echo "b";
+    }
+    if (!empty($_POST["pseudo"])) {
+      echo "c";
+    }
+  }
 
 
-
+  ?>
   <section class="scores-table">
     <table>
       <thead>

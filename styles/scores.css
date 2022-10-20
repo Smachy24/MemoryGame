@@ -57,6 +57,8 @@ td {
   padding: 20px;
 }
 
+/* ============================================ */
+
 .filter-box {
   margin-right: 200px;
   margin-top: 20px;
@@ -65,8 +67,6 @@ td {
   font-family: "Montserrat", sans-serif;
 }
 
-/*============================================*/
-
 .dropdown {
   background-color: #ec9123;
   color: #0d0b26;
@@ -74,11 +74,19 @@ td {
   margin: 0px 10px;
 }
 
-.filter-btn {
-  margin: 10px;
+.filter-content div,
+label {
+  display: block;
+  background-color: #ec9123;
+  color: #0d0b26;
 }
 
-.filter-content {
+.option-dropdown {
+  display: block;
+}
+
+.option-filter-content {
+  width: max-content;
   display: none;
   background-color: aliceblue;
   position: absolute;
@@ -98,25 +106,7 @@ label {
 
 .option-dropdown {
   display: block;
-}
 
-.option-dropdown-content {
-  width: max-content;
-  display: none;
-}
-
-.option-dropdown-content label {
-  display: none;
-}
-
-.option-dropdown:hover label {
-  display: block;
-  background-color: #c2761a;
-}
-
-/* ============================================ */
-
-.pseudo-research {
   max-width: 150px;
   padding: 6px;
   background-color: #ec9123;
@@ -125,6 +115,13 @@ label {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
+
+.option-dropdown:hover label {
+  display: block;
+  background-color: #c2761a;
+}
+
+/* ============================================ */
 
 ::placeholder {
   color: #0d0b266c;
