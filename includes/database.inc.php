@@ -1,8 +1,6 @@
 
 <?php
 
-include "database.inc.php";
-
 class Bdd
 {
   private $user;
@@ -141,7 +139,7 @@ class Bdd
     SET email = ?
     WHERE id = ?
     ");
-    $req->execute($newMail, $userId);
+    $req->execute([$newMail, $userId]);
   }
 }
 
