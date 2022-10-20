@@ -7,6 +7,7 @@ class Bdd{
   private $name;
   private $connexion;
   private $scores;
+  private $filter;
 
   public function __construct($user = "root", $pass = "", $host = "localhost",$name = "memorygame"){
     $this -> user = $user;
@@ -15,6 +16,7 @@ class Bdd{
     $this -> name = $name;
     $this -> connect();
     $this -> scores = [];
+    $this -> filter = "";
 
   }
 
@@ -34,6 +36,17 @@ class Bdd{
 
   function getScores(){
     return $this -> scores;
+  }
+
+  function getFilter(){
+    return $this -> filter;
+  }
+
+  function addFilter($filter){
+    if($this -> getFilter() != ""){
+      $this -> filter. " AND ";
+    }
+    $this -> filter.= $filter;
   }
 
   function addScore($array){
@@ -61,16 +74,9 @@ class Bdd{
     JOIN Utilisateur ON score.player_id = Utilisateur.id
     JOIN Game ON Score.game_id = Game.id 
     ORDER BY Game.name, difficulty, score DESC ";
-
-    /*if($filter=="jeu"){
-      $sql.="WHERE Game.name = '' ";
-    }
-    elseif($filter=="joueur"){
-
-    }
-    elseif($filter=="difficulte"){
-
-    }*/
+    
+    $sql .= $this -> getFilter();
+    echo $sql;
 
 
     $req = $this -> connexion-> prepare($sql);
@@ -97,7 +103,7 @@ class Bdd{
 
 
 $bd = new Bdd();
-$bd -> selectScore();
+
 
 
 
