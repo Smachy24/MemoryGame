@@ -51,15 +51,15 @@
         <form class="modif-container">
           <h3>Modification de l'adresse mail</h3>
           <div id="modifmail" class="modif-container-column">
-            <input type="email" placeholder="Ancien Email" />
+            <input type="email" placeholder="Ancien Email" name="email" />
 
-            <input type="email" placeholder="Nouveau Email" />
+            <input type="email" placeholder="Nouveau Email" name="newemail" />
 
-            <input type="password" placeholder="Mot de passe" />
+            <input type="password" placeholder="Mot de passe" name="password" />
 
-            <input type="password" placeholder="Confirmer le mot de passe" />
+            <input type="password" placeholder="Confirmer le mot de passe" name="confirm" />
 
-            <button type="submit" id="butVmail" class="validation">
+            <button type="submit" id="butVmail" class="validation" name="submit">
               Valider
             </button>
           </div>
