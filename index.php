@@ -79,13 +79,19 @@
     <section class="games-status">
       <img src="assets/watch-dogs.jpg" alt="Fond d'écran watch dogs 2">
       <div class="game-stats">
-        <div class="box">310 <span>Parties Jouées</span></div>
         <div class="box">
-          
+        <?php echo $bd -> getGamesPlayed(); ?>
+          <span>Parties Jouées</span></div>
+        
+          <div class="box">  
         <?php echo $bd -> getConnectedPlayers(); ?>
-        <span>Joueurs Connectés</span></div>
-        <div class="box">10 sec <span>Temps Records</span></div>
-        <div class="box">21 300 <span>Joueurs inscrits</span></div>
+        <span>Joueurs inscrits</span></div>
+        <div class="box">
+        <?php echo $bd -> getBestScore(); ?>
+        <span>Meilleur score</span></div>
+        <div class="box">
+        <?php echo $bd -> getMessages(); ?>  
+        <span>Messages</span></div>
       </div>
     </section>
 

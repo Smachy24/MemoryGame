@@ -118,6 +118,36 @@ class Bdd{
     return $r;
   }
 
+  function getGamesPlayed(){
+    $sql = "SELECT COUNT(id) FROM Score";
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
+  function getBestScore(){
+    $sql = "SELECT score FROM Score ORDER BY score DESC LIMIT 1";
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
+  function getMessages(){
+    $sql = "SELECT COUNT(id) FROM Message" ;
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
 }
 
 
