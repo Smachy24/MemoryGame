@@ -65,23 +65,33 @@ class Bdd{
       die();
    
     }
+    
   }
 
 
-  function selectScore($filter = null){
+  function selectScore(){
     $sql = "SELECT Game.name, Utilisateur.pseudo, difficulty, score, game_date
     FROM Score
     JOIN Utilisateur ON score.player_id = Utilisateur.id
-    JOIN Game ON Score.game_id = Game.id 
-    ORDER BY Game.name, difficulty, score DESC ";
-    
+    JOIN Game ON Score.game_id = Game.id ";
+
+
     $sql .= $this -> getFilter();
+
+    $sql .= " ORDER BY Game.name, difficulty, score DESC ";
+    
+
+    
+    
     echo $sql;
 
 
     $req = $this -> connexion-> prepare($sql);
     $req -> execute();
+
     $all = $req->fetchAll();
+    
+    
     foreach($all as $row){
       $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
       $this -> addScore($array);
