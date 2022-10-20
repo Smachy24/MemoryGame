@@ -19,6 +19,7 @@ class Bdd
     $this->name = $name;
     $this->connect();
     $this->scores = [];
+    $this->messages = [];
   }
   function getPass()
   {
@@ -42,6 +43,11 @@ class Bdd
   function getScores()
   {
     return $this->scores;
+  }
+
+  function getMessages()
+  {
+    return $this->messages;
   }
 
   function addScore($array)
@@ -97,20 +103,6 @@ class Bdd
     }
   }
 
-  function selectMessage()
-  {
-
-    $req = $this->connexion->prepare("SELECT *
-    FROM message
-    WHERE DATEDIFF(CURRENT_TIMESTAMP(), message_date)<1");
-    $req->execute();
-    $lastMessages = $req->fetchAll();
-    foreach ($lastMessages as $messages) {
-      $array = [$messages['id'], $messages['id_game'], $messages['id_sender'], $messages['message'], $messages['message_date']];
-      $this->addScore($array);
-    }
-  }
-
   function selectUser($userIdentifier)
   {
     $req = $this->connexion->prepare("
@@ -150,6 +142,35 @@ class Bdd
     WHERE id = ?
     ");
     $req->execute([$newPassword, $userId]);
+  }
+
+  function getAllMessages()
+  {
+    $req = $this->connexion->prepare("
+    SELECT *
+    FROM message
+    ");
+    $req->execute();
+    $allMessages = $req->fetchAll();
+    foreach ($allMessages as $messages) {
+      $messagesArray = [
+        "id" => $messages["id"],
+        "id_game" => $messages["id_game"],
+        "id_sender" => $messages["id_sender"],
+        "message" => $messages["message"],
+        "message_date" => $messages["message_date"]
+      ];
+      array_push($this->messages, $messagesArray);
+    }
+  }
+
+  function sendMessage($id, $id_game, $id_sender, $message, $message_date)
+  {
+    $req = $this->connexion->prepare('
+    INSERT INTO Message(id, id_game, id_sender, message)
+    VALUES(53, 1, 12, "Salut")
+    ');
+    $req->execute();
   }
 }
 

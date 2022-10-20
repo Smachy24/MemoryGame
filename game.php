@@ -150,6 +150,8 @@
           <p class="chat-title">Chat général</p>
         </div>
 
+        <?php include "includes/messages.inc.php" ?>
+        <!--
         <div class="message-send">
           <div class="message-box">
             <p class="surname">Moi</p>
@@ -166,11 +168,12 @@
             <p class="message-time">Aujourd'hui à 15h30</p>
           </div>
         </div>
+        -->
 
-        <div class="send-message">
-          <input placeholder="Votre message..." type="text" class="text-input">
-          <p class="send-message-text">Envoyer</p>
-        </div>
+        <form class="send-message" method="POST">
+          <input placeholder="Votre message..." type="text" class="text-input" name="userMessage">
+          <button class="send-message-text" type="submit" name="submit">Envoyer</button>
+      </div>
       </div>
     </aside>
   </main>
