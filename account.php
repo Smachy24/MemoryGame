@@ -15,6 +15,7 @@
 <body>
   <?php
   include "includes/updateMail.inc.php";
+  include "includes/updatePassword.inc.php";
   include "view/header.php"; //inclure le header
 
   ?>
@@ -66,16 +67,16 @@
           </div>
         </form>
 
-        <form class="modif-container">
+        <form class="modif-container" method="POST">
           <h3>Modification du mot de passe</h3>
           <div id="modifmdp" class="modif-container-column">
-            <input type="password" placeholder="Ancien mot de passe" />
+            <input type="password" placeholder="Ancien mot de passe" name="oldpassword" />
 
-            <input type="password" placeholder="Nouveau mot de passe" />
+            <input type="password" placeholder="Nouveau mot de passe" name="newpassword" />
 
-            <input type="password" placeholder="Confirmer le nouveau mot de passe" />
+            <input type="password" placeholder="Confirmer le nouveau mot de passe" name="confirmnewpassword" />
 
-            <button type="submit" id="butVmail" class="validation">
+            <button type="submit" id="butVmail" class="validation" name="submitUpdatePassword">
               Valider
             </button>
           </div>

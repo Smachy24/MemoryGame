@@ -141,6 +141,16 @@ class Bdd
     ");
     $req->execute([$newMail, $userId]);
   }
+
+  function updatePassword($newPassword, $userId)
+  {
+    $req = $this->connexion->prepare("
+    UPDATE utilisateur
+    SET password = ?
+    WHERE id = ?
+    ");
+    $req->execute([$newPassword, $userId]);
+  }
 }
 
 
