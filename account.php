@@ -27,6 +27,7 @@
         <div class="user-info">
           <div class="user-avatar">
             <i class="fa-solid fa-user"></i>
+            <h2><?php echo $_SESSION["username"] ?></h2>
           </div>
         </div>
 
@@ -38,6 +39,11 @@
         <h3>
           <span><i class="fa-solid fa-gear"></i></span>
           MODIFIER MES IDENTIFIANTS
+        </h3>
+
+        <h3>
+          <span><i class="fa-solid fa-gear"></i></span>
+          <a href="index.php?logout=true">Deconnexion</a>
         </h3>
       </aside>
 
