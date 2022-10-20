@@ -19,11 +19,6 @@ class Bdd
     $this->connect();
     $this->scores = [];
   }
-
-  function getUser()
-  {
-    return $this->user;
-  }
   function getPass()
   {
     return $this->pass;
@@ -53,7 +48,13 @@ class Bdd
     array_push($this->messages, $array);
   }
 
+  function addMessages($array)
+  {
+    array_push($this->messages, $array);
+  }
+
   function connect()
+
   {
     try {
       if ($this->connexion === null) {
@@ -73,6 +74,15 @@ class Bdd
     JOIN Utilisateur ON score.player_id = Utilisateur.id
     JOIN Game ON Score.game_id = Game.id 
     ORDER BY Game.name, difficulty, score DESC ";
+
+    if ($filter == "jeu") {
+      $sql .= "WHERE Game.name = '' ";
+    } elseif ($filter == "joueur") {
+    } elseif ($filter == "difficulte") {
+    }
+
+
+    $req = $this->connexion->prepare($sql);
 
     if ($filter == "jeu") {
       $sql .= "WHERE Game.name = '' ";

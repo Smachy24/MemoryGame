@@ -54,7 +54,7 @@
       <?php if (
         !empty($_POST["username"]) &&
         !empty($_POST["usertopic"]) &&
-        !empty($_POST["usermessage"]) &&
+        strlen($_POST["usermessage"] >= 15)  &&
         filter_var($_POST["usermail"], FILTER_VALIDATE_EMAIL)
       ) { ?>
 
@@ -98,7 +98,7 @@
               <!-- Input Message -->
               <div class="input-error-flex">
                 <textarea id="message" name="usermessage" placeholder="Message" class="message-box"></textarea>
-                <?php if (isset($_POST["submit"]) && empty($_POST["usermessage"])) {
+                <?php if (isset($_POST["submit"]) && strlen($_POST["usermessage"] < 15)) {
                   echo "<p> Erreur : Votre message doit faire au moins 15 caractères !</p>";
                 } ?>
               </div>
