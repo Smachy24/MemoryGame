@@ -17,6 +17,7 @@ class Bdd{
     $this -> connect();
     $this -> scores = [];
     $this -> filter = "";
+    
 
   }
 
@@ -52,6 +53,8 @@ class Bdd{
   function addScore($array){
     array_push($this -> scores, $array);
   }
+  
+
 
   function connect(){
     try {
@@ -79,25 +82,21 @@ class Bdd{
     $sql .= $this -> getFilter();
 
     $sql .= " ORDER BY Game.name, difficulty, score DESC ";
-    
-
-    
-    
-    echo $sql;
 
 
     $req = $this -> connexion-> prepare($sql);
     $req -> execute();
-
     $all = $req->fetchAll();
     
-    
-    foreach($all as $row){
-      $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
-      $this -> addScore($array);
-    }
-    
+
+      foreach($all as $row){
+        $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
+        $this -> addScore($array);
+      
+      }
+      
   }
+ 
 
   function getConnectedPlayers(){
     $sql = "SELECT COUNT(id) FROM Utilisateur" ;
@@ -113,6 +112,10 @@ class Bdd{
 
 
 $bd = new Bdd();
+$bd -> selectScore();
+
+
+
 
 
 

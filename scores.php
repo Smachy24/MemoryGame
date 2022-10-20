@@ -79,16 +79,20 @@
     if(!empty($_POST["easy"])) {
       $bd -> addFilter("WHERE difficulty = \"easy\"");
       $bd -> selectScore();
+      
     
     }elseif(!empty($_POST["medium"])){
+
       $bd -> addFilter("WHERE difficulty = \"medium\"");
       $bd -> selectScore();
 
     }elseif(!empty($_POST["expert"])){
+
       $bd -> addFilter("WHERE difficulty = \"expert\"");
       $bd -> selectScore();
 
     }elseif(!empty($_POST["impossible"])){
+
       $bd -> addFilter("WHERE difficulty = \"impossible\"");
       $bd -> selectScore();
     }
@@ -102,7 +106,8 @@
     }
     
   }
-  
+
+
   ?>
     <section class="scores-table">
       <table>
