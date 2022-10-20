@@ -13,8 +13,9 @@
 </head>
 
 <body>
-  <?php include "view/header.php";
-  include "includes/session.inc.php"; //inclure le header 
+  <?php
+  include "includes/session.inc.php";
+  include "view/header.php"; //inclure le header
   ?>
   <main>
     <div class="deco-header">
@@ -38,6 +39,11 @@
         <h3>
           <span><i class="fa-solid fa-gear"></i></span>
           MODIFIER MES IDENTIFIANTS
+        </h3>
+
+        <h3>
+          <span><i class="fa-solid fa-gear"></i></span>
+          <a href="index.php?logout=true">Deconnexion</a>
         </h3>
       </aside>
 

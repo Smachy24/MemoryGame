@@ -15,7 +15,9 @@
 
 
 <body>
-  <?php include "view/header.php" //inclure le header 
+  <?php
+  include "includes/session.inc.php";
+  include "view/header.php"; //inclure le header
   ?>
 
   <main>

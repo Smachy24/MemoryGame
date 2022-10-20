@@ -43,6 +43,10 @@ class Bdd{
     return $this -> filter;
   }
 
+  function getConnect(){
+    return $this -> connexion;
+  }
+
   function addFilter($filter){
     if($this -> getFilter() != ""){
       $this -> filter. " AND ";
