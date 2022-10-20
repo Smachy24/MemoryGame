@@ -46,9 +46,6 @@
 
   </section>
 
-
-
-
   <section class="scores-table">
     <table>
       <thead>

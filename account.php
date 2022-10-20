@@ -48,7 +48,7 @@
       </aside>
 
       <section class="modif-section">
-        <form class="modif-container">
+        <form class="modif-container" method="POST">
           <h3>Modification de l'adresse mail</h3>
           <div id="modifmail" class="modif-container-column">
             <input type="email" placeholder="Ancien Email" name="email" />
@@ -57,9 +57,9 @@
 
             <input type="password" placeholder="Mot de passe" name="password" />
 
-            <input type="password" placeholder="Confirmer le mot de passe" name="confirm" />
+            <input type="password" placeholder="Confirmer le mot de passe" name="confirmpassword" />
 
-            <button type="submit" id="butVmail" class="validation" name="submit">
+            <button type="submit" id="butVmail" class="validation" name="submitUpdateEmail">
               Valider
             </button>
           </div>

@@ -1,4 +1,7 @@
+
 <?php
+
+include "database.inc.php";
 
 class Bdd
 {
@@ -28,6 +31,11 @@ class Bdd
     return $this->host;
   }
 
+  function getUser()
+  {
+    return $this->user;
+  }
+
   function getName()
   {
     return $this->name;
@@ -41,16 +49,6 @@ class Bdd
   function addScore($array)
   {
     array_push($this->scores, $array);
-  }
-
-  function addMessages($array)
-  {
-    array_push($this->messages, $array);
-  }
-
-  function addMessages($array)
-  {
-    array_push($this->messages, $array);
   }
 
   function connect()
@@ -134,6 +132,16 @@ class Bdd
       ];
     }
     return $userDataArray;
+  }
+
+  function updateEmail($newMail, $userId)
+  {
+    $req = $this->connexion->prepare("
+    UPDATE utilisateur
+    SET email = ?
+    WHERE id = ?
+    ");
+    $req->execute($newMail, $userId);
   }
 }
 

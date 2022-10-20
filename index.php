@@ -21,7 +21,6 @@
     include "includes/session.inc.php";
     include "view/header.php"; //inclure le header
 
-
     ?>
 
     <section class="home">
