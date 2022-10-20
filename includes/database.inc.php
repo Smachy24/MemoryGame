@@ -44,9 +44,9 @@ class Bdd{
   }
 
   function addFilter($filter){
-    if($this -> getFilter() != ""){
+    /*if($this -> getFilter() != ""){
       $this -> filter. " AND ";
-    }
+    }*/
     $this -> filter.= $filter;
   }
 
@@ -82,10 +82,16 @@ class Bdd{
     JOIN Utilisateur ON score.player_id = Utilisateur.id
     JOIN Game ON Score.game_id = Game.id ";
 
+    $this -> resetScores();
+    
+    if(strpos($this -> getFilter(),"WHERE")){ //Filter only where
+      $sql .= $this -> getFilter();
+      $sql .= "ORDER BY Game.name, difficulty, score DESC";
+    }
+    else{
+      $sql .= $this -> getFilter(); //Other cases (only order, both and nothing)
+    }
 
-    $sql .= $this -> getFilter();
-
-    $sql .= " ORDER BY Game.name, difficulty, score DESC ";
 
 
     $req = $this -> connexion-> prepare($sql);

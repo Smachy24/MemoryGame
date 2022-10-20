@@ -37,10 +37,10 @@
             <div class="option-dropdown-content">
 
               <label>Du plus élevé
-                <input type="checkbox" name="more" value="more">
+                <input type="radio" name="order" value="more">
               </label>
               <label>Du plus faible
-                <input type="checkbox" name="less" value="less">
+                <input type="radio" name="order" value="less">
               </label>
 
             </div>
@@ -115,7 +115,18 @@
                 $bd->selectScore();
                 break;
             }
-          } else {  //Sinon afficher les scores sans filtres
+          }if(isset($_POST["order"])){
+            if($_POST["order"] =='more'){
+              $bd->addFilter("ORDER BY Game.name, difficulty, score DESC");
+              $bd->selectScore();
+            }
+            elseif($_POST["order"] =='less'){
+              $bd->addFilter("ORDER BY Game.name, difficulty, score ASC");
+              $bd->selectScore();
+          }
+        }
+          
+          else {  //Sinon afficher les scores sans filtres
 
             $bd->selectScore();
           }
