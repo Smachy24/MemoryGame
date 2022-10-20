@@ -27,97 +27,51 @@
     <div class="dropdown">
       <div class="filter-btn">Filtrer</div>
       <div class="filter-content">
+        <form method="post" action="scores.php">
+          <label>Jeu
+            <input type="checkbox" name="filter-game" value="Jeu">
+          </label>
 
-        <label>Jeu
-          <input type="checkbox" name="filter-game" value="Jeu">
-        </label>
+          <div class="option-dropdown">Score
 
-        <div>Score</div>
+            <div class="option-dropdown-content">
 
-        <div class="option-dropdown">Difficulté
-          <div class="option-dropdown-content">
+              <label>Du plus élevé
+                <input type="checkbox" name="more" value="more">
+              </label>
+              <label>Du plus faible
+                <input type="checkbox" name="less" value="less">
+              </label>
 
-            <label>Facile
-              <input type="checkbox" name="filter-dif-1" value="easy">
-            </label>
-            <label>Intermédiaire
-              <input type="checkbox" name="filter-dif-2" value="medium">
-            </label>
-            <label>Difficile
-              <input type="checkbox" name="filter-dif-3" value="hard">
-            </label>
-            <label>Expert
-              <input type="checkbox" name="filter-dif-4" value="expert">
-            </label>
-            <label>Impossible
-              <input type="checkbox" name="filter-dif-5" value="impossible">
-            </label>
+            </div>
+
           </div>
 
-        </div>
+          <div class="option-dropdown">Difficulté
+            <div class="option-dropdown-content">
 
+              <label>Facile
+                <input type="radio" name="difficulty" value="easy">
+              </label>
+              <label>Intermédiaire
+                <input type="radio" name="difficulty" value="medium">
+              </label>
 
-
-
+              <label>Expert
+                <input type="radio" name="difficulty" value="expert">
+              </label>
+              <label>Impossible
+                <input type="radio" name="difficulty" value="impossible">
+              </label>
+            </div>
+          </div>
       </div>
-
-
-      <!--<ul class="dropdown-content">
-
-        <li class="dropdown-category">Joueur
-
-        <li class="dropdown-category">Jeu
-          <ul class="dropdown-content">
-            <li class="dropdown-category">Power of memory</li>
-          </ul>
-        </li>
-
-        </li>
-
-        <li class="dropdown-category">Difficulté
-          <ul class="dropdown-content">
-            <li class="dropdown-category">Facile</li>
-            <li class="dropdown-category">Intermédiaire</li>
-            <li class="dropdown-category">Expert</li>
-            <li class="dropdown-category">Impossible</li>
-          </ul>
-        </li>
-
-      </ul>-->
     </div>
-    <input class="pseudo-research" type="text" value="Pseudo...">
+    <input class="pseudo-research" name="pseudo" type="text" placeholder="Pseudo...">
+    <button type="submit" name="submit">Rechercher</button>
+    </form>
   </aside>
 
-  <?php
-
-  if (isset($_POST["submit"])) {
-    if (!empty($_POST["easy"])) {
-      $bd->addFilter("WHERE difficulty = \"easy\"");
-      $bd->selectScore();
-    } elseif (!empty($_POST["medium"])) {
-
-      $bd->addFilter("WHERE difficulty = \"medium\"");
-      $bd->selectScore();
-    } elseif (!empty($_POST["expert"])) {
-
-      $bd->addFilter("WHERE difficulty = \"expert\"");
-      $bd->selectScore();
-    } elseif (!empty($_POST["impossible"])) {
-
-      $bd->addFilter("WHERE difficulty = \"impossible\"");
-      $bd->selectScore();
-    }
-
-    if (!empty($_POST["more"]) xor !empty($_POST["less"])) {
-      echo "b";
-    }
-    if (!empty($_POST["pseudo"])) {
-      echo "c";
-    }
-  }
-
-
-  ?>
   <section class="scores-table">
     <table>
       <thead>
@@ -133,17 +87,47 @@
 
         <?php
 
+        if (isset($_POST["submit"])) {
 
+          $bd->resetScores(); //On reset le contenu du tableau contenant les scores afin de pouvoir afficher les scores filtrés
 
-        for ($a = 0; $a < count($bd->getScores()); $a++) {
+          if (isset($_POST["difficulty"])) { //Si l'user décide de filtrer par les difficultés, on sélectione les scores correspondants 
+
+            switch ($_POST["difficulty"]) {
+              case 'easy':
+                $bd->addFilter("WHERE difficulty = \"easy\"");
+                $bd->selectScore();
+                break;
+              case 'medium':
+                $bd->addFilter("WHERE difficulty = \"medium\"");
+                $bd->selectScore();
+                break;
+              case 'expert':
+                $bd->addFilter("WHERE difficulty = \"expert\"");
+                $bd->selectScore();
+                break;
+              case 'impossible':
+                $bd->addFilter("WHERE difficulty = \"impossible\"");
+                $bd->selectScore();
+                break;
+
+              default:
+                $bd->selectScore();
+                break;
+            }
+          } else {  //Sinon afficher les scores sans filtres
+
+            $bd->selectScore();
+          }
+        }
+
+        for ($a = 0; $a < count($bd->getScores()); $a++) { //Affichage des scores
           echo "<tr>";
           for ($b = 0; $b < count($bd->getScores()[$a]); $b++) {
             echo "<td>" . $bd->getScores()[$a][$b] . "</td>";
           }
           echo "</tr>";
         }
-
-
         ?>
 
 

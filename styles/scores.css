@@ -74,19 +74,11 @@ td {
   margin: 0px 10px;
 }
 
-.filter-content div,
-label {
-  display: block;
-  background-color: #ec9123;
-  color: #0d0b26;
+.filter-btn {
+  margin: 10px;
 }
 
-.option-dropdown {
-  display: block;
-}
-
-.option-filter-content {
-  width: max-content;
+.filter-content {
   display: none;
   background-color: aliceblue;
   position: absolute;
@@ -106,14 +98,15 @@ label {
 
 .option-dropdown {
   display: block;
+}
 
-  max-width: 150px;
-  padding: 6px;
-  background-color: #ec9123;
-  border: none;
-  color: #0d0b26;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+.option-dropdown-content {
+  width: max-content;
+  display: none;
+}
+
+.option-dropdown-content label {
+  display: none;
 }
 
 .option-dropdown:hover label {
@@ -122,11 +115,3 @@ label {
 }
 
 /* ============================================ */
-
-::placeholder {
-  color: #0d0b266c;
-  border: none;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  padding: 6px;
-}

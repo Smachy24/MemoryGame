@@ -50,6 +50,10 @@ class Bdd{
     $this -> filter.= $filter;
   }
 
+  function resetScores(){
+    $this->scores = [];
+  }
+
   function addScore($array){
     array_push($this -> scores, $array);
   }
@@ -113,15 +117,3 @@ class Bdd{
 
 $bd = new Bdd();
 $bd -> selectScore();
-
-
-
-
-
-
-
-
-
-
-?>
-
