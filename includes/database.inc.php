@@ -1,7 +1,6 @@
 <?php
 
-class Bdd
-{
+class Bdd{
   private $user;
   private $pass;
   private $host;
@@ -9,6 +8,8 @@ class Bdd
   private $connexion;
   private $scores;
   private $messages;
+  private $filter;
+  
 
   public function __construct($user = "root", $pass = "", $host = "localhost", $name = "memorygame")
   {
@@ -19,6 +20,8 @@ class Bdd
     $this->connect();
     $this->scores = [];
     $this->messages = [];
+    $this-> filter = "";
+    
   }
   function getPass()
   {
@@ -42,6 +45,19 @@ class Bdd
   function getScores()
   {
     return $this->scores;
+  }
+
+  function getFilter(){
+    return $this -> filter;
+  }
+
+  function addFilter($filter){
+
+    $this -> filter.= $filter;
+  }
+
+  function resetScores(){
+    $this->scores = [];
   }
 
   function getMessages()
@@ -68,38 +84,37 @@ class Bdd
   }
 
 
-  function selectScore($filter = null)
-  {
+  function selectScore(){
     $sql = "SELECT Game.name, Utilisateur.pseudo, difficulty, score, game_date
     FROM Score
     JOIN Utilisateur ON score.player_id = Utilisateur.id
-    JOIN Game ON Score.game_id = Game.id 
-    ORDER BY Game.name, difficulty, score DESC ";
+    JOIN Game ON Score.game_id = Game.id ";
 
-    if ($filter == "jeu") {
-      $sql .= "WHERE Game.name = '' ";
-    } elseif ($filter == "joueur") {
-    } elseif ($filter == "difficulte") {
+    $this -> resetScores();
+    echo $this -> getFilter();
+
+    if(strpos($this -> getFilter(),"WHERE")!==false){ //Filter only where
+      $sql .= $this -> getFilter();
+      $sql .= "ORDER BY Game.name, difficulty, score DESC";
+    }
+    else{
+      
+      $sql .= $this -> getFilter(); //Other cases (only order, both and nothing)
     }
 
 
-    $req = $this->connexion->prepare($sql);
 
-    if ($filter == "jeu") {
-      $sql .= "WHERE Game.name = '' ";
-    } elseif ($filter == "joueur") {
-    } elseif ($filter == "difficulte") {
-    }
-
-
-    $req = $this->connexion->prepare($sql);
-
-    $req->execute();
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
     $all = $req->fetchAll();
-    foreach ($all as $row) {
-      $array = [$row['name'], $row['pseudo'], $row['difficulty'], $row['score'], $row['game_date']];
-      $this->addScore($array);
-    }
+    
+
+      foreach($all as $row){
+        $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
+        $this -> addScore($array);
+      
+      }
+      
   }
 
   function getConnectedPlayers(){

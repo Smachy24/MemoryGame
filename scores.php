@@ -19,32 +19,59 @@
   include "includes/database.inc.php";
   ?>
 
-  <div class="deco-header">
+<div class="deco-header">
     <h2>SCORES</h2>
   </div>
 
-  <section class="filter-box">
+  <aside class="filter-box">
+
     <div class="dropdown">
-      <button class="filter-dropdown-button" type="button">Filter</button>
-      <ul>Jeu
-        <li>Power of memory</li>
-      </ul>
+      <div class="filter-btn">Filtrer</div>
+      <div class="filter-content">
+        <form method="post" action="scores.php">
+          <label>Jeu
+            <input type="checkbox" name="filter-game" value="Jeu">
+          </label>
 
-      <ul>Joueur
-        <li>Power of memory</li>
-        <li>Power of memory</li>
-        <li>Power of memory</li>
-      </ul>
+          <div class="option-dropdown">Score
 
-      <ul>Difficulté
-        <li>Facile</li>
-        <li>Intermédiaire</li>
-        <li>Expert</li>
-        <li>Impossible</li>
-      </ul>
+            <div class="option-dropdown-content">
+
+              <label>Du plus élevé
+                <input type="radio" name="order" value="more">
+              </label>
+              <label>Du plus faible
+                <input type="radio" name="order" value="less">
+              </label>
+
+            </div>
+
+          </div>
+
+          <div class="option-dropdown">Difficulté
+            <div class="option-dropdown-content">
+
+              <label>Facile
+                <input type="radio" name="difficulty" value="easy">
+              </label>
+              <label>Intermédiaire
+                <input type="radio" name="difficulty" value="medium">
+              </label>
+
+              <label>Expert
+                <input type="radio" name="difficulty" value="expert">
+              </label>
+              <label>Impossible
+                <input type="radio" name="difficulty" value="impossible">
+              </label>
+            </div>
+          </div>
+      </div>
     </div>
-
-  </section>
+    <input class="pseudo-research" name="pseudo" type="text" placeholder="Pseudo...">
+    <button type="submit" name="submit">Rechercher</button>
+    </form>
+  </aside>
 
   <section class="scores-table">
     <table>
@@ -61,17 +88,61 @@
 
         <?php
 
+        if (isset($_POST["submit"])) {
 
+          $bd->resetScores(); //On reset le contenu du tableau contenant les scores afin de pouvoir afficher les scores filtrés
 
-        for ($a = 0; $a < count($bd->getScores()); $a++) {
+          if (isset($_POST["difficulty"])) { //Si l'user décide de filtrer par les difficultés, on sélectione les scores correspondants 
+            
+            switch ($_POST["difficulty"]) {
+              
+              case 'easy':
+                
+                $bd->addFilter("WHERE difficulty = \"easy\"");
+                $bd->selectScore();
+                break;
+              case 'medium':
+                $bd->addFilter("WHERE difficulty = \"medium\"");
+                $bd->selectScore();
+                break;
+              case 'expert':
+                $bd->addFilter("WHERE difficulty = \"expert\"");
+                $bd->selectScore();
+                break;
+              case 'impossible':
+                $bd->addFilter("WHERE difficulty = \"impossible\"");
+                $bd->selectScore();
+                break;
+
+              default:
+                $bd->selectScore();
+                break;
+            }
+          }if(isset($_POST["order"])){
+            if($_POST["order"] =='more'){
+              $bd->addFilter("ORDER BY Game.name,score DESC, difficulty");
+              $bd->selectScore();
+            }
+            elseif($_POST["order"] =='less'){
+              $bd->addFilter("ORDER BY Game.name,score ASC, difficulty ");
+              $bd->selectScore();
+          }
+        }
+      }
+          else {  //Sinon afficher les scores sans filtres
+            
+            $bd->addFilter(" ORDER BY game_date DESC ");
+            $bd->selectScore();
+          }
+        
+
+        for ($a = 0; $a < count($bd->getScores()); $a++) { //Affichage des scores
           echo "<tr>";
           for ($b = 0; $b < count($bd->getScores()[$a]); $b++) {
             echo "<td>" . $bd->getScores()[$a][$b] . "</td>";
           }
           echo "</tr>";
         }
-
-
         ?>
 
 
