@@ -203,6 +203,7 @@ class Bdd{
     $r = $all[0][0];
     return $r;
   }
+  
 
   function getGamesPlayed(){
     /**

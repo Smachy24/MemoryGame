@@ -46,31 +46,38 @@
       $password_error = "";
       $same_password ="";
 
+      ?>
+
+      <p class="mess-erreur"><?php
       if(!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)){//On vérifie si le mail n'est pas valide
         $mail_error = "<p class='mess-erreur'>Erreur : Veuillez renseigner une adresse email valide !</p>";
         $bool=false;
-      }
+      }?>
+      </p>
+      
+      <p class="mess-erreur"><?php
       if(strlen( $_POST["pseudo"]) < 4){ //On vérfie si le pseudo < 4 caractères 
-        $pseudo_error = "<p class='mess-erreur'>Erreur : Votre pseudo doit faire minimum 4 caractères !</p>";
+        $pseudo_error = "<p class='mess-erreur'>Erreur : Votre pseudo doit faire minimum 4 caractères</p>";
         $bool=false;
-      }
+      }?>
+      </p>
+
+      <p class="mess-erreur"><?php
       if (!$uppercase || !$number || !$special_character){ // verifie si le mdp ne correspond pas a ces prerequis
         $password_error = "<p class='mess-erreur'>Erreur : Votre mot de passe doit faire minimum 8 caractères, contenir au moins 1 majuscule, 1 caractère spécial et 1 chiffre !</p>";
         $bool=false;
-      }
+      }?>
+      </p>
 
+      <p class="mess-erreur"><?php
       if($_POST["password"] != $_POST["confirmPassword"]){//On compare les deux mdp
         $same_password = "<p class='mess-erreur'>Erreur : Votre mot de passe doit être identique !</p>";
         $bool=false;
-      }
+      }?>
+      </p>
 
 
-
-    }
-  
-    
-    
-    ?>
+    <?php } ?>
 
 
 <div class="container">
@@ -113,20 +120,22 @@
             if(isset($_POST["submit"])){ // On affiche l'erreur ("" si pas d'erreur)
               echo $same_password; 
               
-            }
+            }?>
             
-            
+            <p class="mess-validation"><?php
             if(isset($_POST["submit"]) && $bool){  //On fait la requete que s'il n'y a pas d'erreurs
  
-              echo "<p class='mess-erreur'>Votre compte à bien été créé</p>";
-              
+              echo "<p class='mess-validation'>Votre compte à bien été créé</p>";
+            ?></p>
+            
+            <?php
               $date = "CURRENT_TIMESTAMP()";
      
 
              
               
               $sql="INSERT INTO Utilisateur (email, password, pseudo, inscription_date) VALUES ('".$_POST["mail"] . "','".$_POST["password"] . "','" .$_POST["pseudo"] . "'," .$date . ")";
-             
+              
 
               $req = $bd->getConnect()->prepare($sql);
               $req->execute();
