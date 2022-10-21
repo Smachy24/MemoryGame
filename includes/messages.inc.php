@@ -2,14 +2,13 @@
 
 include "database.inc.php";
 
-if (isset($_POST["submit"])) {
+if (!empty($_POST["submit"]) && !empty($_POST["userMessage"])) {
     $bd->sendMessage(
         1,
         $_SESSION["id"],
         $_POST["userMessage"]
     );
-    var_dump($_SESSION["id"]);
-    unset($_POST["submit"]);
+   
 }
 
 $bd->getAllMessages();

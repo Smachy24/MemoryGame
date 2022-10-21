@@ -345,6 +345,7 @@ class Bdd{
     $req = $this->connexion->prepare("
     SELECT *
     FROM message
+    ORDER BY message_date ASC
     ");
     $req->execute();
     $allMessages = $req->fetchAll();
@@ -371,8 +372,7 @@ class Bdd{
   {
     $req = $this->connexion->prepare("
     INSERT INTO Message(id_game, id_sender, message)
-    VALUES(".$id_game.",". $id_sender.",".$message.")
-    ");
+    VALUES(".$id_game.",". $id_sender.",'".$message."')");
     $req->execute();
   }
 }

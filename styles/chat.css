@@ -135,7 +135,7 @@ body {
 .send-message {
   margin: 20px 20px 0 20px;
   display: flex;
-  position: absolute;
+  
   bottom: 30px;
   width: 90%;
   justify-content: space-between;

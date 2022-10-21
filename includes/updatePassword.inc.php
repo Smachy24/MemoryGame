@@ -1,5 +1,4 @@
 <?php
-var_dump($_SESSION["mail"]);
 
 if (
     isset($_POST["submitUpdatePassword"])

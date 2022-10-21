@@ -156,6 +156,7 @@
         <form class="send-message" method="POST">
           <input placeholder="Votre message..." type="text" class="text-input" name="userMessage">
           <button class="send-message-text" type="submit" name="submit">Envoyer</button>
+        </form>
       </div>
       </div>
     </aside>
