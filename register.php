@@ -122,10 +122,12 @@
               echo "<p class='mess-erreur'>Votre compte à bien été créé</p>";
               
               $date = "CURRENT_TIMESTAMP()";
-              $id= 20;
+     
+
+             
               
-              $sql="INSERT INTO Utilisateur (id, email, password, pseudo, inscription_date) VALUES (".$id .",'" .$_POST["mail"] . "','".$_POST["password"] . "','" .$_POST["pseudo"] . "'," .$date . ")";
-        
+              $sql="INSERT INTO Utilisateur (email, password, pseudo, inscription_date) VALUES ('".$_POST["mail"] . "','".$_POST["password"] . "','" .$_POST["pseudo"] . "'," .$date . ")";
+              echo $sql;
 
               $req = $bd->getConnect()->prepare($sql);
               $req->execute();
