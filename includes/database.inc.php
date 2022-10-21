@@ -102,6 +102,56 @@ class Bdd
     }
   }
 
+  function getConnectedPlayers(){
+    $sql = "SELECT COUNT(id) FROM Utilisateur" ;
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
+  function getGamesPlayed(){
+    $sql = "SELECT COUNT(id) FROM Score";
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
+  function getBestScore(){
+    $sql = "SELECT score FROM Score ORDER BY score DESC LIMIT 1";
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
+  function getMessageCount(){
+    $sql = "SELECT COUNT(id) FROM Message" ;
+    $req = $this -> connexion-> prepare($sql);
+    $req -> execute();
+    $all = $req->fetchAll();
+    
+    $r = $all[0][0];
+    return $r;
+  }
+
+
+
+
+
+
+
+
+
+
+
   function selectUser($userIdentifier)
   {
     $req = $this->connexion->prepare("
@@ -185,11 +235,11 @@ class Bdd
     }
   }
 
-  function sendMessage($id, $id_game, $id_sender, $message, $message_date)
+  function sendMessage()
   {
     $req = $this->connexion->prepare('
     INSERT INTO Message(id_game, id_sender, message)
-    VALUES(1, 12, "Salut")
+    VALUES(1, 21, "Salut")
     ');
     $req->execute();
   }

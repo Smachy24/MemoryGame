@@ -14,13 +14,10 @@
   
   <section class="landing-page">
 
-  <?php
-    //Déconnexion de la session
-    include "includes/session.inc.php";
+  <?php include "includes/session.inc.php";
     include "view/header.php"; //inclure le header
-
-
-    ?>
+  include "includes/database.inc.php";
+  ?>
 
     <section class="home">
       <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
@@ -83,10 +80,19 @@
     <section class="games-status">
       <img src="assets/watch-dogs.jpg" alt="Fond d'écran watch dogs 2">
       <div class="game-stats">
-        <div class="box">310 <span>Parties Jouées</span></div>
-        <div class="box">1020 <span>Joueurs Connectés</span></div>
-        <div class="box">10 sec <span>Temps Records</span></div>
-        <div class="box">21 300 <span>Joueurs inscrits</span></div>
+        <div class="box">
+        <?php echo $bd -> getGamesPlayed(); ?>
+          <span>Parties Jouées</span></div>
+        
+          <div class="box">  
+        <?php echo $bd -> getConnectedPlayers(); ?>
+        <span>Joueurs inscrits</span></div>
+        <div class="box">
+        <?php echo $bd -> getBestScore(); ?>
+        <span>Meilleur score</span></div>
+        <div class="box">
+        <?php echo $bd -> getMessageCount(); ?>  
+        <span>Messages</span></div>
       </div>
     </section>
 

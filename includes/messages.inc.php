@@ -42,4 +42,4 @@ foreach ($allDbMessage as $messages) {
 }
 
 ?>
-( ! ) Notice: Undefined index: pseudo in C:\wamp64\www\MemoryGame\includes\messages.inc.php on line 36
+
