@@ -15,7 +15,13 @@
   </head>
 
   <body>
-  <?php include "view/header.php" //inclure le header ?>
+  <?php
+    //Déconnexion de la session
+    include "includes/session.inc.php";
+    include "view/header.php"; //inclure le header
+
+
+    ?>
 
     <main>
       <div class="deco-header">

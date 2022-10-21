@@ -13,7 +13,13 @@
 </head>
 <body>
 
-<?php include "view/header.php" //inclure le header ?>
+<?php
+    //Déconnexion de la session
+    include "includes/session.inc.php";
+    include "view/header.php"; //inclure le header
+
+
+    ?>
 
   <div class="deco-header">
     <h2>THE MEMORY GAME</h2>

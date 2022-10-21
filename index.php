@@ -14,7 +14,13 @@
   
   <section class="landing-page">
 
-  <?php include "view/header.php" //inclure le header ?>
+  <?php
+    //Déconnexion de la session
+    include "includes/session.inc.php";
+    include "view/header.php"; //inclure le header
+
+
+    ?>
 
     <section class="home">
       <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
