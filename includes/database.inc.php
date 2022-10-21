@@ -47,6 +47,10 @@ class Bdd{
     return $this->scores;
   }
 
+  function getConnect(){
+    return $this -> connexion;
+  }
+
   function getFilter(){
     return $this -> filter;
   }
