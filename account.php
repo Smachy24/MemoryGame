@@ -14,8 +14,10 @@
 
 <body>
   <?php
-  include "includes/session.inc.php";
+  include "includes/updateMail.inc.php";
+  include "includes/updatePassword.inc.php";
   include "view/header.php"; //inclure le header
+
   ?>
   <main>
     <div class="deco-header">
