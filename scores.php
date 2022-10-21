@@ -92,9 +92,11 @@
           $bd->resetScores(); //On reset le contenu du tableau contenant les scores afin de pouvoir afficher les scores filtrés
 
           if (isset($_POST["difficulty"])) { //Si l'user décide de filtrer par les difficultés, on sélectione les scores correspondants 
-
+            
             switch ($_POST["difficulty"]) {
+              
               case 'easy':
+                
                 $bd->addFilter("WHERE difficulty = \"easy\"");
                 $bd->selectScore();
                 break;
@@ -117,20 +119,21 @@
             }
           }if(isset($_POST["order"])){
             if($_POST["order"] =='more'){
-              $bd->addFilter("ORDER BY Game.name, difficulty, score DESC");
+              $bd->addFilter("ORDER BY Game.name,score DESC, difficulty");
               $bd->selectScore();
             }
             elseif($_POST["order"] =='less'){
-              $bd->addFilter("ORDER BY Game.name, difficulty, score ASC");
+              $bd->addFilter("ORDER BY Game.name,score ASC, difficulty ");
               $bd->selectScore();
           }
         }
-          
+      }
           else {  //Sinon afficher les scores sans filtres
-
+            
+            $bd->addFilter(" ORDER BY game_date DESC ");
             $bd->selectScore();
           }
-        }
+        
 
         for ($a = 0; $a < count($bd->getScores()); $a++) { //Affichage des scores
           echo "<tr>";

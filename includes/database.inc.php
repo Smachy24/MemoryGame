@@ -83,12 +83,14 @@ class Bdd{
     JOIN Game ON Score.game_id = Game.id ";
 
     $this -> resetScores();
-    
-    if(strpos($this -> getFilter(),"WHERE")){ //Filter only where
+    echo $this -> getFilter();
+
+    if(strpos($this -> getFilter(),"WHERE")!==false){ //Filter only where
       $sql .= $this -> getFilter();
       $sql .= "ORDER BY Game.name, difficulty, score DESC";
     }
     else{
+      
       $sql .= $this -> getFilter(); //Other cases (only order, both and nothing)
     }
 
