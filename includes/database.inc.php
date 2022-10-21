@@ -20,7 +20,7 @@ class Bdd{
     $this->connect();
     $this->scores = [];
     $this->messages = [];
-    $this-> filter = "";
+    $this->filter = "";
     
   }
   function getPass()
@@ -91,7 +91,7 @@ class Bdd{
     JOIN Game ON Score.game_id = Game.id ";
 
     $this -> resetScores();
-    echo $this -> getFilter();
+
 
     if(strpos($this -> getFilter(),"WHERE")!==false){ //Filter only where
       $sql .= $this -> getFilter();
@@ -101,10 +101,11 @@ class Bdd{
       
       $sql .= $this -> getFilter(); //Other cases (only order, both and nothing)
     }
-
+    echo $sql;
 
 
     $req = $this -> connexion-> prepare($sql);
+    
     $req -> execute();
     $all = $req->fetchAll();
     
