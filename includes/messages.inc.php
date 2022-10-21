@@ -4,12 +4,11 @@ include "database.inc.php";
 
 if (isset($_POST["submit"])) {
     $bd->sendMessage(
-        3,
         1,
         $_SESSION["id"],
-        $_POST["userMessage"],
-        "2022-10-17 16:01:07"
+        $_POST["userMessage"]
     );
+    var_dump($_SESSION["id"]);
     unset($_POST["submit"]);
 }
 

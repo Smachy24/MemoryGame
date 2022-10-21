@@ -105,7 +105,7 @@ class Bdd{
       
       $sql .= $this -> getFilter(); //Other cases (only order, both and nothing)
     }
-    echo $sql;
+    
 
 
     $req = $this -> connexion-> prepare($sql);
@@ -255,12 +255,12 @@ class Bdd{
     }
   }
 
-  function sendMessage()
+  function sendMessage($id_game,$id_sender, $message)
   {
-    $req = $this->connexion->prepare('
+    $req = $this->connexion->prepare("
     INSERT INTO Message(id_game, id_sender, message)
-    VALUES(1, 21, "Salut")
-    ');
+    VALUES(".$id_game.",". $id_sender.",".$message.")
+    ");
     $req->execute();
   }
 }

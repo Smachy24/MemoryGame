@@ -12,11 +12,13 @@ body {
   right: 50px;
   z-index: 2;
   transition: height 0.5s ease-in-out 2s;
+  background-color: #1a1933;
 }
 
 .chat-box:hover {
   height: 500px;
   transition: height 0.5s;
+  overflow-y: scroll;
 }
 
 .chat {
@@ -24,7 +26,6 @@ body {
   flex-direction: column;
   width: 400px;
   height: 500px;
-  background-color: #1a1933;
   border-radius: 10px;
   position: relative;
 }

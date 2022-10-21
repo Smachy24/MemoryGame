@@ -126,7 +126,7 @@
              
               
               $sql="INSERT INTO Utilisateur (email, password, pseudo, inscription_date) VALUES ('".$_POST["mail"] . "','".$_POST["password"] . "','" .$_POST["pseudo"] . "'," .$date . ")";
-              echo $sql;
+             
 
               $req = $bd->getConnect()->prepare($sql);
               $req->execute();
