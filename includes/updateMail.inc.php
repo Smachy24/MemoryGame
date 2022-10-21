@@ -9,7 +9,7 @@ if (
     && isset($_POST["newemail"])
     && ($_POST["password"] == $_POST["confirmpassword"])
 ) {
-    $userData = $bd->selectUser($_SESSION["email"]);
+    $userData = $bd->selectUser($_SESSION["mail"]);
     if ($userData["password"] == $_POST["password"]) {
         $bd->updateEmail($_POST["newemail"], $userData["id"]);
         $_SESSION["mail"] = $_POST["newemail"];

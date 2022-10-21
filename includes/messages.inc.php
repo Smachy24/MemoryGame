@@ -26,12 +26,14 @@ foreach ($allDbMessage as $messages) {
                 <p class="message-time"><?= $messages["message_date"] ?></p>
             </div>
         </div>
-    <?php } else { ?>
+    <?php } else {
+        $sender = $bd->selectUserById($messages["id_sender"]);
+    ?>
 
         <div class="message-received">
             <img class="profile-picture" src="assets/profile-picture.jpg" alt="profile picture">
             <div class="message-box">
-                <p class="surname">Arthur</p>
+                <p class="surname"><?= $sender["pseudo"] ?></p>
                 <p class="message-received-text"><?= $messages["message"] ?></p>
                 <p class="message-time"><?= $messages["message_date"] ?></p>
             </div>

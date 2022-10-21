@@ -124,6 +124,28 @@ class Bdd
     return $userDataArray;
   }
 
+  function selectUserById($userIdentifier)
+  {
+    $req = $this->connexion->prepare("
+    SELECT *
+    FROM utilisateur
+    WHERE id = ?
+    ");
+    $req->execute([$userIdentifier]);
+    $userData = $req->fetchAll();
+    $userDataArray = [];
+    foreach ($userData as $data) {
+      $userDataArray = [
+        'email' => $data["email"],
+        'id' => $data["id"],
+        'pseudo' => $data["pseudo"],
+        'password' => $data["password"]
+      ];
+    }
+    return $userDataArray;
+  }
+
+
   function updateEmail($newMail, $userId)
   {
     $req = $this->connexion->prepare("
@@ -167,8 +189,8 @@ class Bdd
   function sendMessage($id, $id_game, $id_sender, $message, $message_date)
   {
     $req = $this->connexion->prepare('
-    INSERT INTO Message(id, id_game, id_sender, message)
-    VALUES(53, 1, 12, "Salut")
+    INSERT INTO Message(id_game, id_sender, message)
+    VALUES(1, 12, "Salut")
     ');
     $req->execute();
   }
