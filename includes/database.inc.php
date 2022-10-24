@@ -9,6 +9,7 @@ class Bdd{
   private $scores;
   private $messages;
   private $filter;
+  private $order;
   
 
   public function __construct($user = "root", $pass = "", $host = "localhost", $name = "memorygame")
@@ -21,6 +22,7 @@ class Bdd{
     $this->scores = [];
     $this->messages = [];
     $this->filter = "";
+    $this ->order = "";
     
   }
   function getPass()
@@ -131,6 +133,14 @@ class Bdd{
    */
   {
     array_push($this->scores, $array);
+  }
+
+  function getOrder(){
+    /**
+     * Return selected order
+     * @param: none
+     * @return : String order -> selected order
+     */
   }
 
   function connect()
