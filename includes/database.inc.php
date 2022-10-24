@@ -101,7 +101,9 @@ class Bdd{
    * @return : none
    */
   {
-
+    if($this -> filter != ""){
+      $this -> filter.= " AND ";
+    }
     $this -> filter.= $filter;
   }
 
@@ -141,6 +143,18 @@ class Bdd{
      * @param: none
      * @return : String order -> selected order
      */
+    return $this -> order;
+  }
+
+  function addOrder($order)
+  /**
+   * Add order to $this -> order 
+   * @param : String $order -> order to add to select request
+   * @return : none
+   */
+  {
+
+    $this -> order.= $order;
   }
 
   function connect()
@@ -174,29 +188,18 @@ class Bdd{
     JOIN Game ON Score.game_id = Game.id ";
 
     $this -> resetScores();
+    $sql .= $this -> getFilter(); 
+    $sql .= $this -> getOrder(); 
 
-
-    if(strpos($this -> getFilter(),"WHERE")!==false){ //Filter only where
-      $sql .= $this -> getFilter();
-      $sql .= "ORDER BY Game.name, difficulty, score DESC";
-    }
-    else{
-      
-      $sql .= $this -> getFilter(); //Other cases (only order, both and nothing)
-    }
-    
     $req = $this -> connexion-> prepare($sql);
-    
     $req -> execute();
-    $all = $req->fetchAll();
-    
+    $all = $req->fetchAll();  
 
       foreach($all as $row){
         $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
         $this -> addScore($array);
       
       }
-      
   }
 
   function getConnectedPlayers(){
@@ -390,4 +393,3 @@ class Bdd{
 
 
 $bd = new Bdd();
-$bd->selectScore();

@@ -88,7 +88,10 @@
 
         <?php
 
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["submit"])  && (
+          !empty($_POST["order"]) || !empty($_POST["difficulty"]) || !empty($_POST["pseudo"])
+        )//Because if button was clicked there was a order       
+        ) {
 
           $bd->resetScores(); //On reset le contenu du tableau contenant les scores afin de pouvoir afficher les scores filtrés
 
@@ -97,41 +100,51 @@
             switch ($_POST["difficulty"]) {
               
               case 'easy':
-                
                 $bd->addFilter("WHERE difficulty = \"easy\"");
-                $bd->selectScore();
                 break;
               case 'medium':
                 $bd->addFilter("WHERE difficulty = \"medium\"");
-                $bd->selectScore();
                 break;
               case 'expert':
                 $bd->addFilter("WHERE difficulty = \"expert\"");
-                $bd->selectScore();
                 break;
               case 'impossible':
                 $bd->addFilter("WHERE difficulty = \"impossible\"");
-                $bd->selectScore();
-                break;
-
-              default:
-                $bd->selectScore();
                 break;
             }
-          }if(isset($_POST["order"])){
+          }
+
+          if(isset($_POST["pseudo"]) && !empty($_POST["pseudo"])){
+
+            if(strpos($bd->getFilter(),"WHERE")===0){
+              
+              $bd->addFilter(" pseudo =\"".$_POST["pseudo"]."\"");
+            }
+            
+            else{
+
+              $bd->addFilter("WHERE pseudo =\"".$_POST["pseudo"]."\"");
+            }
+           
+          }
+
+          if(isset($_POST["order"])){
             if($_POST["order"] =='more'){
-              $bd->addFilter("ORDER BY Game.name,score DESC, difficulty");
-              $bd->selectScore();
+              $bd->addOrder(" ORDER BY Game.name,score DESC, difficulty");
             }
             elseif($_POST["order"] =='less'){
-              $bd->addFilter("ORDER BY Game.name,score ASC, difficulty ");
-              $bd->selectScore();
+              $bd->addOrder(" ORDER BY Game.name,score ASC, difficulty ");
+              
           }
+          
+        }else{
+          $bd->addOrder(" ORDER BY Game.name,score DESC, difficulty");
         }
+        
+        $bd->selectScore();
       }
-          else {  //Sinon afficher les scores sans filtres
-            
-            $bd->addFilter(" ORDER BY game_date DESC ");
+          else {  //Sinon afficher les scores sans filtres        
+            $bd->addOrder(" ORDER BY Game.name,difficulty, score DESC ");
             $bd->selectScore();
           }
         
