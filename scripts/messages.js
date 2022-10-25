@@ -1,6 +1,3 @@
-const createMessage = document.querySelectorAll("#message-send")
-console.log(createMessage);
-
 function createFetchOptions(bodyData){
   return {
     method: 'POST',
@@ -11,8 +8,24 @@ function createFetchOptions(bodyData){
   }
 }
 
+function getMessages(){
+  fetch('./includes/getMessage.php')
+  .then(result =>  { return result.json()   
+})
+  .then(data => {
+    for(let row of data){
+      console.log(row.id);
+    }
+})
+}
 
-createMessage.addEventListener('submit', (event) => {
+function insertMessage(){
+  
+}
+
+
+
+/*createMessage.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const inputs = event.target.querySelectorAll('input');
@@ -24,10 +37,8 @@ createMessage.addEventListener('submit', (event) => {
   }
   fetch('../includes/messages.inc.php', createFetchOptions(formData))
   
-  .then(result =>  {result.json()   
+  .then(result =>  { return result.json()   
   })
   .then(data => {
-    console.log(data)
+    console.log(data)*/
 
-  })
-})

@@ -373,9 +373,10 @@ class Bdd{
       ];
       array_push($this->messages, $messagesArray);
     }
+    echo json_encode($this -> messages);
   }
 
-  function sendMessage($id_game,$id_sender, $message)
+  function sendMessage($id_game,$id_sender, $message){
   /**
    * SQL insert into Message's table a new message
    * @param: int $id_game -> game'id
@@ -383,13 +384,24 @@ class Bdd{
    * @param: String $message -> message
    * @return: none
    */
-  {
-    $req = $this->connexion->prepare("
+  
+   /* $req = $this->connexion->prepare("
     INSERT INTO Message(id_game, id_sender, message)
     VALUES(".$id_game.",". $id_sender.",'".$message."')");
-    $req->execute();
-  }
-}
+    $req->execute();*/
 
+    
+
+    $sql = "INSERT INTO Message(id_game, id_sender, message)
+    VALUES(".$id_game.",". $id_sender.",'".$message."')";
+
+    $req = $this -> getConnect() -> prepare($sql);
+    $req -> execute();
+
+    echo json_encode(['success' => 'ok']);
+
+  
+}
+}
 
 $bd = new Bdd();

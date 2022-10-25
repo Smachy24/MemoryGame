@@ -154,7 +154,7 @@
         
 
         <form class="send-message" method="POST">
-          <input placeholder="Votre message..." type="text" class="text-input" name="userMessage">
+          <input placeholder="Votre message..." type="text" class="text-input" name="userMessage" id="usermsg">
           <button class="send-message-text" type="submit" name="submit">Envoyer</button>
         </form>
       </div>
@@ -170,5 +170,6 @@
 
 </body>
 
+<script src="scripts/messages.js"></script>
 
 </html>
