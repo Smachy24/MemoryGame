@@ -106,7 +106,11 @@
           ?>
 
           <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
-          <br />
+          
+          <div class="container2">
+            <div id="jauge"></div>
+          </div>
+          <div id="cont"></div>
 
           <?php
             if(isset($_POST["submit"])){ // On affiche l'erreur ("" si pas d'erreur)
@@ -160,6 +164,7 @@
 
   <?php include "view/footer.php" //inclure le footer 
   ?>
+  <script src= "script/register.js"></script>
 </body>
 
 </html>
