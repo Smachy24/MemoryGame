@@ -14,8 +14,9 @@
 
 <body>
   <?php
-  include "view/header.php"; //inclure le header
   include "includes/database.inc.php";
+  include "view/header.php"; //inclure le header
+  
   
   
 

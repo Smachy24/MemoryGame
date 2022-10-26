@@ -48,14 +48,7 @@ function getMessages(){
       let chat = document.getElementById("chat");
       chat.insertAdjacentHTML("beforeend", childElement);
       }
-       
-        
-        
 
-      
-      console.log(row.user.pseudo);
-      console.log(row.message_date);
-      console.log(row.message);
     }
 })
 }
