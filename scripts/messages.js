@@ -13,11 +13,46 @@ function getMessages(){
   .then(result =>  { return result.json()   
 })
   .then(data => {
+    
     for(let row of data){
+      /*let childElement = `<div class="message-send">
+      <div class="message-box">
+          <p class="surname">${row.user.pseudo}</p>
+          <p class="message-send-text">${row.message}</p>
+          <p class="message-time">${row.message_date.substring(11,16)}</p>
+      </div>
+  </div>`
+      let chat = document.getElementById("chat")
+      chat.insertAdjacentHTML("beforeend", childElement);*/
 
-      if(row.color =="gray"){
-        
+      if(row.color =="orange"){
+        let childElement = `<div class="message-send">
+      <div class="message-box">
+          <p class="surname">${row.user.pseudo}</p>
+          <p class="message-send-text">${row.message}</p>
+          <p class="message-time">${row.message_date.substring(11,16)}</p>
+      </div>
+  </div>`
+      let chat = document.getElementById("chat")
+      chat.insertAdjacentHTML("beforeend", childElement);
       }
+      else{
+        let childElement = `<div class="message-received">
+        <img class="profile-picture" src="./assets/profile-picture.jpg" alt="profile picture">
+        <div class="message-box">
+            <p class="surname">${row.user.pseudo}</p>
+            <p class="message-received-text">${row.message}</p>
+            <p class="message-time">${row.message_date.substring(11,16)}</p>
+        </div>
+        </div>`
+      let chat = document.getElementById("chat");
+      chat.insertAdjacentHTML("beforeend", childElement);
+      }
+       
+        
+        
+
+      
       console.log(row.user.pseudo);
       console.log(row.message_date);
       console.log(row.message);

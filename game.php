@@ -141,8 +141,8 @@
     </div>
 
     <aside class="chat-box">
-      <div class="chat">
-        <div class="chat-head">
+      <div class="chat" id="chat">
+        <div class="chat-head" >
           <div class="profile">
             <img class="my-profile-picture" src="assets/profile-picture.jpg" alt="profile picture">
             <img class="green-circle-icon" src="assets/green-circle-icon.jpg" alt="green circle icon">
