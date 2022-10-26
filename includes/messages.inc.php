@@ -1,7 +1,6 @@
 <?php
 
-include "database.inc.php";
-
+/*
 if (isset($_POST["submit"]) && !empty($_POST["userMessage"])) {
 
     $id_game = 1;

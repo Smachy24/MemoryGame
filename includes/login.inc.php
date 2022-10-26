@@ -1,7 +1,7 @@
 <?php
 
 require "database.inc.php";
-include "session.inc.php";
+
 
 $sucessMessage = "Vous êtes connecté !";
 $errors = "Email ou mot de passe incorrect";

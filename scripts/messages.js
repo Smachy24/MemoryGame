@@ -14,7 +14,13 @@ function getMessages(){
 })
   .then(data => {
     for(let row of data){
-      console.log(row.id);
+
+      if(row.color =="gray"){
+        
+      }
+      console.log(row.user.pseudo);
+      console.log(row.message_date);
+      console.log(row.message);
     }
 })
 }

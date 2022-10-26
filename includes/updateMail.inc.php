@@ -1,6 +1,6 @@
 <?php
 include "database.inc.php";
-include "includes/session.inc.php";
+
 
 if (
     isset($_POST["submitUpdateEmail"])

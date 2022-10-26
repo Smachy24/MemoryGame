@@ -1,5 +1,5 @@
 <?php
-
+include "session.inc.php";
 class Bdd{
   private $user;
   private $pass;
@@ -371,9 +371,18 @@ class Bdd{
         "message" => $messages["message"],
         "message_date" => $messages["message_date"]
       ];
+      if ($messages["id_sender"] == $_SESSION["id"]){
+        $messagesArray["color"] = "orange";
+      }
+      else{
+        $messagesArray["color"] = "gray";
+      } 
+      $messagesArray["user"] = $this->selectUserById($messages["id_sender"]);
       array_push($this->messages, $messagesArray);
     }
     echo json_encode($this -> messages);
+
+      
   }
 
   function sendMessage($id_game,$id_sender, $message){
