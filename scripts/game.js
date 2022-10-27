@@ -256,7 +256,6 @@ function memoryMechanism (){
             isVictory = allCase.every( (el) => {
                 return (el.style.opacity == "1");
             })
-            timer();
             if(isVictory == true){
                 console.log("Victoire");
                 clearInterval(timer());
