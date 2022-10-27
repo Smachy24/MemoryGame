@@ -17,7 +17,6 @@ async function fetchPokemon (numbers){
             pokemonImage.push(pokemonDataImage);
             pokemonImage.push(pokemonDataImage);
         }
-        console.log(pokemonImage);
     }
     
     return shuffleArray(pokemonImage);
@@ -100,8 +99,8 @@ function generateMemoryGame (difficulty){
     let numbersOfImage;
     switch (difficulty) {
         case 'easy':
-            generateGrid(5,5);
-            numbersOfImage = 10;
+            generateGrid(3,12);
+            numbersOfImage = 18;
             break;
         case 'medium':
             generateGrid(4,16);
@@ -120,7 +119,6 @@ function generateMemoryGame (difficulty){
             break;
     }
     loadImage(numbersOfImage);
-    startTimer();
     memoryMechanism();
 };
 
@@ -173,20 +171,19 @@ async function loadImage(numbers){
 
 function selectAllCase (){
     allImgCase = document.querySelectorAll('.imgcase');
-    return allImgCase;
+    return Array.from(allImgCase);
 }
 
 /* TIMER INI =================================================================================================*/
+let hours = document.querySelector("#hours");
+let minutes = document.querySelector("#minutes");
+let seconds = document.querySelector("#seconds");
 
-function startTimer (){
-    let hours = document.querySelector("#hours");
-    let minutes = document.querySelector("#minutes");
-    let seconds = document.querySelector("#seconds");
+let hoursValue = 0;
+let minutesValue = 0;
+let secondsValue = 0;
 
-    let hoursValue = 0;
-    let minutesValue = 0;
-    let secondsValue = 0;
-
+const timer = function (){
         setInterval( ()=>{
             if(secondsValue == 59){
                 secondsValue = 0;
@@ -209,7 +206,9 @@ function memoryMechanism (){
     let secondCase;
     let firstCaseImage;
     let secondCaseImage;
-    const allCase = selectAllCase();
+    let allCase = selectAllCase();
+    let isFilled = (el) => el.style.opacity == "1";
+    timer();
     
     allCase.forEach((elCase)=>{
         elCase.addEventListener('click', (e)=>{ //Quand l'utilisateur clique sur une case...
@@ -219,47 +218,68 @@ function memoryMechanism (){
                 firstCase = e.target;
                 firstCaseImage = firstCase.src;
                 e.target.style.pointerEvents = "none"; //On rend l'élément incliquable pour éviter que l'utilisateur clique plusieurs fois sur l'élément en question
-                e.target.style.opacity = "1";
-                e.target.style.transition = "all 0.3s"
-                e.target.style.transform = "rotateY(360deg)"
-            }else{  //Sinon la case que l'utilisateur vient de cliquer va être stocké dans la variable secondCase.
+                rotateCard(e.target);
+            }else if(secondCase == undefined){  //Sinon la case que l'utilisateur vient de cliquer va être stocké dans la variable secondCase.
                 secondCase = e.target;
                 secondCaseImage = secondCase.src;
                 e.target.style.pointerEvents = "none";
-                
-                e.target.style.opacity = "1";
+                rotateCard(e.target);
+            }else{
+                //pass;
             }
 
-            if(secondCase !== undefined){
+            /*if(secondCase !== undefined){
                 secondCase.style.opacity = "1";
-            }
-            
-            setTimeout( () => {
-                if(firstCase !== undefined && secondCase !== undefined){ // Si les deux variables ont une valeur on les compare
+            }*/
+
+            if(firstCase !== undefined && secondCase !==undefined){
+                setTimeout( () => {
                     if(firstCaseImage == secondCaseImage){ // Si les deux ont la même image on augmente le score et on reset les variables 
                         scoreMemory+=1;
                         firstCase = undefined;
                         secondCase = undefined;
                     }else{ //Sinon on réduit le score et on rend les éléments de nouveau cliquable7
-                        
                         scoreMemory-=1;
-                        secondCase.style.opacity = "0";
-                        secondCase.style.pointerEvents = "auto";
-                        firstCase.style.opacity = "0";
-                        firstCase.style.pointerEvents = "auto"; 
+                        if(secondCase != undefined){
+                            rotateCard(secondCase);
+                            secondCase.style.pointerEvents = "auto";
+                        }
+                        if(firstCase != undefined){
+                            rotateCard(firstCase);
+                            firstCase.style.pointerEvents = "auto";
+                        }
                         firstCase = undefined;
-                        secondCase = undefined; 
-                        
-                        
-                        
-                    }}
-            },200)
-            
-
-            scoreGame.innerText = scoreMemory;
-            isVictory = allCase.every((elCase) => elCase.style.opacity == 1); 
+                        secondCase = undefined;  
+                    }
+                },1000)
+            } 
+            isVictory = allCase.every( (el) => {
+                return (el.style.opacity == "1");
+            })
+            timer();
+            if(isVictory == true){
+                console.log("Victoire");
+                clearInterval(timer());
+                hoursValue = 0;
+                minutesValue = 0;
+                secondsValue = 0;
+            }
+            console.log(isVictory);
 
         })
     })
 }
 
+/* ANIMATIONS ====================================================*/
+function rotateCard(card){
+    if(card.style.opacity == 0){
+        card.style.transform = "rotateY(360deg)"
+        card.style.opacity = 1
+        card.style.transition = "all 0.7s"
+
+    } else if(card.style.opacity == 1){
+        card.style.transform = "rotateY(-360deg)"
+        card.style.opacity = 0
+        card.style.transition = "all 0.7s"
+    }
+}
