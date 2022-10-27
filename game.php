@@ -84,8 +84,8 @@
     </div>
 
     <aside class="chat-box">
-      <div class="chat">
-        <div class="chat-head">
+      <div class="chat" id="chat">
+        <div class="chat-head" >
           <div class="profile">
             <img class="my-profile-picture" src="assets/profile-picture.jpg" alt="profile picture">
             <img class="green-circle-icon" src="assets/green-circle-icon.jpg" alt="green circle icon">
@@ -96,8 +96,8 @@
         <?php include "includes/messages.inc.php"; ?>
 
 
-        <form class="send-message" method="POST">
-          <input placeholder="Votre message..." type="text" class="text-input" name="userMessage">
+        <form class="send-message" method="POST" id="chat-form">
+          <input placeholder="Votre message..." type="text" class="text-input" name="usermsg" id="usermsg">
           <button class="send-message-text" type="submit" name="submit">Envoyer</button>
         </form>
       </div>
@@ -114,5 +114,6 @@
 
 </body>
 
+<script src="scripts/messages.js"></script>
 
 </html>

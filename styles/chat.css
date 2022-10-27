@@ -154,5 +154,8 @@ body {
 .send-message-text {
   font-family: "Roboto", sans-serif;
   color: white;
+  background-color: #ec9123;
   font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 5px;
 }

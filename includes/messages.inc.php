@@ -1,13 +1,15 @@
 <?php
 
-include "database.inc.php";
+/*
+if (isset($_POST["submit"]) && !empty($_POST["userMessage"])) {
 
-if (!empty($_POST["submit"]) && !empty($_POST["userMessage"])) {
-    $bd->sendMessage(
-        1,
-        $_SESSION["id"],
-        $_POST["userMessage"]
-    );
+    $id_game = 1;
+    $id_sender = $_SESSION["id"];
+    $message =  $_POST["userMessage"];
+
+    $bd -> sendMessage($id_game, $id_sender, $message);
+
+
    
 }
 
@@ -41,3 +43,4 @@ foreach ($allDbMessage as $messages) {
 
 ?>
 
+<script src ="scripts/messages.js"></script>*/

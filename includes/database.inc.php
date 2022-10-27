@@ -1,5 +1,5 @@
 <?php
-
+include "session.inc.php";
 class Bdd{
   private $user;
   private $pass;
@@ -371,11 +371,21 @@ class Bdd{
         "message" => $messages["message"],
         "message_date" => $messages["message_date"]
       ];
+      if ($messages["id_sender"] == $_SESSION["id"]){
+        $messagesArray["color"] = "orange";
+      }
+      else{
+        $messagesArray["color"] = "gray";
+      } 
+      $messagesArray["user"] = $this->selectUserById($messages["id_sender"]);
       array_push($this->messages, $messagesArray);
     }
+    echo json_encode($this -> messages);
+
+      
   }
 
-  function sendMessage($id_game,$id_sender, $message)
+  function sendMessage($formData){
   /**
    * SQL insert into Message's table a new message
    * @param: int $id_game -> game'id
@@ -383,13 +393,27 @@ class Bdd{
    * @param: String $message -> message
    * @return: none
    */
-  {
-    $req = $this->connexion->prepare("
+  
+   /* $req = $this->connexion->prepare("
     INSERT INTO Message(id_game, id_sender, message)
     VALUES(".$id_game.",". $id_sender.",'".$message."')");
-    $req->execute();
-  }
-}
+    $req->execute();*/
 
+   
+
+    /*$sql = "INSERT INTO Message(id_game, id_sender, message)
+    VALUES(".$id_game.",". $id_sender.",'".$message."')";*/
+
+    $sql = "INSERT INTO Message(id_game, id_sender, message)
+    VALUES(1 ,".$_SESSION["id"]." ,\"".$_POST["usermsg"]."\")";
+
+    $req = $this -> getConnect() -> prepare($sql);
+    $req -> execute();
+
+    
+
+  
+}
+}
 
 $bd = new Bdd();
