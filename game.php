@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/popup.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/game.css">
   <link rel="stylesheet" href="styles/chat.css">
@@ -25,12 +26,7 @@
     <h2>THE MEMORY GAME</h2>
   </div>
 
-  <div class="game-info">
-    <h3 id="score"></h3>
-    <h3><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></h3>
-    <h3 id="click-count"></h3>
 
-  </div>
   <section class="table-features" id="tablefeatures">
 
     <div class="difficulty">
@@ -54,28 +50,57 @@
         </label>
 
       </div>
+    </div>
 
-      <div class="theme">
-        <div id="theme-btn">THEMES</div>
-        <div id="theme-choice" class="inactive">
-          <label class="pokemon">Pokémons
-            <input type="radio" name="theme" value="pokemon">
-          </label>
-          <label class="flags">FLAGS
-            <input type="radio" name="theme" value="flags">
-          </label>
-          <label class="pokemon">Voitures
-            <input type="radio" name="theme" value="voiture">
-          </label>
-        </div>
+    <div class="theme">
+      <div id="theme-btn">THEMES</div>
+      <div id="theme-choice" class="inactive">
+        <label class="pokemon">Pokémons
+          <input type="radio" name="theme" value="pokemon">
+        </label>
+        <label class="flags">Rick et Morty
+          <input type="radio" name="theme" value="rick">
+        </label>
+        <label class="pokemon">Emoji
+          <input type="radio" name="theme" value="emoji">
+        </label>
       </div>
+    </div>
 
-      <button id="playbutton">JOUER</button>
+    <button id="playbutton">JOUER</button>
 
   </section>
 
 
   <main class="game-grid inactive" id="gamegrid">
+    <section class="popup inactive" id="popup">
+
+      <div class="message-div">
+        <p>Bien joué ! Voici ton score</p>
+      </div>
+
+      <div class="stats-div">
+        <div class="scores-div">
+          <h2>Score</h2>
+          <p id="score-popup">8000</p>
+        </div>
+        <div class="time-div">
+          <h2>Temps</h2>
+          <p id="time-popup">1 : 45</p>
+        </div>
+      </div>
+
+      <div class="replay-div">
+        <button class="replay-button" id="replay">Rejouer</button>
+      </div>
+
+    </section>
+    <div class="game-info">
+      <h3 id="score">0</h3>
+      <h3><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></h3>
+      <!--<h3 id="click-count"></h3>-->
+
+    </div>
     <table>
       <tbody id="gamebody">
 
@@ -85,7 +110,7 @@
 
     <aside class="chat-box">
       <div class="chat" id="chat">
-        <div class="chat-head" >
+        <div class="chat-head">
           <div class="profile">
             <img class="my-profile-picture" src="assets/profile-picture.jpg" alt="profile picture">
             <img class="green-circle-icon" src="assets/green-circle-icon.jpg" alt="green circle icon">

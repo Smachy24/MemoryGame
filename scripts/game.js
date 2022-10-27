@@ -22,6 +22,51 @@ async function fetchPokemon (numbers){
     return shuffleArray(pokemonImage);
 }
 
+async function fetchemoji (numbers){
+    const emojiImage = [];
+    
+    for (let i = 0; i <= numbers-1; i++) {
+
+        let emojiIndex = Math.floor(Math.random()*600+1);
+
+        let fetchData = await fetch(`https://api.emojisworld.fr/v1/emojis/${emojiIndex}`);
+        let emojiData = await fetchData.json();
+        console.log(emojiData);
+        //let emojiDataImage = emojiData.image;
+        if(emojiImage.some((el) => el == emojiDataImage)){
+            i--;
+            continue;
+        }else{
+            emojiImage.push(emojiDataImage);
+            emojiImage.push(emojiDataImage);
+        }
+    }
+    //console.log(emojiImage);
+    return shuffleArray(emojiImage);
+}
+
+async function fetchrick (numbers){
+    const rickImage = [];
+    
+    for (let i = 0; i <= numbers-1; i++) {
+
+        let rickIndex = Math.floor(Math.random()*600+1);
+
+        let fetchData = await fetch(`https://rickandmortyapi.com/api/character/${rickIndex}`);
+        let rickData = await fetchData.json();
+        let rickDataImage = rickData.image;
+        if(rickImage.some((el) => el == rickDataImage)){
+            i--;
+            continue;
+        }else{
+            rickImage.push(rickDataImage);
+            rickImage.push(rickDataImage);
+        }
+    }
+    console.log(rickImage);
+    return shuffleArray(rickImage);
+}
+
 function shuffleArray (array){
     for(let i = array.length -1; i > 0;i--){
         let randomIndex = Math.floor(Math.random() * (i+1));
@@ -34,9 +79,6 @@ function shuffleArray (array){
 }
 
 /* DIFFICULTY AND THEME REQUEST ======================================================================== */
-
-const scoreGame = document.querySelector("#score")
-let scoreMemory = 0;
 
 const difficultyBtn = document.querySelector("#difficulty-btn");
 const difficultyChoice = document.querySelector("#difficulty-choice");
@@ -85,7 +127,29 @@ const tablefeatures = document.querySelector("#tablefeatures")
 const gridGame = document.querySelector("#gamegrid");
 const gameBody = document.querySelector("#gamebody");
 
-let isVictory = false;
+
+
+let isVictory = false; //Victory section
+let isTimerStarted = false;
+const victoryPopup = document.querySelector("#popup");
+
+let scorePopup = document.querySelector("#score-popup");//Score section ===============================
+let timePopup = document.querySelector("#time-popup");
+let multiplier;
+const scoreGame = document.querySelector("#score")
+let scoreMemory = 0;
+
+const replayBtn = document.querySelector("#replay");
+
+replayBtn.addEventListener('click', (e)=>{ //Replay =========================================
+    e.preventDefault();
+
+    victoryPopup.classList.toggle("inactive");
+    gridGame.classList.toggle("inactive");
+    tablefeatures.classList.toggle("inactive");
+
+})
+
 
 playButton.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -99,20 +163,24 @@ function generateMemoryGame (difficulty){
     let numbersOfImage;
     switch (difficulty) {
         case 'easy':
-            generateGrid(3,12);
+            generateGrid(4,9);
             numbersOfImage = 18;
+            multiplier = 0.8;
             break;
         case 'medium':
             generateGrid(4,16);
             numbersOfImage = 32;
+            multiplier = 0.8;
             break;
         case 'expert':
             generateGrid(8,18);
             numbersOfImage = 72;
+            multiplier = 1;
             break;
         case 'impossible':
             generateGrid(16,25);
             numbersOfImage = 200;
+            multiplier = 1.8;
             break;
         default:
             console.log("erreur")
@@ -161,8 +229,17 @@ function generateColumn (cols){
 
 async function loadImage(numbers){
     const allCase = selectAllCase();
-    const imagesArray = await fetchPokemon(numbers);
-    
+    let imagesArray;
+    switch (userThemeChoice) {
+        case 'pokemon':
+            imagesArray = await fetchPokemon(numbers);
+            break;
+        case 'rick':
+            imagesArray = await fetchrick(numbers);
+            break;
+        default:
+            break;
+    }
     allCase.forEach((elCase,index) => {
         elCase.src = imagesArray[index];
     })
@@ -173,6 +250,18 @@ function selectAllCase (){
     allImgCase = document.querySelectorAll('.imgcase');
     return Array.from(allImgCase);
 }
+
+function rotateCases (){
+    allCase = document.querySelectorAll('.case')
+    allCase.forEach((el)=>{
+        el.addEventListener('click', (e)=>{
+            e.preventDefault;
+            rotateCard(el);
+        })
+    })
+}
+
+rotateCases();
 
 /* TIMER INI =================================================================================================*/
 let hours = document.querySelector("#hours");
@@ -196,6 +285,8 @@ const timer = function (){
             hours.innerText = hoursValue;
             minutes.innerText = minutesValue;
             seconds.innerText = secondsValue;
+            scoreMemory -= 10;
+            scoreGame.innerText = scoreMemory;
         },1000)
 }
 
@@ -210,9 +301,14 @@ function memoryMechanism (){
     const clickCountText = document.querySelector("#click-count");
     let clickCount = 0;
     let isFilled = (el) => el.style.opacity == "1";
-    timer();
+
     
+
     allCase.forEach((elCase)=>{
+        if(isVictory == false && isTimerStarted == false){
+            timer();
+            isTimerStarted =true;
+        }
         elCase.addEventListener('click', (e)=>{ //Quand l'utilisateur clique sur une case...
             e.preventDefault();
             if(firstCase == undefined){     //Si il n'a toujours pas cliquer sur une case, la variable firstcase va prendre pour valeur la case que l'utilisateur vient de cliquer.
@@ -229,20 +325,19 @@ function memoryMechanism (){
                 //pass;
             }
 
-            /*if(secondCase !== undefined){
-                secondCase.style.opacity = "1";
-            }*/
-
             if(firstCase !== undefined && secondCase !==undefined){
                 setTimeout( () => {
                     if(firstCaseImage == secondCaseImage){ // Si les deux ont la même image on augmente le score et on reset les variables 
-                        scoreMemory+=1;
+                        scoreMemory += (700*multiplier);
+                        scoreGame.innerText = scoreMemory;
+                        console.log(scoreMemory);
                         clickCount++;
                         firstCase = undefined;
                         secondCase = undefined;
                     }else{ //Sinon on réduit le score et on rend les éléments de nouveau cliquable7
                         clickCount++;
-                        scoreMemory-=1;
+                        scoreMemory-= 50;
+                        scoreGame.innerText = scoreMemory;
                         if(secondCase != undefined){
                             rotateCard(secondCase);
                             secondCase.style.pointerEvents = "auto";
@@ -261,11 +356,15 @@ function memoryMechanism (){
                 return (el.style.opacity == "1");
             })
             if(isVictory == true){
-                console.log("Victoire");
                 clearInterval(timer());
+                victoryPopup.classList.toggle("inactive");
+                timePopup.innerText = `${hoursValue} : ${minutesValue} : ${secondsValue}`;
+                scorePopup.innerText = scoreMemory + (700 * multiplier);
                 hoursValue = 0;
                 minutesValue = 0;
                 secondsValue = 0;
+                
+
             }
             console.log(isVictory);
             clickCountText.innerText = clickCount;
