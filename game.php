@@ -28,6 +28,7 @@
   <div class="game-info">
     <h3 id="score"></h3>
     <h3><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></h3>
+    <h3 id="click-count"></h3>
 
   </div>
   <section class="table-features" id="tablefeatures">
