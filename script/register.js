@@ -4,7 +4,7 @@ input.addEventListener("input",test);
 const jauge = document.querySelector("#jauge");
 
 const para = document.createElement("p"); //créé une balise p
-para.innerHTML = ""; // initialise le text dans para
+para.innerText = ""; // initialise le text dans para
 
 
 
@@ -12,7 +12,7 @@ function test(){
     if(input.value.length >= 1){ // si on commence à écrire :
       modifJauge("20%","red"); 
       para.style.color = "red"
-      para.innerHTML = "weak" // affecte le message weak à para 
+      para.innerText = "weak" // affecte le message weak à para 
       document.querySelector("#cont").appendChild(para); // ajoute le message weak
       if(input.value.length >= 8 && input.value.match(/([0-9])/) && input.value.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)){ //si le mdp fait minimum 8 caractères, contient une maj et un chiffre :
         para.style.color = "yellow"
@@ -48,6 +48,6 @@ function modifJauge(width,backgroundColor){
 
 function modifMessage(mess){
   document.querySelector("#cont").removeChild(para); // supprime le message d'avant
-  para.innerHTML = mess; // affecte le message à para 
+  para.innerText = mess; // affecte le message à para 
   document.querySelector("#cont").appendChild(para); // ajoute le message suivant
 }
