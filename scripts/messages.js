@@ -50,25 +50,38 @@ addMessage.addEventListener('submit', (event) =>{
   const input = event.target.querySelector("#usermsg");
   const formData = {};
   
-  if(input.value){
+  if(input.value && input.value.length >=3){
     formData[input.name] = input.value
     console.log(formData);
 
     fetch('./includes/insertMessage.php', createFetchOptions(formData))
 
-    .then(result =>  { return result.json()   
-    })
+    .then(input.value="")
 
-    .then(data => (console.log(data)))
-      input.value="";
+    
+      
+}else{
+  input.value=""
 }
-getMessages();
 
+document.querySelectorAll(".message-received").forEach(el => el.remove()); //On remove les messages précédents pour afficher les nouveaux
+document.querySelectorAll(".message-send").forEach(el => el.remove());
+
+getMessages();
 })
 
+function showMessages(){
+  document.querySelectorAll(".message-received").forEach(el => el.remove()); //On remove les messages précédents pour afficher les nouveaux
+  document.querySelectorAll(".message-send").forEach(el => el.remove());
+  getMessages();
+
+
+}
+
+const interval = window.setInterval(showMessages, 10000)
 getMessages();
 
-setInterval(getMessages(), )
+
 
 /*createMessage.addEventListener('submit', (event) => {
   event.preventDefault();

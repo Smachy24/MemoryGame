@@ -410,7 +410,7 @@ class Bdd{
     $req = $this -> getConnect() -> prepare($sql);
     $req -> execute();
 
-    echo json_encode(['sucess' => 'ok']);
+    
 
   
 }
