@@ -141,6 +141,9 @@
               $req->execute();
               $all = $req->fetchAll();
               
+              } 
+              else if(isset($_POST["submit"]) && !$bool){
+                echo "Veuillez vérifier les champs du formulaires";
               }
            
 
