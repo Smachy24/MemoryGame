@@ -115,5 +115,6 @@
 </body>
 
 <script src="scripts/messages.js"></script>
+<script src="scripts/scores.js"></script>
 
 </html>

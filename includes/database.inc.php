@@ -385,7 +385,7 @@ class Bdd{
       
   }
 
-  function sendMessage($formData){
+  function sendMessage(){
   /**
    * SQL insert into Message's table a new message
    * @param: int $id_game -> game'id
@@ -409,11 +409,19 @@ class Bdd{
 
     $req = $this -> getConnect() -> prepare($sql);
     $req -> execute();
-
-    
-
-  
+ 
 }
+
+  function insertScore(){
+    $sql = "INSERT INTO Score(player_id, game_id, difficulty,score)
+    VALUES (".$_SESSION["id"].",1,\"" . $_POST["difficulty"] ."\",". $_POST["score"] .")";
+    $req = $this -> getConnect() -> prepare($sql);
+    $req -> execute();
+ 
+    echo json_encode(["sucess" => "ok"]);
+  }
+
+
 }
 
 $bd = new Bdd();
