@@ -215,7 +215,6 @@ function memoryMechanism (){
     allCase.forEach((elCase)=>{
         elCase.addEventListener('click', (e)=>{ //Quand l'utilisateur clique sur une case...
             e.preventDefault();
-            clickCount++;
             if(firstCase == undefined){     //Si il n'a toujours pas cliquer sur une case, la variable firstcase va prendre pour valeur la case que l'utilisateur vient de cliquer.
                 firstCase = e.target;
                 firstCaseImage = firstCase.src;
@@ -238,9 +237,11 @@ function memoryMechanism (){
                 setTimeout( () => {
                     if(firstCaseImage == secondCaseImage){ // Si les deux ont la même image on augmente le score et on reset les variables 
                         scoreMemory+=1;
+                        clickCount++;
                         firstCase = undefined;
                         secondCase = undefined;
                     }else{ //Sinon on réduit le score et on rend les éléments de nouveau cliquable7
+                        clickCount++;
                         scoreMemory-=1;
                         if(secondCase != undefined){
                             rotateCard(secondCase);
@@ -250,6 +251,7 @@ function memoryMechanism (){
                             rotateCard(firstCase);
                             firstCase.style.pointerEvents = "auto";
                         }
+                        
                         firstCase = undefined;
                         secondCase = undefined;  
                     }
