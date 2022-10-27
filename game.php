@@ -153,8 +153,8 @@
         <?php include "includes/messages.inc.php"; ?>
         
 
-        <form class="send-message" method="POST">
-          <input placeholder="Votre message..." type="text" class="text-input" name="userMessage" id="usermsg">
+        <form class="send-message" method="POST" id="chat-form">
+          <input placeholder="Votre message..." type="text" class="text-input" name="usermsg" id="usermsg">
           <button class="send-message-text" type="submit" name="submit">Envoyer</button>
         </form>
       </div>

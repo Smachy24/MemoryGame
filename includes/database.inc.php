@@ -385,7 +385,7 @@ class Bdd{
       
   }
 
-  function sendMessage($id_game,$id_sender, $message){
+  function sendMessage($formData){
   /**
    * SQL insert into Message's table a new message
    * @param: int $id_game -> game'id
@@ -399,15 +399,18 @@ class Bdd{
     VALUES(".$id_game.",". $id_sender.",'".$message."')");
     $req->execute();*/
 
-    
+   
+
+    /*$sql = "INSERT INTO Message(id_game, id_sender, message)
+    VALUES(".$id_game.",". $id_sender.",'".$message."')";*/
 
     $sql = "INSERT INTO Message(id_game, id_sender, message)
-    VALUES(".$id_game.",". $id_sender.",'".$message."')";
+    VALUES(1 ,".$_SESSION["id"]." ,\"".$_POST["usermsg"]."\")";
 
     $req = $this -> getConnect() -> prepare($sql);
     $req -> execute();
 
-    echo json_encode(['success' => 'ok']);
+    echo json_encode(['sucess' => 'ok']);
 
   
 }
