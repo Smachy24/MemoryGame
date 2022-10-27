@@ -25,119 +25,61 @@
     <h2>THE MEMORY GAME</h2>
   </div>
 
+  <div class="game-info">
+    <h3 id="score"></h3>
+    <h3><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></h3>
 
-  <main class="game-grid">
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/1.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/2.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/3.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/4.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/5.png" alt="Image de Pokémons"></div>
-          </td>
-        </tr>
+  </div>
+  <section class="table-features" id="tablefeatures">
 
-        <tr>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/6.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/7.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/8.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/9.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/10.png" alt="Image de Pokémons"></div>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/11.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/12.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/13.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/1.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/2.png" alt="Image de Pokémons"></div>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/3.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/4.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/5.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/6.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/7.png" alt="Image de Pokémons"></div>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/8.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/9.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/10.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/11.png" alt="Image de Pokémons"></div>
-          </td>
-          <td>
-            <div class="case"><img src="assets/assets-pokemon/12.png" alt="Image de Pokémons"></div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <section class="table-features">
-
-      <ul class="difficulty">
-        <li class="easy">FACILE</li>
-        <li class="medium">INTERMÉDIARE</li>
-        <li class="expert">EXPERT</li>
-        <li class="impossible">IMPOSSIBLE</li>
-      </ul>
-
-      <div class="theme">
-        <div class="pokemon">Pokémons</div>
-        <div class="flags">Drapeaux</div>
-        <div class="cars">Voitures</div>
+    <div class="difficulty">
+      <div id="difficulty-btn">DIFFICULTÉ</div>
+      <div id="difficulty-choice" class="inactive">
+        <label class="easy">
+          FACILE
+          <input type="radio" name="difficulty" value="easy" />
+        </label>
+        <label class="medium">
+          INTERMÉDIARE
+          <input type="radio" name="difficulty" value="medium" />
+        </label>
+        <label class="expert">
+          EXPERT
+          <input type="radio" name="difficulty" value="expert" />
+        </label>
+        <label class="impossible">
+          IMPOSSIBLE
+          <input type="radio" name="difficulty" value="impossible" />
+        </label>
 
       </div>
 
-    </section>
+      <div class="theme">
+        <div id="theme-btn">THEMES</div>
+        <div id="theme-choice" class="inactive">
+          <label class="pokemon">Pokémons
+            <input type="radio" name="theme" value="pokemon">
+          </label>
+          <label class="flags">FLAGS
+            <input type="radio" name="theme" value="flags">
+          </label>
+          <label class="pokemon">Voitures
+            <input type="radio" name="theme" value="voiture">
+          </label>
+        </div>
+      </div>
+
+      <button id="playbutton">JOUER</button>
+
+  </section>
+
+
+  <main class="game-grid inactive" id="gamegrid">
+    <table>
+      <tbody id="gamebody">
+
+      </tbody>
+    </table>
     </div>
 
     <aside class="chat-box">
@@ -151,7 +93,7 @@
         </div>
 
         <?php include "includes/messages.inc.php"; ?>
-        
+
 
         <form class="send-message" method="POST" id="chat-form">
           <input placeholder="Votre message..." type="text" class="text-input" name="usermsg" id="usermsg">
@@ -166,7 +108,8 @@
 
   <?php include "view/footer.php" //inclure le footer 
   ?>
-
+  <script src="scripts/animation.js"></script>
+  <script src="scripts/game.js"></script>
 
 </body>
 

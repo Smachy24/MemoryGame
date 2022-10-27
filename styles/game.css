@@ -1,22 +1,13 @@
 body {
   font-family: "Asap", sans-serif;
   background-color: rgb(16, 15, 47);
+  overflow-x: hidden;
 }
 
-main {
-  margin-top: 10em;
-  padding-bottom: 5vh;
-}
-
-.game-grid {
-  position: relative;
-}
-table {
-  min-width: 35%;
-  max-width: 80%;
-  aspect-ratio: 1/1;
-  border-spacing: 20px;
-  margin: auto;
+img {
+  object-fit: contain;
+  width: 100%;
+  opacity: 0;
 }
 
 .deco-header {
@@ -38,36 +29,58 @@ table {
   font-weight: bold;
 }
 
-th {
-  font-size: 4em;
-  color: white;
+main {
+  margin-top: 10em;
+  padding-bottom: 1vh;
 }
-tr {
+
+.table-features {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border: 2px solid rebeccapurple;
+}
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.game-grid {
+  position: relative;
   border: 2px solid blue;
+  height: 100vh;
+  width: 90vw;
+  margin: auto;
+}
+table {
+  width: fit-content;
+  border-spacing: 10px;
+  border-collapse: separate;
+  margin: auto;
+  height: 100%;
+  border: 2px solid red;
 }
 
 td {
   padding: 0;
 }
 
-tfoot div {
-  border: 2px solid red;
-  width: fit-content;
+tr {
+  border: 2px solid gray;
+  padding: 10px;
 }
 
 .case {
   background-color: #1a1933;
-  border-radius: 15px;
+  min-width: 20px;
+  max-width: 100px;
   width: 100%;
-  aspect-ratio: 1/1;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.case img {
-  width: 100px;
-  aspect-ratio: 1/1;
 }
 
 .table-features {
@@ -78,15 +91,24 @@ tfoot div {
 
 .difficulty {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   font-size: 1.5em;
-  width: 100%;
+  width: max-content;
   padding: 0;
 }
 
-.difficulty li {
+.difficulty div {
   padding: 0.5em;
   border-radius: 10px;
+}
+
+#difficulty-choice label {
+  display: block;
+  margin: 10px;
+  width: 80%;
+  padding: 0.5em;
+  border-radius: 20px;
 }
 
 .easy {
@@ -106,16 +128,13 @@ tfoot div {
 }
 
 .theme {
+  font-size: 1em;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  font-size: 2em;
-  margin-top: 1em;
-  font-weight: 800;
+  width: max-content;
+  flex-direction: column;
 }
 
 .theme div {
-  padding: 1em;
   border-radius: 10px;
 }
 
@@ -132,9 +151,4 @@ tfoot div {
 .cars {
   background-image: url(../assets/car.svg);
   background-size: 30px;
-}
-
-.table-features li {
-  display: block;
-  list-style: none;
 }
