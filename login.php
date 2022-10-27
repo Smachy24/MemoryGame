@@ -33,9 +33,9 @@
             <br />
             <input name="password" type="password" placeholder="     Mot de passe" id="Cmdp" />
             <a href="register.php">Vous n'avez pas encore de compte ? Inscrivez-vous !</a>
-            <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {
-              echo $errors;
-            } ?>
+            <?php if (isset($_POST["submit"]) && $_SESSION["connected"] == false) {?>
+              <p id="incorrect"><?php echo $errors;?></p>
+            <?php } ?>
           </div>
 
           <div class="buttonlogin">
