@@ -207,13 +207,15 @@ function memoryMechanism (){
     let firstCaseImage;
     let secondCaseImage;
     let allCase = selectAllCase();
+    const clickCountText = document.querySelector("#click-count");
+    let clickCount = 0;
     let isFilled = (el) => el.style.opacity == "1";
     timer();
     
     allCase.forEach((elCase)=>{
         elCase.addEventListener('click', (e)=>{ //Quand l'utilisateur clique sur une case...
             e.preventDefault();
-
+            clickCount++;
             if(firstCase == undefined){     //Si il n'a toujours pas cliquer sur une case, la variable firstcase va prendre pour valeur la case que l'utilisateur vient de cliquer.
                 firstCase = e.target;
                 firstCaseImage = firstCase.src;
@@ -264,6 +266,7 @@ function memoryMechanism (){
                 secondsValue = 0;
             }
             console.log(isVictory);
+            clickCountText.innerText = clickCount;
 
         })
     })
