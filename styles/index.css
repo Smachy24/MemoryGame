@@ -239,25 +239,3 @@ body {
   list-style: none;
   display: block;
 }
-
-.caroussel{
-  position: relative;
-  
-}
-
-.caroussel img{
-  position: absolute;
-}
-
-#img1{
-  opacity: 1;
-}
-#img2{
-  opacity: 0;
-}
-#img3{
-  opacity: 0;
-}
-#img4{
-  opacity: 0;
-}
