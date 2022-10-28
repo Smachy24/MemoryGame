@@ -41,9 +41,20 @@ h3 {
 
 .table-features {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-between;
-  border: 2px solid rebeccapurple;
+  justify-content: space-evenly;
+  border: 5px solid #ec9123;
+  margin-bottom: 10px;
+  align-items: center;
+  border-radius: 150px;
+  transition: all 1s;
+  padding: 15px 0;
+
+}
+
+.table-features:hover{
+  border-radius: 50px;
 }
 .active {
   display: block;
@@ -93,72 +104,244 @@ tr {
   width: 40%;
   margin: 2em auto;
   color: white;
+  row-gap: 10px;
 }
 
 .difficulty {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  
   font-size: 1.5em;
   width: max-content;
+
   padding: 0;
+
 }
 
 .difficulty div {
   padding: 0.5em;
   border-radius: 10px;
+  
 }
 
 #difficulty-choice label {
   display: block;
-  margin: 10px;
-  width: 80%;
+  margin-bottom: 10px;
+  width: 90%;
   padding: 0.5em;
   border-radius: 20px;
 }
 
+#difficulty-btn{
+  background-color: #ec9123;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+}
+
+#difficulty-btn:hover{
+  cursor: pointer;
+  color: #ec9123;
+  background-color: white;
+}
+
 .easy {
   background-color: #23ec2d;
+  transition: all 0.3s;
+}
+
+.easy:hover{
+  cursor: pointer;
+  color: #23ec2d;
+  background-color: white;
 }
 
 .medium {
   background-color: #ec9123;
+  transition: all 0.3s;
+}
+
+.medium:hover{
+  cursor: pointer;
+  color: #ec9123;
+  background-color: white;
 }
 
 .expert {
   background-color: #f53a3a;
+  transition: all 0.3s;
+}
+
+.expert:hover{
+  cursor: pointer;
+  color: #f53a3a;
+  background-color: white;
 }
 
 .impossible {
   background-color: #9b23ec;
+  transition: all 0.3s;
+}
+
+.impossible:hover{
+  cursor: pointer;
+  color: #9b23ec;
+  background-color: white;
 }
 
 .theme {
-  font-size: 1em;
+  font-size: 1.5em;
   display: flex;
   width: max-content;
-  flex-direction: column;
+  flex-direction: column; 
+  
 }
 
 .theme div {
   border-radius: 10px;
 }
 
+#theme-btn{
+  display: flex;
+  justify-content: center;
+  background-color: #ec9123;
+  transition: all 0.3s;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+}
+
+#theme-btn:hover{
+  cursor: pointer;
+  color: #ec9123;
+  background-color: white;
+}
+
+#playbutton{
+  width: 30%;
+  color: #ec9123;
+  background-color: white;
+  border: 2px solid #ec9123;
+  transition: all 0.5s;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 10px 0;
+
+}
+
+#playbutton:hover{
+  cursor: pointer;
+  color: white;
+  background-color: #ec9123;
+}
+
+.pokemon, .flags, .cars{
+  
+  font-size: 0.8em;
+  padding: 10px;
+}
 .pokemon {
   background-image: url(../assets/pokeball.svg);
   background-size: 30px;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.pokemon:hover{
+  cursor: pointer;
+  border: 2px solid white;
 }
 
 .flags {
   background-image: url(../assets/flag.svg);
   background-size: 30px;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.flags:hover{
+  cursor: pointer;
+  border: 2px solid white;
 }
 
 .cars {
   background-image: url(../assets/car.svg);
   background-size: 30px;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.cars:hover{
+  cursor: pointer;
+  border: 2px solid white;
 }
 
 h3{
   color:white;
 }
+
+#score{
+  display: flex;
+  background: white;
+  color: #ec9123;
+  border-radius: 10px;
+  border : 2px solid #ec9123;
+  width: 10%;
+  justify-content: center;
+  height: 50px;
+  font-size: 30px;
+  align-items: center;
+}
+
+
+#time{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 10%;
+  display: flex;
+  padding: 1%;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec9123;
+}
+
+.points{
+  margin-top: 2%;
+}
+
+
+#hours{
+  color: #fc4a1a;
+  border-left: 1px solid black;
+  padding: 6%;
+  margin-right: 5%;
+  border-radius: 100%;
+  background-color: white;
+}
+
+#minutes{
+  border-bottom: 1px solid black;
+  color: #fc4a1a;
+  padding: 6%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 100%;
+  background-color: white;
+}
+
+#seconds{
+  border-right: 1px solid black;
+  color: #fc4a1a;
+  padding: 6%;
+  margin-left: 5%;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.game-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+} 
