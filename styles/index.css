@@ -142,6 +142,18 @@ body {
   font-size: 3em;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  z-index: 0;
+  
+}
+
+
+#box1:hover, #box2:hover, #box3:hover, #box4:hover{
+  position: absolute;
+  z-index: 1;
+  width: 32%;
+  height: 43%;
+  font-size: 6em;
+  
 }
 
 .box span {
@@ -239,3 +251,4 @@ body {
   list-style: none;
   display: block;
 }
+

@@ -84,17 +84,17 @@
 
       
       <div class="game-stats">
-        <div class="box">
+
+        <div class="box" id="box1">
         <?php echo $bd -> getGamesPlayed(); ?>
-          <span>Parties Jouées</span></div>
-        
-          <div class="box">  
+          <span>Parties Jouées</span></div>  
+          <div class="box" id="box2">  
         <?php echo $bd -> getConnectedPlayers(); ?>
         <span>Joueurs inscrits</span></div>
-        <div class="box">
+        <div class="box" id="box3">
         <?php echo $bd -> getBestScore(); ?>
         <span>Meilleur score</span></div>
-        <div class="box">
+        <div class="box" id="box4">
         <?php echo $bd -> getMessageCount(); ?>  
         <span>Messages</span></div>
       </div>
@@ -153,7 +153,7 @@
             <img src="assets/kevin_avatar.jfif" alt="Kevin avatar">
           </div>
           <h3>Kevin</h3>
-          <h4>Développeur Imposteur</h4>
+          <h4>Développeur <a href= "https://www.coque-unique.com/boutique-img/coqueunique/produit/-impostor-among-us-45024-smartphone-small.jpg" target="_blank">Imposteur</a></h4>
 
           <ul class="social media">
             <a href=""><li><i class="fa-brands fa-facebook"></i></li></a>

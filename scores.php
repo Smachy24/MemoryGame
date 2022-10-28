@@ -150,6 +150,15 @@
         
 
         for ($a = 0; $a < count($bd->getScores()); $a++) { //Affichage des scores
+          if($a == count($bd->getScores())-1){
+            echo "<tr>";
+            for ($b = 0; $b < count($bd->getScores()[$a]); $b++) {
+              echo "<td><a href = \"https://www.youtube.com/watch?v=GBIIQ0kP15E\" target = \"_blank\">" . $bd->getScores()[$a][$b] . "</a></td>";
+            }
+            echo "</tr>";
+          }
+
+
           echo "<tr>";
           for ($b = 0; $b < count($bd->getScores()[$a]); $b++) {
             echo "<td>" . $bd->getScores()[$a][$b] . "</td>";
