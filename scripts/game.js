@@ -22,17 +22,17 @@ async function fetchPokemon (numbers){
     return shuffleArray(pokemonImage);
 }
 
-async function fetchemoji (numbers){
+async function fetchItem (numbers){
     const emojiImage = [];
     
     for (let i = 0; i <= numbers-1; i++) {
 
-        let emojiIndex = Math.floor(Math.random()*600+1);
+        let emojiIndex = Math.floor(Math.random()*200+1);
 
-        let fetchData = await fetch(`https://api.emojisworld.fr/v1/emojis/${emojiIndex}`);
+        let fetchData = await fetch(`https://pokeapi.co/api/v2/item/${emojiIndex}`);
         let emojiData = await fetchData.json();
-        console.log(emojiData);
-        //let emojiDataImage = emojiData.image;
+        let emojiDataImage = emojiData.sprites.default;
+        console.log(emojiDataImage);
         if(emojiImage.some((el) => el == emojiDataImage)){
             i--;
             continue;
@@ -63,7 +63,6 @@ async function fetchrick (numbers){
             rickImage.push(rickDataImage);
         }
     }
-    console.log(rickImage);
     return shuffleArray(rickImage);
 }
 
@@ -282,6 +281,8 @@ async function loadImage(numbers){
         case 'rick':
             imagesArray = await fetchrick(numbers);
             break;
+        case 'item':
+            imagesArray = await fetchItem(numbers);
         default:
             break;
     }

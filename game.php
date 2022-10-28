@@ -61,8 +61,8 @@
         <label class="flags">Rick et Morty
           <input type="radio" name="theme" value="rick">
         </label>
-        <label class="pokemon">Emoji
-          <input type="radio" name="theme" value="emoji">
+        <label class="pokemon">Objets
+          <input type="radio" name="theme" value="item">
         </label>
       </div>
     </div>

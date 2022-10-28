@@ -50,10 +50,9 @@ h3 {
   border-radius: 150px;
   transition: all 1s;
   padding: 15px 0;
-
 }
 
-.table-features:hover{
+.table-features:hover {
   border-radius: 50px;
 }
 .active {
@@ -109,18 +108,16 @@ tr {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
+
   font-size: 1.5em;
   width: max-content;
 
   padding: 0;
-
 }
 
 .difficulty div {
   padding: 0.5em;
   border-radius: 10px;
-  
 }
 
 #difficulty-choice label {
@@ -131,14 +128,14 @@ tr {
   border-radius: 20px;
 }
 
-#difficulty-btn{
+#difficulty-btn {
   background-color: #ec9123;
   transition: all 0.3s;
   display: flex;
   justify-content: center;
 }
 
-#difficulty-btn:hover{
+#difficulty-btn:hover {
   cursor: pointer;
   color: #ec9123;
   background-color: white;
@@ -149,7 +146,7 @@ tr {
   transition: all 0.3s;
 }
 
-.easy:hover{
+.easy:hover {
   cursor: pointer;
   color: #23ec2d;
   background-color: white;
@@ -160,7 +157,7 @@ tr {
   transition: all 0.3s;
 }
 
-.medium:hover{
+.medium:hover {
   cursor: pointer;
   color: #ec9123;
   background-color: white;
@@ -171,7 +168,7 @@ tr {
   transition: all 0.3s;
 }
 
-.expert:hover{
+.expert:hover {
   cursor: pointer;
   color: #f53a3a;
   background-color: white;
@@ -182,7 +179,7 @@ tr {
   transition: all 0.3s;
 }
 
-.impossible:hover{
+.impossible:hover {
   cursor: pointer;
   color: #9b23ec;
   background-color: white;
@@ -192,15 +189,14 @@ tr {
   font-size: 1.5em;
   display: flex;
   width: max-content;
-  flex-direction: column; 
-  
+  flex-direction: column;
 }
 
 .theme div {
   border-radius: 10px;
 }
 
-#theme-btn{
+#theme-btn {
   display: flex;
   justify-content: center;
   background-color: #ec9123;
@@ -209,13 +205,13 @@ tr {
   margin-bottom: 20px;
 }
 
-#theme-btn:hover{
+#theme-btn:hover {
   cursor: pointer;
   color: #ec9123;
   background-color: white;
 }
 
-#playbutton{
+#playbutton {
   width: 30%;
   color: #ec9123;
   background-color: white;
@@ -224,17 +220,17 @@ tr {
   border-radius: 50px;
   padding: 10px;
   margin: 10px 0;
-
 }
 
-#playbutton:hover{
+#playbutton:hover {
   cursor: pointer;
   color: white;
   background-color: #ec9123;
 }
 
-.pokemon, .flags, .cars{
-  
+.pokemon,
+.flags,
+.cars {
   font-size: 0.8em;
   padding: 10px;
 }
@@ -245,7 +241,7 @@ tr {
   transition: all 0.3s;
 }
 
-.pokemon:hover{
+.pokemon:hover {
   cursor: pointer;
   border: 2px solid white;
 }
@@ -257,7 +253,7 @@ tr {
   transition: all 0.3s;
 }
 
-.flags:hover{
+.flags:hover {
   cursor: pointer;
   border: 2px solid white;
 }
@@ -269,7 +265,7 @@ tr {
   transition: all 0.3s;
 }
 
-.cars:hover{
+.cars:hover {
   cursor: pointer;
   border: 2px solid white;
 }
@@ -278,12 +274,12 @@ h3 {
   color: white;
 }
 
-#score{
+#score {
   display: flex;
   background: white;
   color: #ec9123;
   border-radius: 10px;
-  border : 2px solid #ec9123;
+  border: 2px solid #ec9123;
   width: 10%;
   justify-content: center;
   height: 50px;
@@ -291,8 +287,7 @@ h3 {
   align-items: center;
 }
 
-
-#time{
+#time {
   color: white;
   border: none;
   border-radius: 10px;
@@ -305,12 +300,11 @@ h3 {
   background-color: #ec9123;
 }
 
-.points{
+.points {
   margin-top: 2%;
 }
 
-
-#hours{
+#hours {
   color: #fc4a1a;
   border-left: 1px solid black;
   padding: 6%;
@@ -319,7 +313,7 @@ h3 {
   background-color: white;
 }
 
-#minutes{
+#minutes {
   border-bottom: 1px solid black;
   color: #fc4a1a;
   padding: 6%;
@@ -329,7 +323,7 @@ h3 {
   background-color: white;
 }
 
-#seconds{
+#seconds {
   border-right: 1px solid black;
   color: #fc4a1a;
   padding: 6%;
@@ -338,8 +332,8 @@ h3 {
   background-color: white;
 }
 
-.game-info{
+.game-info {
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
-} 
+}
