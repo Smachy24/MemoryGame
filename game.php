@@ -91,13 +91,14 @@
       </div>
 
       <div class="replay-div">
-        <button class="replay-button" id="replay">Rejouer</button>
+        <button class="replay-button" id="replay" onclick="resetGrid()">Rejouer</button>
       </div>
 
     </section>
     <div class="game-info">
       <h3 id="score">0</h3>
-      <h3><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></h3>
+      <h3 id="time"><span id="hours">00</span> <span class="points">:</span> <span id="minutes">00</span> <span class="points">:</span> <span id="seconds">00</span></h3>
+
       <!--<h3 id="click-count"></h3>-->
 
     </div>
