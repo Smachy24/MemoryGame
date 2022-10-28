@@ -359,7 +359,7 @@ class Bdd{
     $req = $this->connexion->prepare("
     SELECT *
     FROM message
-    ORDER BY message_date ASC
+    ORDER BY message_date DESC
     ");
     $req->execute();
     $allMessages = $req->fetchAll();
