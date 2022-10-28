@@ -1,6 +1,7 @@
 <?php
 include "session.inc.php";
-class Bdd{
+class Bdd
+{
   private $user;
   private $pass;
   private $host;
@@ -10,7 +11,7 @@ class Bdd{
   private $messages;
   private $filter;
   private $order;
-  
+
 
   public function __construct($user = "root", $pass = "", $host = "localhost", $name = "memorygame")
   {
@@ -22,8 +23,7 @@ class Bdd{
     $this->scores = [];
     $this->messages = [];
     $this->filter = "";
-    $this ->order = "";
-    
+    $this->order = "";
   }
   function getPass()
   /**
@@ -46,11 +46,11 @@ class Bdd{
 
   function getUser()
   {
-  /**
-   * Return the PDO'user
-   * @param : none
-   * @return : String user -> PDO's user
-   */
+    /**
+     * Return the PDO'user
+     * @param : none
+     * @return : String user -> PDO's user
+     */
     return $this->user;
   }
 
@@ -81,7 +81,7 @@ class Bdd{
    * @return : Object(PDO) connexion -> PDO's connexion
    */
   {
-    return $this -> connexion;
+    return $this->connexion;
   }
 
   function getFilter()
@@ -91,7 +91,7 @@ class Bdd{
    * @return : String scores -> All users scores's filters
    */
   {
-    return $this -> filter;
+    return $this->filter;
   }
 
   function addFilter($filter)
@@ -101,10 +101,10 @@ class Bdd{
    * @return : none
    */
   {
-    if($this -> filter != ""){
-      $this -> filter.= " AND ";
+    if ($this->filter != "") {
+      $this->filter .= " AND ";
     }
-    $this -> filter.= $filter;
+    $this->filter .= $filter;
   }
 
   function resetScores()
@@ -137,13 +137,14 @@ class Bdd{
     array_push($this->scores, $array);
   }
 
-  function getOrder(){
+  function getOrder()
+  {
     /**
      * Return selected order
      * @param: none
      * @return : String order -> selected order
      */
-    return $this -> order;
+    return $this->order;
   }
 
   function addOrder($order)
@@ -154,7 +155,7 @@ class Bdd{
    */
   {
 
-    $this -> order.= $order;
+    $this->order .= $order;
   }
 
   function connect()
@@ -176,7 +177,8 @@ class Bdd{
   }
 
 
-  function selectScore(){
+  function selectScore()
+  {
     /**
      * Select all scores and display them in scores.php
      * @param:none
@@ -187,78 +189,81 @@ class Bdd{
     JOIN Utilisateur ON score.player_id = Utilisateur.id
     JOIN Game ON Score.game_id = Game.id ";
 
-    $this -> resetScores();
-    $sql .= $this -> getFilter(); 
-    $sql .= $this -> getOrder(); 
+    $this->resetScores();
+    $sql .= $this->getFilter();
+    $sql .= $this->getOrder();
 
-    $req = $this -> connexion-> prepare($sql);
-    $req -> execute();
-    $all = $req->fetchAll();  
+    $req = $this->connexion->prepare($sql);
+    $req->execute();
+    $all = $req->fetchAll();
 
-      foreach($all as $row){
-        $array = [$row['name'],$row['pseudo'], $row['difficulty'], $row['score'] , $row['game_date']];
-        $this -> addScore($array);
-      
-      }
+    foreach ($all as $row) {
+      $array = [$row['name'], $row['pseudo'], $row['difficulty'], $row['score'], $row['game_date']];
+      $this->addScore($array);
+    }
   }
 
-  function getConnectedPlayers(){
+  function getConnectedPlayers()
+  {
     /**
      * Return sql request that select all users in db
      * @param: none
      * @return : String $r -> number of users
      */
-    $sql = "SELECT COUNT(id) FROM Utilisateur" ;
-    $req = $this -> connexion-> prepare($sql);
-    $req -> execute();
+    $sql = "SELECT COUNT(id) FROM Utilisateur";
+    $req = $this->connexion->prepare($sql);
+    $req->execute();
     $all = $req->fetchAll();
-    
+
     $r = $all[0][0];
     return $r;
   }
-  
 
-  function getGamesPlayed(){
+
+  function getGamesPlayed()
+  {
     /**
      * Return sql request that select all games played
      * @param: none
      * @return : String $r -> number of games played
      */
     $sql = "SELECT COUNT(id) FROM Score";
-    $req = $this -> connexion-> prepare($sql);
-    $req -> execute();
+    $req = $this->connexion->prepare($sql);
+    $req->execute();
     $all = $req->fetchAll();
-    
+
     $r = $all[0][0];
     return $r;
   }
 
-  function getBestScore(){
+  function getBestScore()
+  {
     /**
      * Return sql request that select the best score in data base
      * @param: none
      * @return : String $r -> best score
      */
     $sql = "SELECT score FROM Score ORDER BY score DESC LIMIT 1";
-    $req = $this -> connexion-> prepare($sql);
-    $req -> execute();
+    $req = $this->connexion->prepare($sql);
+    $req->execute();
     $all = $req->fetchAll();
-    
+
     $r = $all[0][0];
     return $r;
   }
 
-  function getMessageCount(){
+  function getMessageCount()
+  {
     /**
      * Return sql request that select all messages in db
      * @param: none
      * @return : String $r -> number of messages in db
      */
-    $sql = "SELECT COUNT(id) FROM Message" ;
-    $req = $this -> connexion-> prepare($sql);
-    $req -> execute();
+    $sql = "SELECT COUNT(id) FROM Message";
+    $req = $this->connexion->prepare($sql);
+    $req->execute();
     $all = $req->fetchAll();
-    
+
     $r = $all[0][0];
     return $r;
   }
@@ -371,57 +376,53 @@ class Bdd{
         "message" => $messages["message"],
         "message_date" => $messages["message_date"]
       ];
-      if ($messages["id_sender"] == $_SESSION["id"]){
+      if ($messages["id_sender"] == $_SESSION["id"]) {
         $messagesArray["color"] = "orange";
-      }
-      else{
+      } else {
         $messagesArray["color"] = "gray";
-      } 
+      }
       $messagesArray["user"] = $this->selectUserById($messages["id_sender"]);
       array_push($this->messages, $messagesArray);
     }
-    echo json_encode($this -> messages);
-
-      
+    echo json_encode($this->messages);
   }
 
-  function sendMessage(){
-  /**
-   * SQL insert into Message's table a new message
-   * @param: int $id_game -> game'id
-   * @param: int $id_sender -> user'id
-   * @param: String $message -> message
-   * @return: none
-   */
-  
-   /* $req = $this->connexion->prepare("
+  function sendMessage()
+  {
+    /**
+     * SQL insert into Message's table a new message
+     * @param: int $id_game -> game'id
+     * @param: int $id_sender -> user'id
+     * @param: String $message -> message
+     * @return: none
+     */
+
+    /* $req = $this->connexion->prepare("
     INSERT INTO Message(id_game, id_sender, message)
     VALUES(".$id_game.",". $id_sender.",'".$message."')");
     $req->execute();*/
 
-   
+
 
     /*$sql = "INSERT INTO Message(id_game, id_sender, message)
     VALUES(".$id_game.",". $id_sender.",'".$message."')";*/
 
     $sql = "INSERT INTO Message(id_game, id_sender, message)
-    VALUES(1 ,".$_SESSION["id"]." ,\"".$_POST["usermsg"]."\")";
+    VALUES(1 ," . $_SESSION["id"] . " ,\"" . $_POST["usermsg"] . "\")";
 
-    $req = $this -> getConnect() -> prepare($sql);
-    $req -> execute();
- 
-}
-
-  function insertScore(){
-    $sql = "INSERT INTO Score(player_id, game_id, difficulty,score)
-    VALUES (".$_SESSION["id"].",1,\"" . $_POST["difficulty"] ."\",". $_POST["score"] .")";
-    $req = $this -> getConnect() -> prepare($sql);
-    $req -> execute();
- 
-    echo json_encode(["sucess" => "ok"]);
+    $req = $this->getConnect()->prepare($sql);
+    $req->execute();
   }
 
+  function insertScore()
+  {
+    $sql = "INSERT INTO Score(player_id, game_id, difficulty,score)
+    VALUES (" . $_SESSION["id"] . ",1,\"" . $_POST["difficulty"] . "\"," . $_POST["score"] . ")";
+    $req = $this->getConnect()->prepare($sql);
+    $req->execute();
 
+    echo json_encode(["sucess" => "ok"]);
+  }
 }
 
 $bd = new Bdd();

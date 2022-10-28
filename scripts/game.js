@@ -78,6 +78,27 @@ function shuffleArray (array){
     return array
 }
 
+function createFetchOptions(bodyData){
+    return {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams(bodyData)
+    }
+  }
+  
+  
+function insertScore(score, difficulty){
+    const formData = {};
+    formData["score"] = score;
+    formData["difficulty"] = difficulty;
+  
+    console.log(formData);
+    
+    fetch('./includes/insertScore.php', createFetchOptions(formData))
+  }
+
 /* DIFFICULTY AND THEME REQUEST ======================================================================== */
 
 const difficultyBtn = document.querySelector("#difficulty-btn");
@@ -119,7 +140,6 @@ radioThemeChoice.forEach(userChoice => {
     })
 })
 
-
 /* Create Grid Game =======================================================================================*/
 
 const playButton = document.querySelector("#playbutton");
@@ -147,11 +167,13 @@ replayBtn.addEventListener('click', (e)=>{ //Replay ============================
     victoryPopup.classList.toggle("inactive");
     gridGame.classList.toggle("inactive");
     tablefeatures.classList.toggle("inactive");
+    resetGrid();
+    
 
 })
 
 
-playButton.addEventListener('click', (e)=>{
+playButton.addEventListener('click', (e)=>{ // Play ===============================
     e.preventDefault();
 
     gridGame.classList.toggle("inactive");
@@ -159,12 +181,35 @@ playButton.addEventListener('click', (e)=>{
     generateMemoryGame(userDifficultyChoice);
 })
 
+function resetGrid (){
+    userDifficultyChoice = undefined;
+    userThemeChoice = undefined;
+    hoursValue = 0;
+    minutesValue = 0;
+    secondsValue = 0;
+    scoreMemory = 0;
+    while(gameBody.firstChild){
+        console.log("delete")
+        gameBody.firstChild.remove();
+    }
+    radioDifficultyChoice.forEach((el)=>{
+        el.checked = false;
+    })
+
+    radioThemeChoice.forEach((el)=>{
+        el.checked = false;
+    })
+    
+
+}
+
+
 function generateMemoryGame (difficulty){
     let numbersOfImage;
     switch (difficulty) {
         case 'easy':
-            generateGrid(4,9);
-            numbersOfImage = 18;
+            generateGrid(2,4);
+            numbersOfImage = 4;
             multiplier = 0.8;
             break;
         case 'medium':
@@ -229,7 +274,7 @@ function generateColumn (cols){
 
 async function loadImage(numbers){
     const allCase = selectAllCase();
-    let imagesArray;
+    let imagesArray = []
     switch (userThemeChoice) {
         case 'pokemon':
             imagesArray = await fetchPokemon(numbers);
@@ -261,7 +306,6 @@ function rotateCases (){
     })
 }
 
-rotateCases();
 
 /* TIMER INI =================================================================================================*/
 let hours = document.querySelector("#hours");
@@ -273,7 +317,8 @@ let minutesValue = 0;
 let secondsValue = 0;
 
 const timer = function (){
-        setInterval( ()=>{
+    if(isVictory == false){
+        let gameTimer = setInterval( ()=>{
             if(secondsValue == 59){
                 secondsValue = 0;
                 minutesValue+= 1;
@@ -288,6 +333,9 @@ const timer = function (){
             scoreMemory -= 10;
             scoreGame.innerText = scoreMemory;
         },1000)
+    }else{
+    }
+        
 }
 
 /* MEMORY GAMEPLAY ===========================================================================================*/
@@ -301,12 +349,11 @@ function memoryMechanism (){
     const clickCountText = document.querySelector("#click-count");
     let clickCount = 0;
     let isFilled = (el) => el.style.opacity == "1";
-
+    timer();
     
 
     allCase.forEach((elCase)=>{
         if(isVictory == false && isTimerStarted == false){
-            timer();
             isTimerStarted =true;
         }
         elCase.addEventListener('click', (e)=>{ //Quand l'utilisateur clique sur une case...
@@ -356,15 +403,11 @@ function memoryMechanism (){
                 return (el.style.opacity == "1");
             })
             if(isVictory == true){
-                clearInterval(timer());
+                scoreMemory = scoreMemory + (700 * multiplier);
+                insertScore(scoreMemory, userDifficultyChoice);
                 victoryPopup.classList.toggle("inactive");
                 timePopup.innerText = `${hoursValue} : ${minutesValue} : ${secondsValue}`;
-                scorePopup.innerText = scoreMemory + (700 * multiplier);
-                hoursValue = 0;
-                minutesValue = 0;
-                secondsValue = 0;
-                
-
+                scorePopup.innerText = scoreMemory;
             }
             console.log(isVictory);
             clickCountText.innerText = clickCount;
