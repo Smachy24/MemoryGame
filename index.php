@@ -76,9 +76,15 @@
 
       </div>
     </section>
-
+    
     <section class="games-status">
-      <img src="assets/watch-dogs.jpg" alt="Fond d'écran watch dogs 2">
+      <div class="caroussel">
+        <img src="assets/1.jpg" alt="Image 1" id="img1">
+        <img src="assets/2.jpg" alt="Image 2" id="img2">
+        <img src="assets/3.jpg" alt="Image 3" id="img3">
+        <img src="assets/4.jpg" alt="Image 4" id="img4">
+      </div>
+      
       <div class="game-stats">
         <div class="box">
         <?php echo $bd -> getGamesPlayed(); ?>

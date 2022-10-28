@@ -208,8 +208,8 @@ function generateMemoryGame (difficulty){
     let numbersOfImage;
     switch (difficulty) {
         case 'easy':
-            generateGrid(2,4);
-            numbersOfImage = 4;
+            generateGrid(2,13);
+            numbersOfImage = 13;
             multiplier = 0.8;
             break;
         case 'medium':
